@@ -1,0 +1,5 @@
+node_modules/
+scratch/
+package-lock.json
+package.json
+server.js

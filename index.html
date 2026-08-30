@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vedic Pooja Pandit | Sacred Rituals, Divine Experience</title>
+  <meta name="description" content="Book experienced Vedic priests for poojas, homams, ceremonies and rituals across 13 cities in India. Trusted by 50,000+ families.">
+  <meta name="keywords" content="pooja, pandit, vedic, homam, ceremony, hindu rituals, priest booking">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="vpp-header" id="main-header">
+    <div class="vpp-header__inner container">
+      <a href="#" class="vpp-header__logo" id="logo-link">
+        <span class="vpp-header__logo-symbol">🕉️</span>
+        <div>
+          <span class="vpp-header__logo-text">Vedic Pooja Pandit</span>
+          <span class="vpp-header__logo-tagline">Sacred Rituals, Divine Experience</span>
+        </div>
+      </a>
+      <div class="vpp-header__controls">
+        <a href="#/all-services" class="vpp-header__link-btn">All Rituals</a>
+        <!-- City Dropdown -->
+        <div class="vpp-dropdown" id="city-dropdown">
+          <span class="vpp-dropdown__label">City</span>
+          <button class="vpp-dropdown__btn" id="city-btn">
+            <span class="vpp-dropdown__text" id="city-text">Hyderabad</span>
+            <span class="vpp-dropdown__arrow">▾</span>
+          </button>
+          <div class="vpp-dropdown__menu" id="city-menu"></div>
+        </div>
+        <!-- Language Dropdown -->
+        <div class="vpp-dropdown" id="lang-dropdown">
+          <span class="vpp-dropdown__label">Language</span>
+          <button class="vpp-dropdown__btn" id="lang-btn">
+            <span class="vpp-dropdown__text" id="lang-text">Telugu</span>
+            <span class="vpp-dropdown__arrow">▾</span>
+          </button>
+          <div class="vpp-dropdown__menu" id="lang-menu"></div>
+        </div>
+      </div>
+      <!-- Mobile Menu Button -->
+      <button class="vpp-header__mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+        <span class="vpp-header__mobile-menu-line"></span>
+        <span class="vpp-header__mobile-menu-line"></span>
+        <span class="vpp-header__mobile-menu-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="app-main">
+    <!-- Hero Section (only on home) -->
+    <section class="vpp-hero" id="hero-section">
+      <div class="vpp-hero__mandala"></div>
+      <div class="vpp-hero__content container">
+        <div class="vpp-hero__badge">🪔 Trusted by 50,000+ Families Across India</div>
+        <h1 class="vpp-hero__title">Sacred <span class="text-gold">Vedic Rituals</span> at Your Doorstep</h1>
+        <p class="vpp-hero__subtitle">Book experienced, Vedic Patashala certified priests for poojas, homams, ceremonies and rituals in your city.</p>
+        <div style="margin-bottom: 40px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="#/all-services" class="vpp-btn vpp-btn--primary" style="box-shadow: var(--shadow-gold);">📿 Browse All 104+ Rituals</a>
+        </div>
+        <div class="vpp-hero__stats">
+          <div class="vpp-hero__stat">
+            <span class="vpp-hero__stat-number">500+</span>
+            <span class="vpp-hero__stat-label">Certified Priests</span>
+          </div>
+          <div class="vpp-hero__stat">
+            <span class="vpp-hero__stat-number">13</span>
+            <span class="vpp-hero__stat-label">Cities</span>
+          </div>
+          <div class="vpp-hero__stat">
+            <span class="vpp-hero__stat-number">120+</span>
+            <span class="vpp-hero__stat-label">Rituals</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumb (hidden on home) -->
+    <nav class="vpp-breadcrumb hidden" id="breadcrumb">
+      <div class="container">
+        <ol class="vpp-breadcrumb__list" id="breadcrumb-list"></ol>
+      </div>
+    </nav>
+
+    <!-- Dynamic Content Area -->
+    <div id="app-content"></div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="vpp-footer">
+    <div class="vpp-footer__inner container">
+      <div class="vpp-footer__grid">
+        <div class="vpp-footer__col">
+          <h3 class="vpp-footer__title">🕉️ Vedic Pooja Pandit</h3>
+          <p class="vpp-footer__text">We connect you with experienced, Vedic Patashala certified priests for authentic poojas, homams, and ceremonies. Our mission is to make sacred rituals accessible and convenient for every family.</p>
+          <div class="vpp-footer__social">
+            <a href="#" class="vpp-footer__social-link" aria-label="Facebook">f</a>
+            <a href="#" class="vpp-footer__social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="vpp-footer__social-link" aria-label="YouTube">▶</a>
+            <a href="#" class="vpp-footer__social-link" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+        <div class="vpp-footer__col">
+          <h3 class="vpp-footer__title">Popular Services</h3>
+          <ul class="vpp-footer__links">
+            <li><a href="#" class="vpp-footer__link">Satyanarayana Pooja</a></li>
+            <li><a href="#" class="vpp-footer__link">Gruhapravesam</a></li>
+            <li><a href="#" class="vpp-footer__link">Navagraha Homam</a></li>
+            <li><a href="#" class="vpp-footer__link">Marriage</a></li>
+            <li><a href="#" class="vpp-footer__link">Rudrabhishekam</a></li>
+          </ul>
+        </div>
+        <div class="vpp-footer__col">
+          <h3 class="vpp-footer__title">Our Cities</h3>
+          <ul class="vpp-footer__links">
+            <li><a href="#" class="vpp-footer__link">Hyderabad</a></li>
+            <li><a href="#" class="vpp-footer__link">Bangalore</a></li>
+            <li><a href="#" class="vpp-footer__link">Chennai</a></li>
+            <li><a href="#" class="vpp-footer__link">Delhi NCR</a></li>
+            <li><a href="#" class="vpp-footer__link">Mumbai</a></li>
+            <li><a href="#" class="vpp-footer__link">Pune</a></li>
+          </ul>
+        </div>
+        <div class="vpp-footer__col">
+          <h3 class="vpp-footer__title">Contact Us</h3>
+          <div class="vpp-footer__contact">📞 +91 98765 43210</div>
+          <div class="vpp-footer__contact">📧 info@vedicpoojapandit.com</div>
+          <div class="vpp-footer__contact">📍 Hyderabad, Telangana</div>
+        </div>
+      </div>
+      <div class="vpp-footer__bottom">
+        <p class="vpp-footer__copyright">© 2026 Vedic Pooja Pandit. All rights reserved. | Made with 🙏 for divine experiences.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js?v=2"></script>
+  <script src="js/app.js?v=2"></script>
+</body>
+</html>
