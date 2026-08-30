@@ -8,7 +8,6 @@ const state = {
 
 function init() {
   initDropdowns();
-  initMobileMenu();
   handleRoute();
   window.addEventListener('hashchange', handleRoute);
   
@@ -26,7 +25,6 @@ function init() {
       document.querySelectorAll('.vpp-dropdown').forEach(dropdown => {
         dropdown.classList.remove('vpp-dropdown--open');
       });
-      closeMobileMenu();
     }
   });
 }
@@ -99,43 +97,6 @@ function initDropdowns() {
       item.classList.add('vpp-dropdown__item--active');
     }
   });
-}
-
-function initMobileMenu() {
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const headerControls = document.querySelector('.vpp-header__controls');
-  
-  if (!mobileMenuBtn) return;
-
-  mobileMenuBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    mobileMenuBtn.classList.toggle('active');
-    headerControls.classList.toggle('mobile-menu-open');
-  });
-
-  // Close mobile menu when a link is clicked
-  if (headerControls) {
-    headerControls.addEventListener('click', (e) => {
-      if (e.target.matches('.vpp-header__link-btn, .vpp-dropdown__item')) {
-        closeMobileMenu();
-      }
-    });
-  }
-
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.vpp-header') && headerControls.classList.contains('mobile-menu-open')) {
-      closeMobileMenu();
-    }
-  });
-}
-
-function closeMobileMenu() {
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const headerControls = document.querySelector('.vpp-header__controls');
-  
-  if (mobileMenuBtn) mobileMenuBtn.classList.remove('active');
-  if (headerControls) headerControls.classList.remove('mobile-menu-open');
 }
 
 function handleRoute() {

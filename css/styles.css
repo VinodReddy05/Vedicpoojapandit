@@ -1125,41 +1125,7 @@ ul, ol {
 .slide-up:nth-child(10).is-visible { animation-delay: 0.9s; }
 
 
-/* 13. MOBILE MENU BUTTON */
-.vpp-header__mobile-menu-btn {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  align-items: center;
-  justify-content: center;
-}
-
-.vpp-header__mobile-menu-line {
-  width: 24px;
-  height: 2.5px;
-  background: var(--color-gold);
-  border-radius: 2px;
-  transition: all var(--transition-fast);
-}
-
-.vpp-header__mobile-menu-btn.active .vpp-header__mobile-menu-line:nth-child(1) {
-  transform: rotate(45deg) translateY(11px);
-}
-
-.vpp-header__mobile-menu-btn.active .vpp-header__mobile-menu-line:nth-child(2) {
-  opacity: 0;
-}
-
-.vpp-header__mobile-menu-btn.active .vpp-header__mobile-menu-line:nth-child(3) {
-  transform: rotate(-45deg) translateY(-11px);
-}
-
-
-/* 14. RESPONSIVE DESIGN */
+/* 13. RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
   .vpp-detail__grid {
     grid-template-columns: 1fr;
@@ -1180,13 +1146,8 @@ ul, ol {
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
-    padding: 12px 0;
+    height: var(--header-height);
     z-index: 1000;
-  }
-
-  .vpp-header__mobile-menu-btn {
-    display: flex;
   }
   
   #app-main {
@@ -1195,71 +1156,39 @@ ul, ol {
   
   .vpp-header__inner {
     flex-direction: row;
-    gap: 0;
+    gap: 8px;
     align-items: center;
     justify-content: space-between;
   }
   
   .vpp-header__controls {
-    display: none;
-    position: fixed;
-    top: var(--header-height);
-    left: 0;
-    width: 100%;
-    background: var(--color-maroon-dark);
-    flex-direction: column;
-    grid-template-columns: 1fr !important;
-    gap: 0;
-    padding: 12px;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-    max-height: calc(100vh - var(--header-height));
-    overflow-y: auto;
-    z-index: 999;
-  }
-
-  .vpp-header__controls.mobile-menu-open {
     display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
   }
 
   .vpp-header__link-btn {
-    grid-column: auto !important;
-    text-align: left;
     margin: 0 !important;
-    padding: 12px 16px;
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 8px 12px;
+    font-size: 0.9rem;
   }
   
   .vpp-dropdown {
-    width: 100%;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    width: auto;
   }
 
   .vpp-dropdown__btn {
-    width: 100%;
+    width: auto;
     min-width: 0;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 12px 16px;
-    justify-content: space-between;
+    padding: 8px 12px;
+    font-size: 0.9rem;
   }
 
   .vpp-dropdown__menu {
-    position: static;
-    opacity: 0;
-    pointer-events: none;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.2s ease;
-    box-shadow: none;
-    border: none;
-    background: rgba(0, 0, 0, 0.2);
-  }
-
-  .vpp-dropdown--open .vpp-dropdown__menu {
-    opacity: 1;
-    pointer-events: all;
-    max-height: 300px;
+    position: absolute;
+    top: 100%;
+    left: 0;
   }
   
   .vpp-hero {
