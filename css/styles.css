@@ -1230,14 +1230,55 @@ ul, ol {
   }
 }
 
+@media (max-width: 600px) {
+  .vpp-header__controls {
+    gap: 4px !important;
+  }
+
+  .vpp-dropdown__btn {
+    min-width: auto;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .vpp-dropdown__text {
+    font-size: 0.8rem;
+  }
+
+  .vpp-header__link-btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .vpp-dropdown__menu {
+    min-width: 140px;
+  }
+
+  .vpp-dropdown__item {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}
+
 @media (max-width: 480px) {
   :root {
-    --header-height: 60px;
+    --header-height: 70px;
     --container-padding: 16px;
+  }
+
+  .vpp-header {
+    height: auto;
+    padding: 8px 0;
+  }
+
+  .vpp-header__inner {
+    flex-wrap: wrap;
+    gap: 0;
   }
 
   .vpp-header__logo {
     gap: 8px;
+    flex: 0 0 auto;
   }
 
   .vpp-header__logo-symbol {
@@ -1245,12 +1286,54 @@ ul, ol {
   }
 
   .vpp-header__logo-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .vpp-header__logo-tagline {
+    font-size: 0.55rem;
+    letter-spacing: 0.3px;
+  }
+
+  .vpp-header__controls {
+    flex: 1 1 100%;
+    margin-top: 8px;
+    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .vpp-header__link-btn {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    flex: 0 0 auto;
+  }
+
+  .vpp-dropdown {
+    flex: 0 0 auto;
+  }
+
+  .vpp-dropdown__label {
     font-size: 0.6rem;
-    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  .vpp-dropdown__btn {
+    min-width: auto;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
+  .vpp-dropdown__text {
+    font-size: 0.75rem;
+  }
+
+  .vpp-dropdown__menu {
+    min-width: 120px;
+  }
+
+  .vpp-dropdown__item {
+    padding: 8px 12px;
+    font-size: 0.8rem;
   }
 
   .vpp-hero {
@@ -1328,17 +1411,6 @@ ul, ol {
   .vpp-all-services-grid {
     grid-template-columns: 1fr;
     gap: 16px;
-  }
-
-  .vpp-dropdown__menu {
-    position: static !important;
-    opacity: 1 !important;
-    pointer-events: all !important;
-    max-height: 200px;
-  }
-
-  .vpp-dropdown--open .vpp-dropdown__menu {
-    max-height: 200px;
   }
 }
 
