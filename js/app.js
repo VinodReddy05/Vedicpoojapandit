@@ -1,10 +1,79 @@
 const state = {
-  currentView: 'home', // 'home' | 'category' | 'detail'
+  currentView: 'home', // 'home' | 'category' | 'detail' | 'gallery'
   selectedCity: 'hyderabad',
   selectedLanguage: 'telugu',
   currentCategoryId: null,
   currentServiceId: null
 };
+
+// Image mapping helper function
+function getServiceImage(service) {
+  if (service.image) return service.image;
+  
+  const specificImages = {
+    'satyanarayana-pooja': 'assets/images/satyanarayana_pooja.png',
+    'gruhapravesam': 'assets/images/gruhapravesam.png',
+    'chandi-homam': 'assets/images/chandi_homam.png',
+    'marriage': 'assets/images/marriage.png',
+    'ganapati-pooja': 'assets/images/ganapati_pooja.png',
+    'varalakshmi-pooja': 'assets/images/varalakshmi_vratham.png',
+    'upanayanam': 'assets/images/upanayanam.png',
+    'vastu-shanti-pooja': 'assets/images/vastu_shanti.png',
+    'rudrabhishekam-pooja': 'assets/images/rudrabhishekam.png',
+    'ayudha-pooja': 'assets/images/ayudha_pooja.png'
+  };
+  
+  if (specificImages[service.id]) {
+    return specificImages[service.id];
+  }
+  
+  const fallbacks = {
+    ceremony: 'assets/images/ceremony.png',
+    pooja: 'assets/images/devotion.png',
+    homam: 'assets/images/homam.png',
+    shanti: 'assets/images/devotion.png',
+    parihar: 'assets/images/devotion.png',
+    devi: 'assets/images/devi_default.png',
+    ancestor: 'assets/images/ancestor_default.png',
+    vratam: 'assets/images/devotion.png',
+    festival: 'assets/images/devotion.png'
+  };
+  
+  return fallbacks[service.imageType] || 'assets/images/devotion.png';
+}
+
+// Download image helper function
+function downloadImage(imagePath, imageName) {
+  showToast(`Downloading ${imageName}...`);
+  
+  const link = document.createElement('a');
+  link.href = imagePath;
+  link.download = `${imageName.toLowerCase().replace(/[^a-z0-9]+/g, '_')}.png`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+// Toast notification helper function
+function showToast(message) {
+  let toast = document.getElementById('vpp-toast-element');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'vpp-toast-element';
+    toast.className = 'vpp-toast';
+    document.body.appendChild(toast);
+  }
+  
+  toast.innerHTML = `<span class="vpp-toast__icon">🪔</span> <span class="vpp-toast__text">${message}</span>`;
+  toast.classList.add('vpp-toast--show');
+  
+  setTimeout(() => {
+    toast.classList.remove('vpp-toast--show');
+  }, 3000);
+}
+
+// Expose downloadImage to global window scope for inline onclick handlers
+window.downloadImage = downloadImage;
 
 function init() {
   initDropdowns();
@@ -104,6 +173,9 @@ function handleRoute() {
   
   if (hash === '#/all-services') {
     renderAllServices();
+    return;
+  } else if (hash === '#/gallery') {
+    renderGallery();
     return;
   } else if (hash.startsWith('#/service/')) {
     const parts = hash.split('/');
@@ -234,26 +306,29 @@ function renderCategory(categoryId) {
   
   const content = document.getElementById('app-content');
   
-  let servicesHtml = (category.services || []).map(service => `
-    <div class="vpp-service-card slide-up" data-category="${categoryId}" data-service="${service.id}" onclick="window.location.hash='#/service/${categoryId}/${service.id}'">
-      <div class="vpp-service-card__image-wrap">
-        <div class="vpp-service-card__img" style="background: ${getCategoryGradient(service.imageType)}; display: flex; align-items: center; justify-content: center; font-size: 3rem;">${category.icon}</div>
-        <div class="vpp-service-card__gradient"></div>
-        <span class="vpp-service-card__badge">${category.name}</span>
-      </div>
-      <div class="vpp-service-card__body">
-        <h3 class="vpp-service-card__title">${service.name}</h3>
-        <p class="vpp-service-card__excerpt">${service.shortDesc || ''}</p>
-        <div class="vpp-service-card__footer">
-          <span class="vpp-service-card__price">₹${service.priceMin ? service.priceMin.toLocaleString('en-IN') : '0'}</span>
-          <span class="vpp-service-card__rating">
-            <span class="vpp-service-card__stars">${renderStars(service.rating || 0)}</span>
-            ${service.rating || 0}
-          </span>
+  let servicesHtml = (category.services || []).map(service => {
+    const imageUrl = getServiceImage(service);
+    return `
+      <div class="vpp-service-card slide-up" data-category="${categoryId}" data-service="${service.id}" onclick="window.location.hash='#/service/${categoryId}/${service.id}'">
+        <div class="vpp-service-card__image-wrap">
+          <img src="${imageUrl}" class="vpp-service-card__img" alt="${service.name}" loading="lazy">
+          <div class="vpp-service-card__gradient"></div>
+          <span class="vpp-service-card__badge">${category.name}</span>
+        </div>
+        <div class="vpp-service-card__body">
+          <h3 class="vpp-service-card__title">${service.name}</h3>
+          <p class="vpp-service-card__excerpt">${service.shortDesc || ''}</p>
+          <div class="vpp-service-card__footer">
+            <span class="vpp-service-card__price">₹${service.priceMin ? service.priceMin.toLocaleString('en-IN') : '0'}</span>
+            <span class="vpp-service-card__rating">
+              <span class="vpp-service-card__stars">${renderStars(service.rating || 0)}</span>
+              ${service.rating || 0}
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 
   content.innerHTML = `
     <section class="vpp-section" style="padding-top: 40px">
@@ -295,7 +370,7 @@ function renderDetail(categoryId, serviceId) {
   ]);
   
   const content = document.getElementById('app-content');
-  const gradient = getCategoryGradient(service.imageType);
+  const imageUrl = getServiceImage(service);
   
   const insightsHtml = (service.keyInsights || []).map(i => `<li class="vpp-detail__insight-item">${i}</li>`).join('');
   const promiseHtml = (service.promise || []).map(p => `<li class="vpp-detail__promise-item">${p}</li>`).join('');
@@ -305,9 +380,12 @@ function renderDetail(categoryId, serviceId) {
       <div class="container">
         <div class="vpp-detail__grid">
           <div class="vpp-detail__gallery slide-in-left">
-            <div class="vpp-detail__image-wrap">
-              <div class="vpp-detail__img" style="background: ${gradient}; min-height: 450px; display: flex; align-items: center; justify-content: center;">
-                <span style="font-size: 5rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">${category.icon}</span>
+            <div class="vpp-detail__img-container">
+              <img src="${imageUrl}" class="vpp-detail__img" alt="${service.name}">
+              <div class="vpp-detail__download-overlay">
+                <button class="vpp-btn--image-download" onclick="event.stopPropagation(); downloadImage('${imageUrl}', '${service.name}')">
+                  📥 Download Image
+                </button>
               </div>
             </div>
           </div>
@@ -336,8 +414,8 @@ function renderDetail(categoryId, serviceId) {
               </ul>
             </div>
             <div class="vpp-detail__actions">
-              <button class="vpp-btn vpp-btn--primary">🪔 Book Now</button>
-              <button class="vpp-btn vpp-btn--whatsapp">💬 WhatsApp</button>
+              <a href="https://wa.me/919014747545?text=Namaste!%20I%20would%20like%20to%20book%20the%20${encodeURIComponent(service.name)}%20service%20in%20${state.selectedCity}." target="_blank" class="vpp-btn vpp-btn--primary" style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: var(--shadow-gold);">🪔 Book Now</a>
+              <a href="https://wa.me/919014747545?text=Namaste!%20I%20would%20like%20to%20book%20the%20${encodeURIComponent(service.name)}%20service%20in%20${state.selectedCity}." target="_blank" class="vpp-btn vpp-btn--whatsapp" style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">💬 WhatsApp</a>
             </div>
           </div>
         </div>
@@ -426,4 +504,115 @@ function initScrollObserver() {
   document.querySelectorAll('.slide-up, .slide-in-left, .slide-in-right').forEach(el => {
     observer.observe(el);
   });
+}
+
+function renderGallery() {
+  state.currentView = 'gallery';
+  document.getElementById('hero-section').classList.add('hidden');
+  document.getElementById('breadcrumb').classList.remove('hidden');
+  
+  renderBreadcrumb([
+    { label: 'Home', hash: '#/' },
+    { label: 'Pooja Gallery', hash: '' }
+  ]);
+  
+  const content = document.getElementById('app-content');
+  
+  let allServices = [];
+  if (window.APP_DATA && window.APP_DATA.categories) {
+    window.APP_DATA.categories.forEach(cat => {
+      if (cat.services) {
+        cat.services.forEach(serv => {
+          allServices.push({
+            ...serv,
+            categoryName: cat.name,
+            categoryId: cat.id,
+            categoryIcon: cat.icon
+          });
+        });
+      }
+    });
+  }
+
+  const categoriesList = window.APP_DATA.categories || [];
+  let filterButtonsHtml = `<button class="vpp-gallery-filter-btn vpp-gallery-filter-btn--active" data-filter="all">All Poojas</button>`;
+  filterButtonsHtml += categoriesList.map(cat => 
+    `<button class="vpp-gallery-filter-btn" data-filter="${cat.id}">${cat.name}</button>`
+  ).join('');
+
+  function buildGridHtml(filteredServices) {
+    return filteredServices.map(service => {
+      const imageUrl = getServiceImage(service);
+      return `
+        <div class="vpp-gallery-card slide-up" data-category="${service.categoryId}">
+          <div class="vpp-gallery-card__image-container">
+            <img src="${imageUrl}" class="vpp-gallery-card__img" alt="${service.name}" loading="lazy">
+            <span class="vpp-gallery-card__tag">${service.categoryName}</span>
+            <div class="vpp-gallery-card__overlay">
+              <button class="vpp-gallery-card__btn vpp-gallery-card__btn--download" onclick="downloadImage('${imageUrl}', '${service.name}')" title="Download Image">📥</button>
+              <a href="#/service/${service.categoryId}/${service.id}" class="vpp-gallery-card__btn" title="View Details">👁️</a>
+            </div>
+          </div>
+          <div class="vpp-gallery-card__body">
+            <div>
+              <h4 class="vpp-gallery-card__title">${service.name}</h4>
+              <p class="vpp-gallery-card__desc">${service.shortDesc || ''}</p>
+            </div>
+            <div class="vpp-gallery-card__actions">
+              <button class="vpp-gallery-card__download-link" onclick="downloadImage('${imageUrl}', '${service.name}')">
+                📥 Download
+              </button>
+              <a href="#/service/${service.categoryId}/${service.id}" class="vpp-gallery-card__view-link">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  content.innerHTML = `
+    <section class="vpp-section vpp-gallery-section">
+      <div class="container">
+        <div class="vpp-section__header">
+          <h2 class="vpp-section__title">Divine Image Gallery</h2>
+          <p class="vpp-section__subtitle">Explore and download high-quality images of our sacred poojas, homams, and ceremonies</p>
+        </div>
+        
+        <div class="vpp-gallery-filter-bar" id="gallery-filter-bar">
+          ${filterButtonsHtml}
+        </div>
+        
+        <div class="vpp-gallery-grid" id="gallery-grid">
+          ${buildGridHtml(allServices)}
+        </div>
+      </div>
+    </section>
+  `;
+
+  const filterBar = document.getElementById('gallery-filter-bar');
+  const grid = document.getElementById('gallery-grid');
+  
+  filterBar.addEventListener('click', (e) => {
+    const btn = e.target.closest('.vpp-gallery-filter-btn');
+    if (!btn) return;
+    
+    filterBar.querySelectorAll('.vpp-gallery-filter-btn').forEach(b => b.classList.remove('vpp-gallery-filter-btn--active'));
+    btn.classList.add('vpp-gallery-filter-btn--active');
+    
+    const filter = btn.dataset.filter;
+    const cards = grid.querySelectorAll('.vpp-gallery-card');
+    
+    cards.forEach(card => {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+
+  initScrollObserver();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }

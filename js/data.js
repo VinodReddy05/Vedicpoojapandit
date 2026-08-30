@@ -41,32 +41,43 @@ window.APP_DATA = {
           id: 'aksharabhyasam',
           name: 'Aksharabhyasam',
           shortDesc: 'Initiation of education and writing.',
-          description: 'Perform the sacred Annaprashan Puja to mark your baby’s first solid food intake with blessings of health, strength, and prosperity. Harivara provides experienced North Indian Pandits, complete puja samagri, muhurat selection, and hassle-free doorstep service across India.',
+          description: 'Aksharabhyasam is one of the 16 sanskaras to be performed, in which when the baby attains age two years and above will be initiated to write the first letter for the first time to get the blessings from Matha Saraswati and Lord Ganesh by performing the Aksharabhyasam pooja to start their schooling life successfully.',
           keyInsights: [
-            'Initiates the child into the world of alphabets.',
-            'Performed typically at the age of two to two-and-a-half years.',
-            'Invokes Goddess Saraswati for knowledge and wisdom.',
-            'The child writes Omkara on rice or sand.',
-            'Helps in the intellectual growth of the child.'
+            'Baby writes for the first time with Lords blessing.',
+            'It helps the baby to grow healthy and strong.',
+            'Performed on any auspicious day after the child attains 2.5 yrs of age.',
+           'Mantras are chanted for the baby’s well-being.',
+
           ],
-          promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 3500, priceMax: 12000, rating: 4.9, reviewCount: 45, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
+          promise: ['Highly Qualified and Vedic Pandits.',
+                    'All rituals follow Vedic Standards and Procedures.',
+                    'High-quality Samagri to ensure a pleasant Puja experience.',
+                    'Guaranteed Punctuality and Authenticity.',
+                    'Professional Guidance & Support.'],
+          priceMin: 4800, priceMax: 9800, rating: 4.9, reviewCount: 45, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
         },
+
+        // 888888888888888
         {
           id: 'annaprasanam',
           name: 'Annaprasanam',
           shortDesc: 'First feeding ceremony for the baby.',
-          description: 'Annaprasanam marks the baby\'s first intake of solid food other than milk. It is a significant milestone in a child\'s growth, celebrated by invoking deities for health and longevity.',
-          keyInsights: [
-            'The baby takes solid food for the first time.',
-            'Helps the baby grow healthy and strong.',
+           keyInsights: [
+            'Baby takes solid food for the first time.',
+            'It helps the baby to grow healthy and strong.',
             'Performed on 6th or 7th month on Janma Nakshatra day.',
-            'Mantras are chanted for the baby\'s well-being.',
-            'Payasam or Milk Rice is the main ingredient.'
+            'Mantras are chanted for the baby’s well-being.',
+            'Kheer or Milk Rice is the main ingredient for the ceremony.'
           ],
-          promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
+            promise: ['Highly Qualified and Vedic Pandits.',
+                    'All rituals follow Vedic Standards and Procedures.',
+                    'High-quality Samagri to ensure a pleasant Puja experience.',
+                    'Guaranteed Punctuality and Authenticity.',
+                    'Professional Guidance & Support.'],
           priceMin: 4800, priceMax: 18800, rating: 4.8, reviewCount: 38, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
         },
+
+        // 8888888888888888
         {
           id: 'barasala',
           name: 'Barasala (Namakaranam)',
@@ -82,6 +93,9 @@ window.APP_DATA = {
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
           priceMin: 3000, priceMax: 15000, rating: 4.7, reviewCount: 50, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
         },
+
+
+        // 8888888888888888
         {
           id: 'bhima-ratha-shanti',
           name: 'Bhima Ratha Shanti (70th Birthday)',
@@ -95,23 +109,29 @@ window.APP_DATA = {
             'A grand celebration with family and relatives.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 15000, priceMax: 45000, rating: 4.9, reviewCount: 12, duration: '4-6 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
+          priceMin: 19800, priceMax: 138000, rating: 4.9, reviewCount: 12, duration: '4-6 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
         },
+
+
+        // 888888888888888888888888
         {
           id: 'devata-kalyanotsavam',
           name: 'Devata Kalyanotsavam',
           shortDesc: 'Divine marriage ceremony of deities.',
           description: 'Kalyanotsavam is the celestial wedding of the presiding deities, performed for the welfare of the world and to bring auspiciousness, peace, and prosperity to the sponsors.',
           keyInsights: [
-            'Re-enactment of the divine marriage.',
+            'The marriage ceremony is performed for Lords.',
             'Brings immense peace and prosperity to the family.',
             'Removes obstacles in marriage for devotees.',
             'A highly elaborate and sacred ritual.',
             'Can be performed at home or in temples.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 12000, priceMax: 35000, rating: 5.0, reviewCount: 22, duration: '3-5 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
+          priceMin: 38000, priceMax: 97999, rating: 5.0, reviewCount: 22, duration: '3-5 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
         },
+
+
+        // 8888888888888888888/
         {
           id: 'fix-your-muhurtham',
           name: 'Fix Your Muhurtham',
@@ -124,9 +144,11 @@ window.APP_DATA = {
             'Tailored for specific types of events.',
             'Crucial for the long-term success of the endeavor.'
           ],
-          promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 1000, priceMax: 5000, rating: 4.6, reviewCount: 40, duration: '1 hour', defaultLanguage: 'telugu', imageType: 'ceremony'
+          priceMin: 299, priceMax: 499, rating: 4.6, reviewCount: 40, duration: '1 hour', defaultLanguage: 'telugu', imageType: 'ceremony'
         },
+
+
+        // 8888888888888888888888888888
         {
           id: 'gruhapravesam',
           name: 'Gruhapravesam',
@@ -140,8 +162,10 @@ window.APP_DATA = {
             'Seeks blessings of Lord Ganesha and Lakshmi.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 10000, priceMax: 40000, rating: 4.9, reviewCount: 50, duration: '4-6 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
+          priceMin: (18800), priceMax: 91999, rating: 4.9, reviewCount: 50, duration: '4-6 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
         },
+
+        // 99999999999999999999999
         {
           id: 'karna-vedha',
           name: 'Karna Vedha',
@@ -155,8 +179,11 @@ window.APP_DATA = {
             'Accompanied by Ayush Homam.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 3000, priceMax: 10000, rating: 4.8, reviewCount: 15, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
+          priceMin: 5600, priceMax: 11600, rating: 4.8, reviewCount: 15, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
         },
+
+
+        // 8888888888888888888
         {
           id: 'marriage',
           name: 'Marriage',
@@ -170,8 +197,11 @@ window.APP_DATA = {
             'Performed by experienced head priests.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 35000, priceMax: 150000, rating: 5.0, reviewCount: 30, duration: '6-10 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
+          priceMin: 50000, priceMax: 150000, rating: 5.0, reviewCount: 30, duration: '6-10 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
         },
+
+
+        // 9999999999999999999999999999
         {
           id: 'nischitartham',
           name: 'Nischitartham',
@@ -185,8 +215,10 @@ window.APP_DATA = {
             'A joyous pre-wedding celebration.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 8000, priceMax: 25000, rating: 4.7, reviewCount: 25, duration: '2-4 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
+          priceMin: 5600, priceMax: 6800, rating: 4.7, reviewCount: 25, duration: '2-4 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
         },
+
+        // 9999999999999999999
         {
           id: 'pandiri-rata-pooja',
           name: 'Pandiri Rata Pooja',
@@ -200,8 +232,10 @@ window.APP_DATA = {
             'Signifies the start of wedding festivities.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 4000, priceMax: 12000, rating: 4.5, reviewCount: 8, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
+          priceMin: 3800, priceMax: 4800, rating: 4.5, reviewCount: 8, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
         },
+
+        // 99999999999999999999999
         {
           id: 'sashtiapthapoorthi',
           name: 'Sashtiapthapoorthi (60th Birthday)',
@@ -215,8 +249,10 @@ window.APP_DATA = {
             'A major family reunion event.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 20000, priceMax: 60000, rating: 5.0, reviewCount: 18, duration: '5-8 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
+          priceMin: 19800, priceMax: 138000, rating: 5.0, reviewCount: 18, duration: '5-8 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
         },
+
+        // 99999999999999999999999
         {
           id: 'sathabhishekam',
           name: 'Sathabhishekam (80th Birthday)',
@@ -230,8 +266,10 @@ window.APP_DATA = {
             'A time of deep gratitude and celebration.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 25000, priceMax: 70000, rating: 5.0, reviewCount: 10, duration: '5-8 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
+          priceMin: 15800, priceMax: 123000, rating: 5.0, reviewCount: 10, duration: '5-8 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
         },
+
+        // 99999999999999999999999999999
         {
           id: 'seemantham',
           name: 'Seemantham (Baby Shower)',
@@ -245,8 +283,10 @@ window.APP_DATA = {
             'Nourishing food is offered to the mother.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 8000, priceMax: 25000, rating: 4.8, reviewCount: 35, duration: '2-4 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
+          priceMin: 11800, priceMax: 19800, rating: 4.8, reviewCount: 35, duration: '2-4 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
         },
+
+        // 0000000000000000
         {
           id: 'upanayanam',
           name: 'Upanayanam',
@@ -260,8 +300,9 @@ window.APP_DATA = {
             'A vital milestone in a young boy\'s life.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 15000, priceMax: 40000, rating: 4.9, reviewCount: 28, duration: '4-6 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
+          priceMin: 25800, priceMax: 118800, rating: 4.9, reviewCount: 28, duration: '4-6 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
         },
+        // 0000000000000000000
         {
           id: 'venkateshwara-kalyanotsavam',
           name: 'Venkateshwara Kalyanotsavam',
@@ -275,9 +316,11 @@ window.APP_DATA = {
             'A deeply spiritual and uplifting experience.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 15000, priceMax: 45000, rating: 5.0, reviewCount: 20, duration: '3-5 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
+          priceMin: 15000, priceMax: 97999, rating: 5.0, reviewCount: 20, duration: '3-5 hours', defaultLanguage: 'telugu', imageType: 'ceremony'
         }
       ]
+
+      // 0000000000000000000000
     },
     {
       id: 'poojalu',
@@ -299,8 +342,10 @@ window.APP_DATA = {
             'Essential for factories and businesses.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 3000, priceMax: 10000, rating: 4.8, reviewCount: 40, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 3200, priceMax: 3800, rating: 4.8, reviewCount: 40, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+        // 00000000000000000000
         {
           id: 'bhoomi-pooja',
           name: 'Bhoomi Pooja (Sankusthapana)',
@@ -314,8 +359,10 @@ window.APP_DATA = {
             'A foundational ritual for any property.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 5000, priceMax: 20000, rating: 4.9, reviewCount: 38, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 4800, priceMax: 5800, rating: 4.9, reviewCount: 38, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+        // 000000000000000000000
         {
           id: 'chandi-saptashati-parayanam',
           name: 'Chandi Saptashati Parayanam',
@@ -329,8 +376,11 @@ window.APP_DATA = {
             'Usually takes several hours to complete.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 8000, priceMax: 25000, rating: 5.0, reviewCount: 22, duration: '4-6 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 4800, priceMax: 22800, rating: 5.0, reviewCount: 22, duration: '4-6 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+
+        // 00000000000000000000000
         {
           id: 'dhanalakshmi-pooja',
           name: 'Dhanalakshmi Pooja',
@@ -344,8 +394,10 @@ window.APP_DATA = {
             'Brings harmony and prosperity to the home.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 4000, priceMax: 15000, rating: 4.9, reviewCount: 45, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 4200, priceMax: 4500, rating: 4.9, reviewCount: 45, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+        // 000000000000000000000000
         {
           id: 'durga-pooja',
           name: 'Durga Pooja',
@@ -359,8 +411,10 @@ window.APP_DATA = {
             'Involves recitation of Durga Suktam.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 5000, priceMax: 18000, rating: 4.9, reviewCount: 32, duration: '2-4 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 3200, priceMax: 3800, rating: 4.9, reviewCount: 32, duration: '2-4 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+            // 00000000000000000000
         {
           id: 'ganapati-pooja',
           name: 'Ganapati Pooja',
@@ -374,8 +428,11 @@ window.APP_DATA = {
             'Brings wisdom and intellect.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 2000, priceMax: 8000, rating: 4.8, reviewCount: 50, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 4500, priceMax: 9500, rating: 4.8, reviewCount: 50, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+
+        // 0000000000000000000000
         {
           id: 'kedareswara-nomu',
           name: 'Kedareswara Nomu or Vratham',
@@ -389,8 +446,10 @@ window.APP_DATA = {
             'Brings immense peace and marital harmony.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 3500, priceMax: 12000, rating: 4.7, reviewCount: 15, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 4500, priceMax: 10500, rating: 4.7, reviewCount: 15, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+        // 000000000000000000000000
         {
           id: 'lalitha-sahasranama-pooja',
           name: 'Lalitha Sahasranama Pooja',
@@ -404,8 +463,10 @@ window.APP_DATA = {
             'Very auspicious on Fridays and full moon days.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 4000, priceMax: 15000, rating: 5.0, reviewCount: 42, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 4800, priceMax: 66000, rating: 5.0, reviewCount: 42, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+        // 0000000000000000000000
         {
           id: 'maha-lingarchana',
           name: 'Maha Lingarchana',
@@ -419,8 +480,10 @@ window.APP_DATA = {
             'Requires meticulous preparation and devotion.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 15000, priceMax: 50000, rating: 5.0, reviewCount: 18, duration: '4-6 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 2200, priceMax: 2500, rating: 5.0, reviewCount: 18, duration: '4-6 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+        // 00000000000000000
         {
           id: 'new-business-office-opening-pooja',
           name: 'New Business / Office Opening Pooja',
@@ -434,8 +497,10 @@ window.APP_DATA = {
             'Crucial for commercial success.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 5000, priceMax: 20000, rating: 4.8, reviewCount: 48, duration: '2-4 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 4800, priceMax: 20800, rating: 4.8, reviewCount: 48, duration: '2-4 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+        // 000000000000000000000
         {
           id: 'new-vehicle-pooja',
           name: 'New Vehicle Pooja',
@@ -449,8 +514,11 @@ window.APP_DATA = {
             'Can be done at home or temple.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 1500, priceMax: 4000, rating: 4.7, reviewCount: 50, duration: '1 hour', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 2200, priceMax: 2500, rating: 4.7, reviewCount: 50, duration: '1 hour', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+
+        // 0000000000000000
         {
           id: 'punyahavachanam',
           name: 'Punyahavachanam',
@@ -464,8 +532,11 @@ window.APP_DATA = {
             'Clears impurities and negative vibes.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 2500, priceMax: 8000, rating: 4.8, reviewCount: 30, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 3200, priceMax: 3500, rating: 4.8, reviewCount: 30, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+
+        // 000000000000000000
         {
           id: 'rudrabhishekam-pooja',
           name: 'Rudrabhishekam Pooja',
@@ -479,8 +550,10 @@ window.APP_DATA = {
             'Cures diseases and brings prosperity.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 6000, priceMax: 25000, rating: 5.0, reviewCount: 45, duration: '2-4 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 4800, priceMax: 47700, rating: 5.0, reviewCount: 45, duration: '2-4 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+        // 00000000000000000000
         {
           id: 'saraswathi-pooja',
           name: 'Saraswathi Pooja',
@@ -494,8 +567,10 @@ window.APP_DATA = {
             'Brings clarity of thought.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 3000, priceMax: 10000, rating: 4.9, reviewCount: 35, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 3800, priceMax: 7800, rating: 4.9, reviewCount: 35, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+        // 0000000000000000000
         {
           id: 'satyanarayana-pooja',
           name: 'Satyanarayana Pooja',
@@ -509,8 +584,10 @@ window.APP_DATA = {
             'A joyous and communal prayer event.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 4000, priceMax: 15000, rating: 5.0, reviewCount: 50, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 4800, priceMax: 9800, rating: 5.0, reviewCount: 50, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+        // 00000000000000000000
         {
           id: 'udaka-shanti',
           name: 'Udaka Shanti',
@@ -524,8 +601,10 @@ window.APP_DATA = {
             'Brings tranquility and auspiciousness.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 5000, priceMax: 18000, rating: 4.8, reviewCount: 20, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 15800, priceMax: 24800, rating: 4.8, reviewCount: 20, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+        // 000000000000000000000
         {
           id: 'varalakshmi-pooja',
           name: 'Varalakshmi Pooja',
@@ -539,11 +618,12 @@ window.APP_DATA = {
             'Highly revered among South Indian women.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 4000, priceMax: 15000, rating: 4.9, reviewCount: 42, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 3200, priceMax: 3800, rating: 4.9, reviewCount: 42, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+        // 00000000000
         {
-          id: 'varakal-regia',
-          name: 'Varakal Regia (Dwarabandhanam)',
+          id: 'vasakal-Pooja',
+          name: 'Vasakal Pooja (Dwarabandhanam)',
           shortDesc: 'Pooja for the main door frame.',
           description: 'Dwarabandhanam is performed during house construction when fixing the main entrance door frame. It invites auspiciousness and blocks negative energies from entering the house.',
           keyInsights: [
@@ -554,8 +634,11 @@ window.APP_DATA = {
             'Marks the formal defining of the home\'s entrance.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 3000, priceMax: 10000, rating: 4.7, reviewCount: 12, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 4200, priceMax: 4800, rating: 4.7, reviewCount: 12, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+
+        // 00000000000000000000
         {
           id: 'vastu-shanti-pooja',
           name: 'Vastu Shanti Pooja',
@@ -569,8 +652,10 @@ window.APP_DATA = {
             'Involves Vastu Homam and Navagraha Pooja.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 6000, priceMax: 22000, rating: 4.9, reviewCount: 38, duration: '3-4 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 16800, priceMax: 22800, rating: 4.9, reviewCount: 38, duration: '3-4 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         },
+
+        // 000000000000000000
         {
           id: 'vishnu-sahasranama-pooja',
           name: 'Vishnu Sahasranama Pooja',
@@ -584,9 +669,11 @@ window.APP_DATA = {
             'Aids in achieving both material and spiritual goals.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 4000, priceMax: 12000, rating: 5.0, reviewCount: 30, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+          priceMin: 4800, priceMax: 66000, rating: 5.0, reviewCount: 30, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
         }
       ]
+
+      // 00000000000000000000000
     },
     {
       id: 'homalu',
@@ -608,8 +695,10 @@ window.APP_DATA = {
             'Invokes the deity of life force.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 5000, priceMax: 18000, rating: 4.9, reviewCount: 35, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'homam'
+          priceMin: 9800, priceMax: 42100, rating: 4.9, reviewCount: 35, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'homam'
         },
+
+        // 0000000000000
         {
           id: 'chandi-homam',
           name: 'Chandi Homam',
@@ -623,8 +712,10 @@ window.APP_DATA = {
             'Grants strength, courage, and immense success.'
           ],
           promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards and Procedures.', 'High-quality Samagri to ensure a pleasant Pooja experience.', 'Guaranteed Punctuality and Authenticity.'],
-          priceMin: 20000, priceMax: 100000, rating: 5.0, reviewCount: 40, duration: '5-8 hours', defaultLanguage: 'telugu', imageType: 'homam'
+          priceMin: 28000, priceMax: 99000, rating: 5.0, reviewCount: 40, duration: '5-8 hours', defaultLanguage: 'telugu', imageType: 'homam'
         },
+
+        // ///////////////////
         {
           id: 'dhanvantari-homam',
           name: 'Dhanvantari Homam',
