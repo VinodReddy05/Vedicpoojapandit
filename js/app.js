@@ -27,6 +27,11 @@ function getServiceImage(service) {
     return specificImages[service.id];
   }
   
+  // Use dynamically matched image if available
+  if (window.SERVICE_IMAGES && window.SERVICE_IMAGES[service.id]) {
+    return window.SERVICE_IMAGES[service.id];
+  }
+  
   const fallbacks = {
     ceremony: 'assets/images/ceremony.png',
     pooja: 'assets/images/devotion.png',
@@ -41,39 +46,6 @@ function getServiceImage(service) {
   
   return fallbacks[service.imageType] || 'assets/images/devotion.png';
 }
-
-// Download image helper function
-function downloadImage(imagePath, imageName) {
-  showToast(`Downloading ${imageName}...`);
-  
-  const link = document.createElement('a');
-  link.href = imagePath;
-  link.download = `${imageName.toLowerCase().replace(/[^a-z0-9]+/g, '_')}.png`;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-
-// Toast notification helper function
-function showToast(message) {
-  let toast = document.getElementById('vpp-toast-element');
-  if (!toast) {
-    toast = document.createElement('div');
-    toast.id = 'vpp-toast-element';
-    toast.className = 'vpp-toast';
-    document.body.appendChild(toast);
-  }
-  
-  toast.innerHTML = `<span class="vpp-toast__icon">🪔</span> <span class="vpp-toast__text">${message}</span>`;
-  toast.classList.add('vpp-toast--show');
-  
-  setTimeout(() => {
-    toast.classList.remove('vpp-toast--show');
-  }, 3000);
-}
-
-// Expose downloadImage to global window scope for inline onclick handlers
-window.downloadImage = downloadImage;
 
 function init() {
   initDropdowns();
@@ -382,11 +354,6 @@ function renderDetail(categoryId, serviceId) {
           <div class="vpp-detail__gallery slide-in-left">
             <div class="vpp-detail__img-container">
               <img src="${imageUrl}" class="vpp-detail__img" alt="${service.name}">
-              <div class="vpp-detail__download-overlay">
-                <button class="vpp-btn--image-download" onclick="event.stopPropagation(); downloadImage('${imageUrl}', '${service.name}')">
-                  📥 Download Image
-                </button>
-              </div>
             </div>
           </div>
           <div class="vpp-detail__info slide-in-right">
@@ -549,8 +516,7 @@ function renderGallery() {
             <img src="${imageUrl}" class="vpp-gallery-card__img" alt="${service.name}" loading="lazy">
             <span class="vpp-gallery-card__tag">${service.categoryName}</span>
             <div class="vpp-gallery-card__overlay">
-              <button class="vpp-gallery-card__btn vpp-gallery-card__btn--download" onclick="downloadImage('${imageUrl}', '${service.name}')" title="Download Image">📥</button>
-              <a href="#/service/${service.categoryId}/${service.id}" class="vpp-gallery-card__btn" title="View Details">👁️</a>
+              <a href="#/service/${service.categoryId}/${service.id}" class="vpp-gallery-card__btn" title="View Details" style="width: auto; height: auto; padding: 10px 20px; border-radius: 50px;">👁️ View Details</a>
             </div>
           </div>
           <div class="vpp-gallery-card__body">
@@ -559,10 +525,7 @@ function renderGallery() {
               <p class="vpp-gallery-card__desc">${service.shortDesc || ''}</p>
             </div>
             <div class="vpp-gallery-card__actions">
-              <button class="vpp-gallery-card__download-link" onclick="downloadImage('${imageUrl}', '${service.name}')">
-                📥 Download
-              </button>
-              <a href="#/service/${service.categoryId}/${service.id}" class="vpp-gallery-card__view-link">
+              <a href="#/service/${service.categoryId}/${service.id}" class="vpp-gallery-card__view-link" style="flex-grow: 1; text-align: center;">
                 View Details
               </a>
             </div>
