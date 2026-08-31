@@ -31,6 +31,968 @@ window.APP_DATA = {
 
   categories: [
     {
+      id: 'gujarati-pujas',
+      name: 'Pujas',
+      icon: '📿',
+      gradient: 'linear-gradient(135deg, #FF6B00, #E65100)',
+      description: 'Traditional Gujarati Pujas and sacred worship rituals',
+      defaultLanguage: 'gujarati',
+      services: [
+        {
+          id: 'gujarati-annaprashan-puja',
+          name: 'Annaprashan Puja',
+          shortDesc: 'Sacred first grain feeding ritual for the baby as per Gujarati tradition.',
+          description: 'Annaprashan is the traditional Gujarati first solid food feeding ritual. Performed in the 6th or 7th month, sacred Kheer/Kansu is offered to the baby after invoking Lord Vishnu and family deities for health and prosperity.',
+          keyInsights: ['First grain feeding ceremony (Annaprashan).', 'Invokes blessings of Lord Ganesha and Kuldevi.', 'Silver coin and utensil ritual.', 'Ensures healthy digestion and growth.', 'Conducted by expert Gujarati Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 4500, priceMax: 9500, rating: 4.9, reviewCount: 38, duration: '1-2 hours', defaultLanguage: 'gujarati', imageType: 'ceremony'
+        },
+        {
+          id: 'gujarati-bhoomi-puja',
+          name: 'Bhoomi Puja',
+          shortDesc: 'Land blessing and Vastu Shanti before starting construction.',
+          description: 'Bhoomi Puja in Gujarati tradition is performed to seek permission and blessings from Bhumi Devi (Mother Earth) and Vastu Purusha before laying the foundation of a house or commercial property.',
+          keyInsights: ['Purifies the plot and removes Vastu defects.', 'Invokes Bhumi Devi and Lord Ganesha.', 'Includes silver snake & coin sthapana.', 'Ensures safe and smooth construction.', 'Performed by certified Gujarati Purohits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 4800, priceMax: 9800, rating: 4.9, reviewCount: 42, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'pooja'
+        },
+        {
+          id: 'gujarati-durga-puja',
+          name: 'Durga Puja',
+          shortDesc: 'Worship of Goddess Durga for divine protection and victory.',
+          description: 'Durga Puja in Gujarati custom is celebrated with traditional Shodasopachara rituals, Durga Suktam, and Chandi Parayan to destroy negativity and bless the family with strength, peace, and health.',
+          keyInsights: ['Invokes the fierce protective power of Maa Durga.', 'Destroys evil forces and removes fear.', 'Brings peace, vitality, and prosperity.', 'Ideal during Navratri or monthly Ashtami.', 'Conducted by senior Vedic Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 5000, priceMax: 12000, rating: 4.8, reviewCount: 45, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'pooja'
+        },
+        {
+          id: 'gujarati-engagement-sagai',
+          name: 'Engagement Puja - Sagai',
+          shortDesc: 'Traditional Gujarati betrothal and ring exchange ceremony.',
+          description: 'Sagai (Sagaai) is the holy Gujarati engagement ceremony. Involves Ganesha Puja, Lagna Patrika exchange, ring exchange, and family blessings for a harmonious marital union.',
+          keyInsights: ['Formal Gujarati engagement ceremony (Sagai).', 'Reading of Lagna Patrika and auspicious Muhurat fixing.', 'Invokes blessings of Lord Ganesha and Goddess Lakshmi.', 'Exchange of rings, sweets, and gifts.', 'Performed by experienced Gujarati Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 5500, priceMax: 12500, rating: 4.9, reviewCount: 40, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'ceremony'
+        },
+        {
+          id: 'gujarati-fix-your-muhurat',
+          name: 'Fix Your Muhurat',
+          shortDesc: 'Astrological consultation for fixing auspicious timings.',
+          description: 'Consult expert Gujarati astrologers and Jyotish pandits to calculate the most auspicious Muhurat (timing) based on birth charts for marriage, housewarming, or new business.',
+          keyInsights: ['Panchang calculation based on exact birth details.', 'Avoids Rahu Kaal and inauspicious planetary transits.', 'Tailored for marriage, Griha Pravesh, and business.', 'Ensures long-term success of the endeavor.', 'Provided by certified Gujarati Jyotishis.'],
+          promise: ['Experienced Astrologers.', 'Accurate Panchang Calculation.', 'Detailed Report Provided.'],
+          priceMin: 299, priceMax: 500, rating: 4.7, reviewCount: 50, duration: '1 hour', defaultLanguage: 'gujarati', imageType: 'pooja'
+        },
+        {
+          id: 'gujarati-ganesh-puja',
+          name: 'Ganesh Puja',
+          shortDesc: 'Invocational worship of Lord Ganesha for removing hurdles.',
+          description: 'Traditional Gujarati Ganesh Puja performed before starting any new venture, function, or festival. Invokes Siddhivinayak with Modak, Durva grass, and Vedic mantras.',
+          keyInsights: ['First worship in Hindu tradition (Vighnaharta).', 'Removes obstacles and grants success.', 'Ideal for new beginnings and commercial starts.', 'Includes Shodasopachara Puja and Aarti.', 'Performed by certified Gujarati priests.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 3500, priceMax: 7500, rating: 4.9, reviewCount: 52, duration: '1-2 hours', defaultLanguage: 'gujarati', imageType: 'pooja'
+        },
+        {
+          id: 'gujarati-griha-pravesh',
+          name: 'Griha Pravesh',
+          shortDesc: 'Sacred Gujarati housewarming and Vastu purification ceremony.',
+          description: 'Griha Pravesh is the traditional Gujarati housewarming ritual. Includes Vastu Puja, Ganesh Sthapana, Boiling Milk ritual, Surya Arghya, and Navagraha Havan to usher in peace and prosperity.',
+          keyInsights: ['Traditional Gujarati housewarming (Griha Pravesh).', 'Includes Vastu Shanti and Boiling Milk ritual.', 'Drives away negative energies and spatial defects.', 'Invokes divine grace of Goddess Lakshmi & Lord Vishnu.', 'Complete Samagri and Vedic Pandit service.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 8800, priceMax: 25000, rating: 5.0, reviewCount: 60, duration: '3-4 hours', defaultLanguage: 'gujarati', imageType: 'ceremony'
+        },
+        {
+          id: 'gujarati-janamdin-birthday-puja',
+          name: 'Janamdin Puja - Birthday Puja',
+          shortDesc: 'Auspicious birthday prayer for health, luck, and longevity.',
+          description: 'Performed on birthdays to seek divine protection and longevity. Involves Ayushya Puja, Nakshatra Japam, Kuldevi Pujan, and Markandeya Rishi worship.',
+          keyInsights: ['Invokes Ayur Devata for long life and health.', 'Removes planetary obstacles of the coming year.', 'Includes Markandeya Puja and Aarti.', 'Brings vitality and academic/career growth.', 'Conducted by experienced Gujarati priests.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 3500, priceMax: 8500, rating: 4.8, reviewCount: 30, duration: '1-2 hours', defaultLanguage: 'gujarati', imageType: 'pooja'
+        },
+        {
+          id: 'gujarati-laxmi-puja',
+          name: 'Laxmi Puja',
+          shortDesc: 'Worship of Goddess Laxmi for wealth, business profits, and luck.',
+          description: 'Laxmi Puja in Gujarati tradition is performed to invoke Goddess Lakshmi for abundance and financial stability. Includes Lotus flowers, Kumkumarchana, and Dhan Puja.',
+          keyInsights: ['Attracts wealth, business growth, and financial stability.', 'Ideal for Diwali Chopda Pujan, Fridays, or new starts.', 'Invokes Mahalakshmi and Lord Kubera.', 'Removes debts and financial struggles.', 'Performed by certified Gujarati Brahmins.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 4200, priceMax: 9500, rating: 4.9, reviewCount: 50, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'pooja'
+        },
+        {
+          id: 'gujarati-mundan-chudakarana',
+          name: 'Mundan or Chudakarana Ceremony',
+          shortDesc: 'First head-shaving ritual for the child\'s health and purity.',
+          description: 'Mundan (Chudakarana) is the sacred tonsure ceremony performed in the 1st or 3rd year. Shaving the birth hair symbolizes shedding past life karma, promoting scalp health and intellect.',
+          keyInsights: ['Traditional first tonsure ceremony (Mundan).', 'Purifies child from birth impurities.', 'Promotes proper hair growth and brain development.', 'Includes Ayushya Puja and Kuldevi Pujan.', 'Conducted by specialized Vedic priests.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 4200, priceMax: 8800, rating: 4.7, reviewCount: 33, duration: '1-2 hours', defaultLanguage: 'gujarati', imageType: 'ceremony'
+        },
+        {
+          id: 'gujarati-namkaran-puja',
+          name: 'Namkaran Puja',
+          shortDesc: 'Naming and blessing ceremony for the newborn child.',
+          description: 'Namkaran Puja is the traditional naming ritual performed on the 11th, 12th, or 21st day after birth. The astrologically chosen name is whispered into the baby\'s right ear.',
+          keyInsights: ['Formal naming of the newborn child.', 'Name calculated based on birth Nakshatra & Janam Rashi.', 'Whispering name into ear with honey & ghee.', 'Blessings for health, longevity, and prosperity.', 'Performed by certified Gujarati Purohits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 4500, priceMax: 10500, rating: 4.8, reviewCount: 40, duration: '1-2 hours', defaultLanguage: 'gujarati', imageType: 'ceremony'
+        },
+        {
+          id: 'gujarati-office-opening-puja',
+          name: 'Office Opening Puja',
+          shortDesc: 'Inaugural worship for new business, office, or shop premises.',
+          description: 'Performed before starting operations in a new commercial space in Gujarat. Includes Ganesha Sthapana, Laxmi-Kubera Puja, Vastu Shanti, and sanctified water sprinkling.',
+          keyInsights: ['Ensures commercial success and high profitability.', 'Removes negative energies from the workspace.', 'Boosts employee morale and business luck.', 'Includes ribbon cutting muhurat and Aarti.', 'Conducted by expert Gujarati Vedic Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 5200, priceMax: 18500, rating: 4.9, reviewCount: 45, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'pooja'
+        },
+        {
+          id: 'gujarati-rudrabhishek-puja',
+          name: 'Rudrabhishek Puja',
+          shortDesc: 'Sacred bath offering to Lord Shiva with Sri Rudram chanting.',
+          description: 'Rudrabhishek is a powerful worship of Lord Shiva by bathing the Shivling with Panchamrut, Milk, Honey, and Gangajal while chanting Sri Rudram for health and peace.',
+          keyInsights: ['Most revered worship for Lord Shiva.', 'Removes severe health ailments and karmic debts.', 'Fulfills desires and grants peace of mind.', 'Highly auspicious on Mondays and Pradosham.', 'Performed by senior Vedic Priests.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 4800, priceMax: 15000, rating: 5.0, reviewCount: 55, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'pooja'
+        },
+        {
+          id: 'gujarati-saraswati-puja',
+          name: 'Saraswati Puja',
+          shortDesc: 'Worship of Maa Saraswati for wisdom, education, and arts.',
+          description: 'Saraswati Puja is performed to seek the divine blessings of Goddess Saraswati for knowledge, memory, and artistic skills. Especially beneficial for students.',
+          keyInsights: ['Enhances intellect, memory, and academic focus.', 'Books and instruments placed for divine blessings.', 'Removes obstacles in education and exams.', 'Ideal during Vasant Panchami or school starts.', 'Conducted by experienced Vedic Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 3800, priceMax: 8500, rating: 4.9, reviewCount: 42, duration: '1-2 hours', defaultLanguage: 'gujarati', imageType: 'pooja'
+        },
+        {
+          id: 'gujarati-satyanarayan-puja',
+          name: 'Satyanarayan Puja',
+          shortDesc: 'Traditional Satyanarayan Vratha & Katha for family prosperity.',
+          description: 'Satyanarayan Puja is dedicated to Lord Vishnu for family harmony and fulfillment of vows. Includes reading of 5 chapters of Satyanarayan Katha and offering Sheera prasadam.',
+          keyInsights: ['Auspicious Satyanarayan Katha & Aarti.', 'Preparation of delicious Sheera prasadam.', 'Fulfills wishes and brings peace & prosperity.', 'Ideal for Purnima, birthdays, and anniversaries.', 'Complete Samagri and Gujarati Pandit service.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 4500, priceMax: 10500, rating: 5.0, reviewCount: 58, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'pooja'
+        },
+        {
+          id: 'gujarati-shuddhikaran-puja',
+          name: 'Shuddhikaran Puja',
+          shortDesc: 'Purification ritual for house, office, or individuals.',
+          description: 'Shuddhikaran Puja is performed to purify a space or individual after events like birth, death, eclipse, or long neglect. Uses sacred water, mantras, and Havan smoke.',
+          keyInsights: ['Restores spiritual and physical purity (Shuddhi).', 'Clears negative vibrations and evil energy.', 'Invokes Varuna Devata and Lord Ganesha.', 'Essential before major auspicious ceremonies.', 'Performed by certified Gujarati priests.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 3500, priceMax: 8000, rating: 4.8, reviewCount: 30, duration: '1-2 hours', defaultLanguage: 'gujarati', imageType: 'pooja'
+        },
+        {
+          id: 'gujarati-vivah-marriage',
+          name: 'Vivah (Marriage)',
+          shortDesc: 'Authentic Vedic Gujarati wedding ceremony (Lagna).',
+          description: 'Gujarati Vivah is a solemn and vibrant wedding ceremony. Includes Ganesh Pujan, Hastamelap, Mangal Fera (around holy fire), Saptapadi, and Chero Ceti rituals.',
+          keyInsights: ['Full traditional Gujarati wedding ceremony.', 'Includes Hastamelap, Mangal Fera, and Saptapadi.', 'Chanting of authentic Vedic wedding mantras.', 'Unites two families with divine blessings.', 'Conducted by experienced Chief Priests.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 25000, priceMax: 75000, rating: 5.0, reviewCount: 40, duration: '4-6 hours', defaultLanguage: 'gujarati', imageType: 'ceremony'
+        },
+        {
+          id: 'gujarati-gand-mool-nakshatra-shanti',
+          name: 'Gand Mool Nakshatra Shanti Puja',
+          shortDesc: 'Pacification ritual for babies born in Gand Mool Nakshatras.',
+          description: 'Performed when a child is born under Gand Mool Nakshatras (Ashlesha, Magha, Jyeshtha, Moola, Revati, Ashwini). Mitigates health issues and brings peace to parents and child.',
+          keyInsights: ['Removes Doshas of Gand Mool Nakshatra birth.', '27 types of water, soil, and leaves used for Abhishekam.', 'Protects child\'s health and parents\' well-being.', 'Performed on 27th day after birth.', 'Conducted by specialized Vedic Brahmins.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 6500, priceMax: 15000, rating: 4.8, reviewCount: 35, duration: '3-4 hours', defaultLanguage: 'gujarati', imageType: 'shanti'
+        },
+        {
+          id: 'gujarati-graha-shanti-puja',
+          name: 'Graha Shanti Puja',
+          shortDesc: 'Pacifying all nine planetary transits and doshas.',
+          description: 'Graha Shanti Puja in Gujarati tradition pacifies malefic planetary influences in one\'s horoscope, ensuring health, wealth, family peace, and professional growth.',
+          keyInsights: ['Balances planetary energies of all 9 Grahas.', 'Reduces Sade Sati, Rahu/Ketu, and Kuja Dosha effects.', 'Includes Navagraha Sthapana and Havan.', 'Grants peace of mind and career prosperity.', 'Performed by senior Vedic Acharyas.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 5500, priceMax: 14000, rating: 4.8, reviewCount: 46, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'shanti'
+        },
+        {
+          id: 'gujarati-vastu-shanti-puja',
+          name: 'Vastu Shanti Puja',
+          shortDesc: 'Pacifying Vastu Purusha to resolve architectural flaws.',
+          description: 'Vastu Shanti Puja corrects directional defects (Vastu Doshas) in a residential or commercial building, bringing peace, prosperity, and mental harmony to occupants.',
+          keyInsights: ['Pacifies Vastu Purusha (Deity of the structure).', 'Neutralizes negative energy due to structural flaws.', 'Promotes health, family harmony, and wealth.', 'Includes Vastu Havan and Mandal Sthapana.', 'Performed by senior Vastu Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 8800, priceMax: 22000, rating: 4.9, reviewCount: 45, duration: '3-4 hours', defaultLanguage: 'gujarati', imageType: 'shanti'
+        },
+        {
+          id: 'gujarati-yagnopavit-sanskar',
+          name: 'Yagnopavit Sanskar',
+          shortDesc: 'Sacred thread ceremony (Janoi / Upanayan) for young boys.',
+          description: 'Yagnopavit Sanskar (Janoi) initiates a young boy into Vedic studies and spiritual discipline. The boy receives the sacred thread (Janoi) and Gayatri Mantra.',
+          keyInsights: ['Initiation into Brahmacharya phase of life.', 'Wearing of sacred thread (Janoi / Yajnopavit).', 'Recitation of Gayatri Mantra and Havan.', 'Marks second birth (Dwij) for spiritual growth.', 'Conducted by certified Vedic Acharyas.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 12500, priceMax: 35000, rating: 4.9, reviewCount: 30, duration: '4-6 hours', defaultLanguage: 'gujarati', imageType: 'ceremony'
+        }
+      ]
+    },
+    {
+      id: 'gujarati-havans',
+      name: 'Havans',
+      icon: '🔥',
+      gradient: 'linear-gradient(135deg, #FF6B00, #FFA000)',
+      description: 'Sacred Gujarati Fire Havan & Homam Rituals',
+      defaultLanguage: 'gujarati',
+      services: [
+        {
+          id: 'gujarati-ayush-havan',
+          name: 'Ayush Havan',
+          group: 'Havans',
+          shortDesc: 'Sacred fire ritual for health, vitality, and longevity.',
+          description: 'Ayush Havan invokes Ayur Devata for a disease-free, energetic, and long life. Especially performed on birthdays or for ill family members.',
+          keyInsights: ['Invokes deity of life energy for longevity.', 'Eliminates health afflictions and bad health transits.', 'Medicinal ghee & herbal offerings into fire.', 'Promotes mental and physical strength.', 'Performed by expert Vedic Priests.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 6500, priceMax: 18000, rating: 4.9, reviewCount: 35, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'homam'
+        },
+        {
+          id: 'gujarati-chandi-havan',
+          name: 'Chandi Havan',
+          group: 'Havans',
+          shortDesc: 'Powerful fire ritual for ultimate victory, protection, and success.',
+          description: 'Chandi Havan is one of the most potent Vedic fire rituals, invoking Maa Durga. It eliminates deep karmic blockages, enemy obstacles, and brings grand victory.',
+          keyInsights: ['Ultimate fire ritual for removing major hurdles.', 'Chanting of 700 verses of Durga Saptashati.', 'Grants immense power, victory, and prosperity.', 'Wards off black magic & negative energy.', 'Conducted by senior Vedic Brahmins.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 18000, priceMax: 65000, rating: 5.0, reviewCount: 42, duration: '4-6 hours', defaultLanguage: 'gujarati', imageType: 'homam'
+        },
+        {
+          id: 'gujarati-dhanvantri-havan',
+          name: 'Dhanvantri Havan',
+          group: 'Havans',
+          shortDesc: 'Fire ritual for curing chronic diseases and good health.',
+          description: 'Dedicated to Lord Dhanvantari, the divine physician. Medicinal herbs and ghee are offered in the sacred fire to cure chronic ailments and improve health.',
+          keyInsights: ['Invokes the divine physician Lord Dhanvantari.', 'Highly effective for chronic health conditions.', 'Medicinal herb offerings into sacred fire.', 'Aids in post-surgery quick recovery.', 'Performed by certified Gujarati priests.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 6000, priceMax: 18000, rating: 4.9, reviewCount: 28, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'homam'
+        },
+        {
+          id: 'gujarati-ganapathi-havan',
+          name: 'Ganapathi Havan',
+          group: 'Havans',
+          shortDesc: 'Fire ritual for removing all hurdles and ensuring success.',
+          description: 'Ganapathi Havan is performed before starting new businesses, housewarmings, or major ceremonies to ensure obstacle-free completion and good luck.',
+          keyInsights: ['Foundational fire ritual in Hindu tradition.', 'Removes all obstacles and brings prosperity.', 'Offerings of Modak, Ghee, and Durva grass.', 'Ideal for business and residential starts.', 'Performed by experienced Vedic Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 5500, priceMax: 14000, rating: 4.9, reviewCount: 48, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'homam'
+        },
+        {
+          id: 'gujarati-laxmi-kubera-havan',
+          name: 'Laxmi Kubera Havan',
+          group: 'Havans',
+          shortDesc: 'Fire ritual for attracting financial wealth and business growth.',
+          description: 'Combines the divine energies of Goddess Laxmi and Lord Kubera (banker of heaven) to attract financial abundance, clear debts, and grow business.',
+          keyInsights: ['Attracts wealth, prosperity, and financial luck.', 'Helps in clearing heavy business debts.', 'Offerings of Lotus seeds, Ghee, and Fruits.', 'Ideal for commercial & financial ventures.', 'Conducted by senior Vedic Acharyas.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 7500, priceMax: 22000, rating: 5.0, reviewCount: 40, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'homam'
+        },
+        {
+          id: 'gujarati-mrityunjaya-havan',
+          name: 'Mrityunjaya Havan',
+          group: 'Havans',
+          shortDesc: 'Life-saving fire ritual for critical health and protection.',
+          description: 'Dedicated to Lord Shiva as Mahamrityunjaya. Invokes divine healing vibrations to protect against untimely death, cure critical diseases, and grant longevity.',
+          keyInsights: ['Supreme fire ritual for life protection & health.', 'Recitation of Maha Mrityunjaya Mantra.', 'Creates powerful protective energy shield.', 'Wards off accidents and serious illnesses.', 'Conducted by specialized Vedic priests.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 8500, priceMax: 35000, rating: 5.0, reviewCount: 38, duration: '3-4 hours', defaultLanguage: 'gujarati', imageType: 'homam'
+        },
+        {
+          id: 'gujarati-navagraha-havan',
+          name: 'Navagraha Havan',
+          group: 'Havans',
+          shortDesc: 'Fire ritual to balance all nine planetary transits.',
+          description: 'Navagraha Havan offers sacred ahutis to all 9 planets, removing planetary afflictions, Sade Sati, Rahu/Ketu doshas, and ensuring smooth life progress.',
+          keyInsights: ['Balances planetary energies of all 9 Grahas.', 'Removes unknown blockages and horoscope doshas.', 'Includes 9 types of sacred woods (Samidha).', 'Brings harmony, health, and wealth.', 'Performed by certified Gujarati Brahmins.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 6500, priceMax: 18000, rating: 4.9, reviewCount: 50, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'homam'
+        },
+        {
+          id: 'gujarati-rudra-havan',
+          name: 'Rudra Havan',
+          group: 'Havans',
+          shortDesc: 'Fire ritual invoking Lord Rudra for health and peace.',
+          description: 'Rudra Havan invokes the fierce healing form of Lord Shiva. Chanting of Sri Rudram along with fire offerings cures deep diseases and cleanses sins.',
+          keyInsights: ['Invokes divine grace of Lord Rudra.', 'Removes deep physical and mental ailments.', 'Cleanses environmental and personal karma.', 'Brings peace, health, and spiritual growth.', 'Performed by Vedic Shivacharya priests.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 7000, priceMax: 20000, rating: 4.9, reviewCount: 36, duration: '3-4 hours', defaultLanguage: 'gujarati', imageType: 'homam'
+        },
+        {
+          id: 'gujarati-saraswati-havan',
+          name: 'Saraswati Havan',
+          group: 'Havans',
+          shortDesc: 'Fire ritual for academic excellence, wisdom, and speech.',
+          description: 'Saraswati Havan is performed to invoke Goddess Saraswati in sacred fire, boosting memory power, analytical skills, speech clarity, and exam success.',
+          keyInsights: ['Enhances intelligence, focus, and memory.', 'Ideal for students, researchers, and artists.', 'Sacred Ahutis of ghee and yellow flowers.', 'Removes speech defects and learning hurdles.', 'Performed by experienced Vedic Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 5500, priceMax: 15000, rating: 4.8, reviewCount: 32, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'homam'
+        }
+      ]
+    },
+    {
+      id: 'gujarati-festival-pujas',
+      name: 'Festival pujas',
+      icon: '🎊',
+      gradient: 'linear-gradient(135deg, #F9A825, #FFEE58)',
+      description: 'Gujarati Festive Celebrations and Vratam Worship',
+      defaultLanguage: 'gujarati',
+      services: [
+        {
+          id: 'gujarati-diwali-lakshmi-puja',
+          name: 'Diwali Lakshmi Puja',
+          group: 'Festival pujas',
+          shortDesc: 'Traditional Diwali Chopda Pujan and Lakshmi worship.',
+          description: 'Diwali Lakshmi Puja and Chopda Pujan is a revered Gujarati Diwali ritual. Invokes Goddess Lakshmi and Lord Ganesha for business prosperity, blessing new account books (Chopda).',
+          keyInsights: ['Traditional Gujarati Chopda Pujan on Diwali.', 'Blesses account books, cash boxes, and business.', 'Invokes Goddess Lakshmi, Saraswati, and Ganesha.', 'Brings year-round financial success & luck.', 'Conducted by certified Gujarati Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 4500, priceMax: 12000, rating: 5.0, reviewCount: 65, duration: '1-2 hours', defaultLanguage: 'gujarati', imageType: 'festival'
+        },
+        {
+          id: 'gujarati-dussehra-puja',
+          name: 'Dussehra Puja',
+          group: 'Festival pujas',
+          shortDesc: 'Worship of weapons, tools, and Shami tree on Vijayadashami.',
+          description: 'Dussehra (Vijayadashami) Puja involves worship of tools, vehicles, business machinery, and Shami leaves, celebrating the triumph of good over evil and seeking victory.',
+          keyInsights: ['Worship of machinery, vehicles, and tools.', 'Shami Patra exchange for good fortune.', 'Marks victory in career and personal goals.', 'Blesses new vehicles and machinery.', 'Performed by experienced Vedic priests.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 3500, priceMax: 8500, rating: 4.8, reviewCount: 38, duration: '1-2 hours', defaultLanguage: 'gujarati', imageType: 'festival'
+        },
+        {
+          id: 'gujarati-ganesh-sthapana-visarjan',
+          name: 'Ganesh Sthapana and Visarjan Puja',
+          group: 'Festival pujas',
+          shortDesc: 'Ganesh Chaturthi idol sthapana and visarjan rituals.',
+          description: 'Comprehensive worship for Ganesh Chaturthi, including Prana Pratishtha, daily Shodasopachara Puja, Uttara Pujan, and Visarjan rituals for divine presence.',
+          keyInsights: ['Prana Pratishtha and Sthapana of Ganesha idol.', 'Daily Modak naivedya and Aarti guidance.', 'Uttara Pujan and respectful Visarjan Vidhi.', 'Brings joy, peace, and removes all hurdles.', 'Conducted by expert Gujarati Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 3500, priceMax: 10000, rating: 4.9, reviewCount: 50, duration: '1-2 hours', defaultLanguage: 'gujarati', imageType: 'festival'
+        },
+        {
+          id: 'gujarati-holika-puja',
+          name: 'Holika Puja',
+          group: 'Festival pujas',
+          shortDesc: 'Sacred Holika Dahan worship for burning away negativity.',
+          description: 'Performed on Holi eve during Holika Dahan. Invokes divine fire to burn away diseases, evil eye, negative energies, and restore prosperity and joy.',
+          keyInsights: ['Worship of sacred Holika fire.', 'Destroys negativity, evil eye, and bad omens.', 'Includes offerings of coconut, wheat ears, and water.', 'Promotes family health and happiness.', 'Conducted by Vedic Gujarati priests.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 3000, priceMax: 7000, rating: 4.7, reviewCount: 28, duration: '1 hour', defaultLanguage: 'gujarati', imageType: 'festival'
+        },
+        {
+          id: 'gujarati-janmashtami-puja',
+          name: 'Janmashtami Puja',
+          group: 'Festival pujas',
+          shortDesc: 'Celebration of Lord Krishna\'s birth with Bal Gopal Abhishekam.',
+          description: 'Janmashtami Puja celebrates the birth of Lord Krishna. Includes midnight Bal Gopal Abhishekam with Panchamrut, swing decoration (Jhula), Makhan-Mishri bhog, and Aarti.',
+          keyInsights: ['Midnight Bal Gopal Abhishekam & Pujan.', 'Jhula (swing) decoration and Makhan bhog.', 'Brings joy, progeny, and love in the home.', 'Chanting of Vishnu Sahasranamam & Krishna Stotra.', 'Performed by experienced Vedic Brahmins.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 3800, priceMax: 9500, rating: 4.9, reviewCount: 42, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'festival'
+        },
+        {
+          id: 'gujarati-navratri-kalash-sthapana-durga-saptashati',
+          name: 'Navratri Kalash Sthapana Puja and Durga Saptashati Path',
+          group: 'Festival pujas',
+          shortDesc: 'Ghatasthapana and 9-day Durga Saptashati recitation during Navratri.',
+          description: 'Auspicious Navratri Ghatasthapana (Kalash Sthapana) followed by daily recitation of 700 verses of Durga Saptashati for supreme peace, prosperity, and divine protection.',
+          keyInsights: ['Kalash Sthapana & Akhand Jyot setup.', 'Recitation of 13 chapters of Durga Saptashati.', 'Daily Kanya Pujan guidance & Ashtami Havan.', 'Fulfills all desires and grants divine grace.', 'Conducted by senior Vedic Acharyas.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 6500, priceMax: 25000, rating: 5.0, reviewCount: 55, duration: '2-4 hours', defaultLanguage: 'gujarati', imageType: 'festival'
+        },
+        {
+          id: 'gujarati-tulsi-vivah-puja',
+          name: 'Tulsi Vivah Puja',
+          group: 'Festival pujas',
+          shortDesc: 'Ceremonial wedding of Goddess Tulsi and Lord Shaligram.',
+          description: 'Tulsi Vivah is performed on Prabodhini Ekadashi. Marks the ceremonial marriage of Tulsi (Vrinda) with Lord Vishnu (Shaligram), initiating the auspicious Hindu wedding season.',
+          keyInsights: ['Ceremonial marriage of Tulsi Plant & Shaligram.', 'Invokes marital harmony, prosperity, and luck.', 'Marks start of auspicious wedding dates.', 'Includes Kanyadaan ritual of Tulsi plant.', 'Performed by certified Gujarati Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 4200, priceMax: 9800, rating: 4.9, reviewCount: 35, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'festival'
+        }
+      ]
+    },
+    {
+      id: 'gujarati-jaaps',
+      name: 'Jaaps',
+      icon: '📿',
+      gradient: 'linear-gradient(135deg, #1565C0, #42A5F5)',
+      description: 'Mantra Jaaps & Graha Shanti Recitations',
+      defaultLanguage: 'gujarati',
+      services: [
+        {
+          id: 'gujarati-budha-graha-jaap',
+          name: 'Budha Graha Shanti Jaap',
+          group: 'Jaaps',
+          shortDesc: 'Mantra chanting to pacify Mercury for intellect and business.',
+          description: 'Continuous chanting of Budha (Mercury) mantra to rectify weak Mercury in horoscope. Improves speech, business skills, analytical thinking, and memory.',
+          keyInsights: ['Enhances business acumen and communication.', 'Resolves skin and nervous system disorders.', 'Involves 4,000 or 17,000 Budha mantra chants.', 'Moong dal & green clothes offerings.', 'Conducted by trained Vedic Chanting Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 3500, priceMax: 12000, rating: 4.8, reviewCount: 25, duration: '2-4 hours', defaultLanguage: 'gujarati', imageType: 'shanti'
+        },
+        {
+          id: 'gujarati-chandra-graha-jaap',
+          name: 'Chandra Graha Shanti Jaap',
+          group: 'Jaaps',
+          shortDesc: 'Mantra chanting to pacify Moon for mental peace and balance.',
+          description: 'Japam dedicated to Chandra (Moon) to resolve emotional stress, mood swings, and mental anxiety. Restores peace of mind and emotional stability.',
+          keyInsights: ['Restores mental peace and emotional balance.', 'Cures sleep issues and anxiety.', 'Involves 11,000 Chandra mantra chants.', 'White flowers, rice, and milk offerings.', 'Performed by experienced Vedic Brahmins.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 3500, priceMax: 12000, rating: 4.8, reviewCount: 22, duration: '2-4 hours', defaultLanguage: 'gujarati', imageType: 'shanti'
+        },
+        {
+          id: 'gujarati-guru-graha-jaap',
+          name: 'Guru Graha Shanti Jaap',
+          group: 'Jaaps',
+          shortDesc: 'Mantra chanting to pacify Jupiter for wisdom and marriage luck.',
+          description: 'Chanting for Guru (Jupiter) to remove obstacles in marriage, higher education, and childbirth, bringing wisdom, luck, and spiritual growth.',
+          keyInsights: ['Removes delays in marriage & childbirth.', 'Grants immense wisdom and wealth.', 'Involves 16,000 Guru mantra chants.', 'Chana dal and yellow flower offerings.', 'Performed by senior Vedic Priests.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 4200, priceMax: 15000, rating: 4.9, reviewCount: 30, duration: '3-5 hours', defaultLanguage: 'gujarati', imageType: 'shanti'
+        },
+        {
+          id: 'gujarati-ketu-graha-jaap',
+          name: 'Ketu Graha Shanti Jaap',
+          group: 'Jaaps',
+          shortDesc: 'Mantra chanting to pacify Ketu for liberation and health.',
+          description: 'Japam for Ketu to mitigate sudden losses, spiritual confusion, and undiagnosed health issues, turning chaos into intuition and liberation.',
+          keyInsights: ['Removes spiritual confusion & sudden losses.', 'Cures strange health problems.', 'Involves 7,000 or 17,000 Ketu chants.', 'Horse gram (Kulthi) offerings.', 'Conducted by specialized Vedic Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 3800, priceMax: 12000, rating: 4.7, reviewCount: 20, duration: '2-4 hours', defaultLanguage: 'gujarati', imageType: 'shanti'
+        },
+        {
+          id: 'gujarati-maha-mrityunjaya-jaap',
+          name: 'Maha Mrityunjaya Jaap',
+          group: 'Jaaps',
+          shortDesc: 'Continuous life-saving mantra chanting for severe illness.',
+          description: 'Intense and continuous chanting of Maha Mrityunjaya Mantra to create a healing shield for critically ill patients, warding off untimely death.',
+          keyInsights: ['Ultimate mantra for health and life protection.', 'Creates powerful divine healing vibrations.', 'Wards off untimely death (Apamrityu).', 'Can be chanted 11,000 to 125,000 times.', 'Conducted by senior Vedic Acharyas.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 12000, priceMax: 65000, rating: 5.0, reviewCount: 45, duration: '1-3 days', defaultLanguage: 'gujarati', imageType: 'shanti'
+        },
+        {
+          id: 'gujarati-mangal-graha-jaap',
+          name: 'Mangal Graha Shanti Jaap',
+          group: 'Jaaps',
+          shortDesc: 'Mantra chanting to pacify Mars and resolve Manglik Dosha.',
+          description: 'Dedicated to Mangal (Mars) to resolve Manglik Dosha, anger issues, debt, and property disputes, bringing courage and energy.',
+          keyInsights: ['Remedy for Kuja / Manglik Dosha in marriage.', 'Clears debts and real estate disputes.', 'Involves 10,000 Mangal mantra chants.', 'Toor dal and red flower offerings.', 'Performed by expert Vedic Priests.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 3800, priceMax: 14000, rating: 4.8, reviewCount: 35, duration: '2-4 hours', defaultLanguage: 'gujarati', imageType: 'shanti'
+        },
+        {
+          id: 'gujarati-rahu-graha-jaap',
+          name: 'Rahu Graha Shanti Jaap',
+          group: 'Jaaps',
+          shortDesc: 'Mantra chanting to pacify Rahu and Kala Sarpa Dosha.',
+          description: 'Japam dedicated to Rahu to remove sudden misfortunes, fears, phobias, and Kaal Sarp Dosha, turning chaos into unexpected gains.',
+          keyInsights: ['Remedy for Kaal Sarp Dosha & Rahu Mahadasha.', 'Removes fear, anxiety, and confusion.', 'Involves 18,000 Rahu mantra chants.', 'Urad dal & black sesame offerings.', 'Conducted by certified Vedic Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 4200, priceMax: 15000, rating: 4.8, reviewCount: 32, duration: '3-5 hours', defaultLanguage: 'gujarati', imageType: 'shanti'
+        },
+        {
+          id: 'gujarati-shani-graha-jaap',
+          name: 'Shani Graha Shanti Jaap',
+          group: 'Jaaps',
+          shortDesc: 'Mantra chanting to pacify Saturn and Sade Sati.',
+          description: 'Japam to mitigate the severe effects of Sade Sati (7.5 years of Saturn), Ashtama Shani, or malefic Saturn. Removes delays, suffering, and poverty.',
+          keyInsights: ['Essential remedy during Sade Sati & Dhaiya.', 'Reduces life hardships, delays, and losses.', 'Involves 19,000 Shani mantra chants.', 'Mustard oil and black sesame offerings.', 'Performed by senior Vedic Shivacharyas.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 5000, priceMax: 18000, rating: 4.9, reviewCount: 48, duration: '3-5 hours', defaultLanguage: 'gujarati', imageType: 'shanti'
+        },
+        {
+          id: 'gujarati-shukra-graha-jaap',
+          name: 'Shukra Graha Shanti Jaap',
+          group: 'Jaaps',
+          shortDesc: 'Mantra chanting to pacify Venus for marital bliss and wealth.',
+          description: 'Japam for Shukra (Venus) to resolve marital discord, financial instability, and lack of comfort, enhancing love, wealth, and arts.',
+          keyInsights: ['Improves marital harmony and relationships.', 'Attracts financial prosperity and luxuries.', 'Involves 16,000 Shukra mantra chants.', 'White flowers and camphor offerings.', 'Performed by certified Vedic Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 4200, priceMax: 15000, rating: 4.8, reviewCount: 25, duration: '3-5 hours', defaultLanguage: 'gujarati', imageType: 'shanti'
+        },
+        {
+          id: 'gujarati-surya-graha-jaap',
+          name: 'Surya Graha Shanti Jaap',
+          group: 'Jaaps',
+          shortDesc: 'Mantra chanting to pacify the Sun for health and authority.',
+          description: 'Chanting for Surya (Sun) to overcome health issues (eye/heart/vitality), government/legal problems, and lack of confidence.',
+          keyInsights: ['Improves physical vitality and eye/bone health.', 'Resolves government, legal, and career hurdles.', 'Involves 7,000 Surya mantra chants.', 'Wheat and red lotus/flower offerings.', 'Conducted by experienced Vedic Acharyas.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 3500, priceMax: 12000, rating: 4.7, reviewCount: 22, duration: '2-4 hours', defaultLanguage: 'gujarati', imageType: 'shanti'
+        }
+      ]
+    },
+    {
+      id: 'gujarati-paths',
+      name: 'Paths',
+      icon: '📖',
+      gradient: 'linear-gradient(135deg, #2E7D32, #66BB6A)',
+      description: 'Sacred Scriptures Recitations & Paths',
+      defaultLanguage: 'gujarati',
+      services: [
+        {
+          id: 'gujarati-akhand-ramayan-path',
+          name: 'Akhand Ramayan Path',
+          group: 'Paths',
+          shortDesc: 'Continuous 24-hour recitation of Ramcharitmanas.',
+          description: 'Akhand Ramayan Path is a continuous 24-hour recitation of the entire Ramcharitmanas. It invokes divine grace of Lord Rama, Goddess Sita, and Lord Hanuman.',
+          keyInsights: ['Continuous 24-hour non-stop chanting.', 'Purifies the home and creates divine aura.', 'Grants peace, harmony, and removes obstacles.', 'Accompanied by Bhajan, Kirtan, and Havan.', 'Conducted by team of experienced Ramayani Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 15000, priceMax: 45000, rating: 5.0, reviewCount: 40, duration: '24 hours', defaultLanguage: 'gujarati', imageType: 'pooja'
+        },
+        {
+          id: 'gujarati-hanuman-chalisa-path',
+          name: 'Hanuman Chalisa Path',
+          group: 'Paths',
+          shortDesc: 'Recitation of Hanuman Chalisa for courage and protection.',
+          description: 'Recitation of Hanuman Chalisa (11, 21, or 108 times) to invoke Lord Hanuman for protection from evil spirits, fear, health issues, and Saturn doshas.',
+          keyInsights: ['108 times Hanuman Chalisa Samput Path.', 'Protects against fear, enemies, and black magic.', 'Relieves Shani Sade Sati afflictions.', 'Includes Sundarkand extracts & Aarti.', 'Conducted by devoted Vedic Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 3500, priceMax: 9500, rating: 4.9, reviewCount: 45, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'pooja'
+        },
+        {
+          id: 'gujarati-sunderkand-path',
+          name: 'Sunderkand Path',
+          group: 'Paths',
+          shortDesc: 'Recitation of Sunderkand chapter for victory and wisdom.',
+          description: 'Sunderkand Path recites the 5th chapter of Ramcharitmanas, describing Hanumanji\'s heroics. Brings confidence, removes anxiety, and solves impossible problems.',
+          keyInsights: ['Recitation of the most inspiring Ramayan chapter.', 'Removes deep depression, fear, and negativity.', 'Brings victory over impossible challenges.', 'Includes Hanuman Pujan, Bhajans, and Aarti.', 'Performed by certified Gujarati Pandits.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 3800, priceMax: 10500, rating: 4.9, reviewCount: 50, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'pooja'
+        }
+      ]
+    },
+    {
+      id: 'gujarati-shanti-pujas',
+      name: 'Shanti pujas',
+      icon: '☮️',
+      gradient: 'linear-gradient(135deg, #7B1FA2, #CE93D8)',
+      description: 'Special Remedy & Shanti Rituals',
+      defaultLanguage: 'gujarati',
+      services: [
+        {
+          id: 'gujarati-ark-vivah-male',
+          name: 'Ark Vivah For Male',
+          group: 'Shanti pujas',
+          shortDesc: 'Remedial symbolic marriage for males with Kuja/Manglik Dosha.',
+          description: 'Ark Vivah is a remedial symbolic marriage performed for a male who has severe Kuja/Manglik Dosha or multiple marriages indicated, marrying an Ark (Madar) plant first.',
+          keyInsights: ['Remedy for severe Manglik Dosha in grooms.', 'Symbolic marriage with Ark (Madar) plant.', 'Absorbs negative marital Karma & delays.', 'Ensures smooth and happy actual marriage.', 'Performed by specialized Vedic Shanti priests.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 6500, priceMax: 16000, rating: 4.8, reviewCount: 28, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'shanti'
+        },
+        {
+          id: 'gujarati-kumbh-vivah-female',
+          name: 'Kumbh Vivah For Female',
+          group: 'Shanti pujas',
+          shortDesc: 'Remedial symbolic marriage with mud pot for females.',
+          description: 'Kumbh Vivah is a sacred remedial ritual for a female having severe Manglik Dosha or Vaidhavya Dosha, marrying a mud pot (Kumbh) containing Lord Vishnu before actual wedding.',
+          keyInsights: ['Essential remedy for severe Manglik brides.', 'Symbolic marriage with consecrated Kumbh (pot).', 'Eliminates marital obstacles & spouse ill-luck.', 'Ensures long and happy married life.', 'Performed by expert Vedic Shanti Acharyas.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 6500, priceMax: 16000, rating: 4.9, reviewCount: 32, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'shanti'
+        },
+        {
+          id: 'gujarati-vishnu-vivah-female',
+          name: 'Vishnu Vivah For Female',
+          group: 'Shanti pujas',
+          shortDesc: 'Remedial symbolic marriage with Lord Vishnu idol for females.',
+          description: 'Vishnu Vivah is performed for females with horoscope afflictions delay in marriage or widowhood dosha, symbolically marrying a golden Lord Vishnu idol before the real wedding.',
+          keyInsights: ['Remedy for severe horoscope afflictions in brides.', 'Symbolic marriage with Lord Vishnu / Shaligram.', 'Absorbs malefic planetary influences.', 'Grants long marital bliss and protection.', 'Conducted by senior Vedic Brahmins.'],
+          promise: ['Highly Qualified Gujarati Pandits.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 7000, priceMax: 18000, rating: 4.9, reviewCount: 30, duration: '2-3 hours', defaultLanguage: 'gujarati', imageType: 'shanti'
+        }
+      ]
+    },
+    {
+      id: 'malayalam-pooja-services',
+      name: 'Malayalam Pooja Services',
+      icon: '🪔',
+      gradient: 'linear-gradient(135deg, #1565C0, #0D47A1)',
+      description: 'Authentic Kerala Vedic Pujas and sacred ceremonies performed by experienced Malayalam Priests',
+      defaultLanguage: 'malayalam',
+      subheader: 'Ceremonies',
+      services: [
+        {
+          id: 'malayalam-choroonu',
+          name: 'Choroonu (Rice Feeding Ceremony)',
+          shortDesc: 'Sacred Kerala first rice feeding ritual for the infant.',
+          description: 'Choroonu is the traditional Malayalam first solid food feeding ceremony. Conducted during the 6th month, the baby is fed sacred rice/payasam after invoking Lord Guruvayurappan and family deities for health, longevity, and prosperity.',
+          keyInsights: [
+            'Traditional Kerala first rice feeding ritual (Choroonu).',
+            'Invokes divine blessings of Lord Guruvayurappan and Mahavishnu.',
+            'Sacred Payasam offering in banana leaf as per Kerala tradition.',
+            'Brings good digestion, vitality, and lifelong well-being.',
+            'Conducted by certified Malayalam Vedic priests.'
+          ],
+          promise: ['Highly Qualified Malayalam Priests.', 'All rituals follow Kerala Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 4500, priceMax: 9500, rating: 4.9, reviewCount: 36, duration: '1-2 hours', defaultLanguage: 'malayalam', imageType: 'ceremony'
+        },
+        {
+          id: 'malayalam-noolukettu',
+          name: 'Noolukettu - Naming Ceremony',
+          shortDesc: 'Traditional Kerala 28th-day thread tying and naming ceremony.',
+          description: 'Noolukettu is the sacred Kerala naming and waist-thread tying ceremony performed on the 28th day after birth (or 56th day). A black/gold thread (Aranjanam) is tied around the baby\'s waist and the formal name is whispered in the ear.',
+          keyInsights: [
+            'Revered Kerala 28th day naming ritual (Noolukettu).',
+            'Tying of the auspicious waist thread (Aranjanam) and Kohl eyelining.',
+            'Calculating birth star name according to Malayalam Kollavarsham Panchangam.',
+            'Blessing of mother and newborn with long life and prosperity.',
+            'Performed by experienced Malayalam Pandits.'
+          ],
+          promise: ['Highly Qualified Malayalam Priests.', 'All rituals follow Kerala Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 4800, priceMax: 11000, rating: 4.8, reviewCount: 32, duration: '1-2 hours', defaultLanguage: 'malayalam', imageType: 'ceremony'
+        },
+        {
+          id: 'malayalam-vivaaham-marriage',
+          name: 'Vivaaham (Marriage)',
+          shortDesc: 'Authentic Kerala Hindu wedding ceremony (Vivaaham).',
+          description: 'Vivaaham is the sacred Kerala wedding ceremony. Conducted in traditional attire (Kasavu Pudava), rituals include Thali Kettu (tying of sacred ribbon/thali), Pudamuri (gift of saree), Garland exchange, and Panni Grihitam for eternal marital bliss.',
+          keyInsights: [
+            'Traditional Kerala wedding rituals (Thali Kettu & Pudamuri).',
+            'Auspicious Lagna Muhurtham as per Malayalam Panchangam.',
+            'Pudava Vastra exchange signifying protection and lifelong love.',
+            'Invokes divine grace of Mahavishnu and Bhagavati.',
+            'Performed by senior Malayalam Acharyas and Priests.'
+          ],
+          promise: ['Highly Qualified Malayalam Priests.', 'All rituals follow Kerala Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 22000, priceMax: 65000, rating: 5.0, reviewCount: 40, duration: '3-5 hours', defaultLanguage: 'malayalam', imageType: 'ceremony'
+        }
+      ]
+    },
+    {
+      id: 'bengali-pooja-services',
+      name: 'Bengali Pooja Services',
+      icon: '🪔',
+      gradient: 'linear-gradient(135deg, #C41E3A, #990000)',
+      description: 'Authentic Bengali Vedic Pujas and sacred ceremonies performed by experienced Bengali Pandits',
+      defaultLanguage: 'bengali',
+      subheader: 'Pujas',
+      services: [
+        {
+          id: 'bengali-bhoomi-puja',
+          name: 'Bhoomi Puja',
+          shortDesc: 'Land blessing and Vastu Shanti ritual before construction as per Bengali traditions.',
+          description: 'Bhoomi Puja in Bengali tradition is performed to seek permission from Mother Earth (Bhumi Devi) and Vastu Purusha before starting construction. Invokes divine blessings for safety, structural strength, and prosperity.',
+          keyInsights: [
+            'Traditional Bengali land purification and Vastu puja.',
+            'Invokes Bhumi Devi, Lord Ganesha, and Vastu Purusha.',
+            'Removes negative vibes, evil eye, and geographical defects.',
+            'Includes sacred silver coin placement and soil sanctification.',
+            'Performed by certified Bengali Purohits with complete Samagri.'
+          ],
+          promise: ['Highly Qualified Vedic Bengali Pandits.', 'All rituals follow authentic Bengali Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 4800, priceMax: 9800, rating: 4.9, reviewCount: 40, duration: '2-3 hours', defaultLanguage: 'bengali', imageType: 'pooja'
+        },
+        {
+          id: 'bengali-durga-puja',
+          name: 'Durga Puja',
+          shortDesc: 'Sacred worship of Maa Durga for divine protection, peace, and prosperity.',
+          description: 'Durga Puja is the heart of Bengali spiritual tradition. Performed with traditional Shodasopachara rituals, Chandi Parayan (recitation), Dhunuchi Naach offerings, and Pushpanjali to invoke Maa Durga\'s supreme protective power.',
+          keyInsights: [
+            'Authentic Bengali Durga Pujo rituals with Chandi Parayan.',
+            'Includes Bodhon, Amantran, Adhibhas, and Anjali offerings.',
+            'Destroys negativity, enemies, and brings victory in life.',
+            'Offerings of Shiuli flowers, Lotus, and Bhog Prasadam.',
+            'Conducted by senior Vedic Bengali Brahmins.'
+          ],
+          promise: ['Highly Qualified Vedic Bengali Pandits.', 'All rituals follow authentic Bengali Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 5500, priceMax: 15000, rating: 5.0, reviewCount: 55, duration: '3-4 hours', defaultLanguage: 'bengali', imageType: 'pooja'
+        },
+        {
+          id: 'bengali-ganesh-puja',
+          name: 'Ganesh Puja',
+          shortDesc: 'Inaugural worship of Lord Ganesha for removing hurdles and bringing good fortune.',
+          description: 'Ganesh Puja in Bengali custom is conducted before embarking on new businesses, ventures, or rituals. Invokes Siddhidata Ganesha with Durba grass, Modak/Laddoo bhog, and Vedic mantras.',
+          keyInsights: [
+            'Removal of all obstacles (Vighnanashan) and bringing success.',
+            'Special Durba grass, modak, and red flower offerings.',
+            'Blesses new ventures, home, and commercial spaces.',
+            'Invokes wisdom, intellect, and wealth.',
+            'Suitable for Sankashti Chaturthi, Ganesh Chaturthi, and new starts.'
+          ],
+          promise: ['Highly Qualified Vedic Bengali Pandits.', 'All rituals follow authentic Bengali Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 3500, priceMax: 7500, rating: 4.8, reviewCount: 42, duration: '1-2 hours', defaultLanguage: 'bengali', imageType: 'pooja'
+        },
+        {
+          id: 'bengali-griho-probesh',
+          name: 'Griho Probesh',
+          shortDesc: 'Sacred Bengali housewarming and new home purification ceremony.',
+          description: 'Griho Probesh is the traditional Bengali housewarming ritual. Involves entry with Narayan/Shila or Lakshmi Kalash, Milk Boiling ritual (Doodh Uthano), Narayan Puja, and Vastu Shanti to fill the new home with joy and prosperity.',
+          keyInsights: [
+            'Traditional Bengali housewarming (Griho Probesh) ceremony.',
+            'Sacred milk boiling ritual and Kalash Sthapana.',
+            'Vastu Shanti, Satyanarayan Puja, and Havan for home purification.',
+            'Wards off negative energies, evil eye, and brings peace.',
+            'Performed by experienced Bengali Purohits.'
+          ],
+          promise: ['Highly Qualified Vedic Bengali Pandits.', 'All rituals follow authentic Bengali Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 8800, priceMax: 25000, rating: 4.9, reviewCount: 50, duration: '3-4 hours', defaultLanguage: 'bengali', imageType: 'ceremony'
+        },
+        {
+          id: 'bengali-laxmi-puja',
+          name: 'Laxmi Puja',
+          shortDesc: 'Worship of Maa Laxmi (Kojagari Lakshmi Puja) for wealth and abundance.',
+          description: 'Bengali Kojagari Lakshmi Puja and Thursday Laxmi Broto involve decorating the floor with traditional Alpana (Alpona) rice paste art, offering Dhan (paddy), Coconut Naru, and Khichuri bhog to invite eternal prosperity.',
+          keyInsights: [
+            'Authentic Bengali Kojagari Lakshmi Pujo with hand-painted Alpona.',
+            'Offerings of Naru, Murki, Khichuri bhog, and Payesh.',
+            'Brings financial stability, family happiness, and good fortune.',
+            'Recitation of Laxmi Broto Katha and Panchali.',
+            'Conducted by certified Bengali priests.'
+          ],
+          promise: ['Highly Qualified Vedic Bengali Pandits.', 'All rituals follow authentic Bengali Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 4200, priceMax: 9500, rating: 4.9, reviewCount: 48, duration: '2-3 hours', defaultLanguage: 'bengali', imageType: 'pooja'
+        },
+        {
+          id: 'bengali-onnoprashon-mukhe-bhaat',
+          name: 'Onnoprashon (Mukhe Bhaat)',
+          shortDesc: 'Traditional Bengali baby\'s first rice feeding ceremony (Mukhe Bhaat).',
+          description: 'Onnoprashon or Mukhe Bhaat is the sacred Bengali first solid food feeding ritual for an infant (6th month for boys, 7th month for girls). The child is fed sacred Payesh by maternal uncle (Mama) after Puja and item selection testing (book, pen, coin).',
+          keyInsights: [
+            'Revered Bengali first rice feeding ceremony (Mukhe Bhaat / Onnoprashon).',
+            'Payesh feeding ritual by Mama (Maternal Uncle) and elders.',
+            'Traditional item selection ritual (Book, Pen, Coin, Paddy) for child\'s future.',
+            'Invokes health, long life, and intellectual growth.',
+            'Complete ritual conducted by expert Bengali Purohits.'
+          ],
+          promise: ['Highly Qualified Vedic Bengali Pandits.', 'All rituals follow authentic Bengali Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 4500, priceMax: 9800, rating: 4.9, reviewCount: 39, duration: '1-2 hours', defaultLanguage: 'bengali', imageType: 'ceremony'
+        },
+        {
+          id: 'bengali-saraswati-puja',
+          name: 'Saraswati Puja',
+          shortDesc: 'Worship of Maa Saraswati for education, wisdom, and fine arts.',
+          description: 'Saraswati Puja in Bengal is celebrated with immense fervor on Vasant Panchami. Students keep their books and instruments at Goddess Saraswati\'s feet, participate in Pushpanjali in yellow attire, and seek academic excellence.',
+          keyInsights: [
+            'Worship of the Goddess of Wisdom, Learning, and Music.',
+            'Pushpanjali recitation, Palash flower offerings, and Kul (berry) bhog.',
+            'Initiates children into writing and reading (Hatey Khori).',
+            'Ideal for homes, educational institutions, and coaching centers.',
+            'Performed by traditional Bengali Brahmins.'
+          ],
+          promise: ['Highly Qualified Vedic Bengali Pandits.', 'All rituals follow authentic Bengali Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 3800, priceMax: 8500, rating: 4.9, reviewCount: 46, duration: '1-2 hours', defaultLanguage: 'bengali', imageType: 'pooja'
+        },
+        {
+          id: 'bengali-satyanarayan-puja',
+          name: 'Satyanarayan Puja',
+          shortDesc: 'Worship of Lord Satyanarayan with Shinni offering for peace and fulfillment.',
+          description: 'Satyanarayan Puja in Bengali tradition is performed on Purnima, birthdays, or auspicious occasions. Includes reading of 5 chapters of Satyanarayan Panchali and preparation of delicious traditional Bengali Shinni prasadam.',
+          keyInsights: [
+            'Auspicious Satyanarayan Katha and Panchali recitation in Bengali.',
+            'Special Shinni Prasadam (flour, milk, banana, sugar, and batasa).',
+            'Fulfills desires, removes difficulties, and brings family peace.',
+            'Suitable for Purnima, housewarmings, and special milestones.',
+            'Complete Puja samagri and Bengali Purohit provided.'
+          ],
+          promise: ['Highly Qualified Vedic Bengali Pandits.', 'All rituals follow authentic Bengali Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 4500, priceMax: 10500, rating: 5.0, reviewCount: 50, duration: '2-3 hours', defaultLanguage: 'bengali', imageType: 'pooja'
+        },
+        {
+          id: 'bengali-upanayan',
+          name: 'Upanayan',
+          shortDesc: 'Sacred thread initiation ceremony (Poita / Upanayan) for young boys.',
+          description: 'Upanayan or Poita is the sacred thread ceremony in Bengali Hindu culture. The young boy is initiated into Vedic studies, receives the sacred Yajnopavita (Poita) and Gayatri Mantra, entering the Brahmacharya phase.',
+          keyInsights: [
+            'Sacred thread ceremony (Poita / Upanayan Samskara).',
+            'Initiation into Gayatri Mantra and spiritual education.',
+            'Head shaving, Bhiksha ritual, and sacred fire Havan.',
+            'Marks spiritual re-birth and moral discipline.',
+            'Conducted by qualified Vedic Bengali Acharyas.'
+          ],
+          promise: ['Highly Qualified Vedic Bengali Pandits.', 'All rituals follow authentic Bengali Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 12500, priceMax: 35000, rating: 4.9, reviewCount: 28, duration: '4-6 hours', defaultLanguage: 'bengali', imageType: 'ceremony'
+        },
+        {
+          id: 'bengali-vivah-marriage',
+          name: 'Vivah (Marriage)',
+          shortDesc: 'Authentic Vedic Bengali wedding ceremony with traditional rituals.',
+          description: 'Bengali Vivah is a rich, solemn, and joyful Vedic wedding ceremony. Features traditional rituals including Shubho Drishti, Mala Badal, Saat Paak, Kanyadaan, Anjali (Khoi Porano), and Sindoor Daan.',
+          keyInsights: [
+            'Full traditional Bengali wedding ceremony (Bengali Biye).',
+            'Includes Shubho Drishti, Mala Badal, Saptapadi, and Sindoor Daan.',
+            'Chanting of authentic Vedic Sampradan mantras by head priests.',
+            'Unites two souls and families with divine blessings.',
+            'Performed by experienced Bengali Chief Purohits.'
+          ],
+          promise: ['Highly Qualified Vedic Bengali Pandits.', 'All rituals follow authentic Bengali Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 25000, priceMax: 75000, rating: 5.0, reviewCount: 35, duration: '4-6 hours', defaultLanguage: 'bengali', imageType: 'ceremony'
+        }
+      ]
+    },
+    {
+      id: 'odia-pooja-services',
+      name: 'Odia Pooja Services',
+      icon: '🪔',
+      gradient: 'linear-gradient(135deg, #FF6B00, #D84315)',
+      description: 'Authentic Odia Vedic Pujas and sacred ceremonies performed by experienced Odia Pandits',
+      defaultLanguage: 'odia',
+      subheader: 'Pujas',
+      services: [
+        {
+          id: 'odia-annaprashan-puja',
+          name: 'Annaprashan Puja',
+          shortDesc: 'Sacred first grain feeding ritual for the baby according to Odia traditions.',
+          description: 'Annaprashan is the traditional Odia first food feeding ritual. Performed during the 6th or 8th month for boys and 5th or 7th month for girls, sacred Kheer (rice pudding) is offered after invoking Lord Jagannath and family deities for the child\'s longevity, health, and prosperity.',
+          keyInsights: [
+            'First solid food feeding ritual (Kheer Khia) for the infant.',
+            'Invokes blessings of Lord Jagannath, Goddess Lakshmi, and Kula Devata.',
+            'Silver coin and utensil testing rituals performed as per Odia traditions.',
+            'Ensures digestive health, immunity, and lifelong prosperity.',
+            'Conducted on an auspicious tithi with certified Odia pandits.'
+          ],
+          promise: ['Highly Qualified Vedic Odia Pandits.', 'All rituals follow authentic Odia Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 4500, priceMax: 9500, rating: 4.9, reviewCount: 38, duration: '1-2 hours', defaultLanguage: 'odia', imageType: 'ceremony'
+        },
+        {
+          id: 'odia-engagement-nirbandha',
+          name: 'Engagement Puja - Nirbandha',
+          shortDesc: 'Traditional Odia betrothal ceremony and ring exchange ritual.',
+          description: 'Nirbandha is the holy Odia engagement ceremony where the commitment between two families is solemnized in front of sacred fire and elders. Sacred Sankalpa, Lagna Patrika reading, and ring/gift exchanges take place.',
+          keyInsights: [
+            'Formal Odia wedding betrothal ceremony (Nirbandha).',
+            'Recitation of Lagna Patrika and exchange of sacred coconuts & clothes.',
+            'Invokes divine blessings of Lord Ganesha and Prajapati for marital harmony.',
+            'Fixes the auspicious wedding muhurat (Lagna).',
+            'Performed by experienced Odia Vedic pandits.'
+          ],
+          promise: ['Highly Qualified Vedic Odia Pandits.', 'All rituals follow authentic Odia Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 5500, priceMax: 12500, rating: 4.8, reviewCount: 42, duration: '2-3 hours', defaultLanguage: 'odia', imageType: 'ceremony'
+        },
+        {
+          id: 'odia-ganapathi-puja',
+          name: 'Ganapathi Puja',
+          shortDesc: 'Invocational worship of Lord Ganesha for removing all obstacles.',
+          description: 'Traditional Odia Ganapathi Puja performed to invoke Lord Ganesha at the beginning of any auspicious work, venture, or festival. Includes Durba grass offerings, modak naivedya, and Vedic stotras for peace and prosperity.',
+          keyInsights: [
+            'Vighnaraja worship for removing hurdles and bringing good fortune.',
+            'Ritualistic Shodasopachara puja with Durba grass and Laddu/Modak offerings.',
+            'Invokes Siddhi and Buddhi for wisdom and career growth.',
+            'Purifies the residential or commercial venue.',
+            'Suitable for all auspicious occasions and monthly Sankashti Chaturthi.'
+          ],
+          promise: ['Highly Qualified Vedic Odia Pandits.', 'All rituals follow authentic Odia Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 3500, priceMax: 7500, rating: 4.9, reviewCount: 50, duration: '1-2 hours', defaultLanguage: 'odia', imageType: 'pooja'
+        },
+        {
+          id: 'odia-griha-pravesh-gruha-pratistha',
+          name: 'Griha Pravesh (Gruha Pratistha)',
+          shortDesc: 'Sacred Odia housewarming and Vastu purification ceremony.',
+          description: 'Gruha Pratistha is the auspicious Odia housewarming ritual. It purifies the new dwelling through Vastu Puja, Boiling of Milk, Surya Puja, Cow Entry (Gau Puja), and Kirtan to ensure eternal happiness and peace in the new home.',
+          keyInsights: [
+            'Traditional Odia housewarming (Gruha Pratistha & Dwarabandha Puja).',
+            'Includes Vastu Shanti, Navagraha Puja, and Boiling Milk ritual.',
+            'Sacred Cow entry (Gau Seva) and Kalash sthapana.',
+            'Drives away evil eye, negative energies, and spatial doshas.',
+            'Complete Samagri and Vedic Odia Purohit service provided.'
+          ],
+          promise: ['Highly Qualified Vedic Odia Pandits.', 'All rituals follow authentic Odia Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 9800, priceMax: 28500, rating: 5.0, reviewCount: 47, duration: '3-5 hours', defaultLanguage: 'odia', imageType: 'ceremony'
+        },
+        {
+          id: 'odia-janma-chuti-poka-mundan',
+          name: 'Janma Chuti Poka (Mundan)',
+          shortDesc: 'First haircut and head-shaving ritual for the child.',
+          description: 'Janma Chuti Poka is the sacred Odia Mundan ceremony where the child\'s birth hair is shaved for the first time. It symbolizes the shedding of past-life karma, promoting proper hair growth and brain development.',
+          keyInsights: [
+            'Traditional Odia first tonsure ceremony (Chudakarana / Chuti Poka).',
+            'Purifies the child from birth impurities (Jatashaucha).',
+            'Invokes longevity, health, and sharp intellect.',
+            'Accompanied by Ayushya Homam and Kuladevata puja.',
+            'Performed by specialized Odia pandits.'
+          ],
+          promise: ['Highly Qualified Vedic Odia Pandits.', 'All rituals follow authentic Odia Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 4200, priceMax: 8800, rating: 4.7, reviewCount: 31, duration: '1-2 hours', defaultLanguage: 'odia', imageType: 'ceremony'
+        },
+        {
+          id: 'odia-lakshmi-puja',
+          name: 'Lakshmi Puja',
+          shortDesc: 'Worship of Maa Lakshmi for prosperity, wealth, and domestic harmony.',
+          description: 'Maa Lakshmi Puja in Odia tradition (such as Manabasa Gurubara / Kojagari Lakshmi Puja) involves worshipping the Goddess of Wealth with fresh paddy grains (Mana), alpana (Jhoti), white flowers, and traditional Odia pithas.',
+          keyInsights: [
+            'Authentic Odia Lakshmi Puja featuring traditional Jhoti (alpana) art.',
+            'Offerings of Mana (rice measure), Kakara Pitha, and Payasa.',
+            'Brings financial abundance, harmony, and luck to the household.',
+            'Performed on Thursdays (Gurubara), Diwali, or full moon days.',
+            'Chanting of Sri Suktam and Lakshmi Stotra by Odia priests.'
+          ],
+          promise: ['Highly Qualified Vedic Odia Pandits.', 'All rituals follow authentic Odia Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 4000, priceMax: 9000, rating: 4.9, reviewCount: 45, duration: '2-3 hours', defaultLanguage: 'odia', imageType: 'pooja'
+        },
+        {
+          id: 'odia-namkaran-puja-ekoisia',
+          name: 'Namkaran Puja (Ekoisia)',
+          shortDesc: '21st day naming and blessing ceremony for the newborn.',
+          description: 'Ekoisia is the traditional 21st-day Odia naming ceremony for a newborn baby. The mother and baby undergo purification baths, and the child is officially named based on astrological birth star (Rashi & Nakshatra).',
+          keyInsights: [
+            'Sacred Odia 21st day ceremony (Ekoisia) for newborn naming.',
+            'Purification of mother and child after birth period.',
+            'Name calculation based on authentic Odia Panchang & Nakshatra.',
+            'Whispering the name into the baby\'s ear with honey and ghee.',
+            'Brings longevity, health, and protection to the infant.'
+          ],
+          promise: ['Highly Qualified Vedic Odia Pandits.', 'All rituals follow authentic Odia Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 4800, priceMax: 11500, rating: 4.8, reviewCount: 36, duration: '2-3 hours', defaultLanguage: 'odia', imageType: 'ceremony'
+        },
+        {
+          id: 'odia-office-shop-opening-puja',
+          name: 'Office/Shop Opening Puja',
+          shortDesc: 'Inaugural worship for new business, shop, or commercial premises.',
+          description: 'Performed before starting a new business venture, shop, or corporate office in Odisha traditions. Involves Ganesha Puja, Lakshmi-Kubera Puja, Navagraha Shanti, and Vastu Pujan for commercial prosperity.',
+          keyInsights: [
+            'Inaugural blessing for commercial enterprises and stores.',
+            'Invokes Goddess Lakshmi and Lord Ganesha for high profits & growth.',
+            'Clears negative energies and commercial Vastu flaws.',
+            'Includes ribbon cutting muhurat and sanctified water sprinkling.',
+            'Conducted by qualified Odia Vedic Pandits.'
+          ],
+          promise: ['Highly Qualified Vedic Odia Pandits.', 'All rituals follow authentic Odia Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 5200, priceMax: 18500, rating: 4.9, reviewCount: 40, duration: '2-3 hours', defaultLanguage: 'odia', imageType: 'pooja'
+        },
+        {
+          id: 'odia-saraswati-puja',
+          name: 'Saraswati Puja',
+          shortDesc: 'Worship of Maa Saraswati for wisdom, education, and arts.',
+          description: 'Saraswati Puja in Odia tradition is celebrated with immense devotion, especially on Vasant Panchami. Books, pens, and musical instruments are placed before Goddess Saraswati to seek knowledge and academic excellence.',
+          keyInsights: [
+            'Worship of the Goddess of Wisdom, Learning, and Fine Arts.',
+            'Palasa flowers, white garlands, and Khichdi/Fruit bhog offerings.',
+            'Initiates students into higher learning and improves concentration.',
+            'Ideal for homes, schools, colleges, and educational institutes.',
+            'Includes Saraswati Stotra and Pushpanjali rituals.'
+          ],
+          promise: ['Highly Qualified Vedic Odia Pandits.', 'All rituals follow authentic Odia Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 3800, priceMax: 8500, rating: 4.9, reviewCount: 48, duration: '1-2 hours', defaultLanguage: 'odia', imageType: 'pooja'
+        },
+        {
+          id: 'odia-satyanarayan-puja',
+          name: 'Satyanarayan Puja',
+          shortDesc: 'Traditional Odia Satyanarayan Pala and Vratha worship.',
+          description: 'Satyanarayan Puja (often performed with traditional Odia Pala stotras) invokes Lord Satyanarayan (Vishnu) for family peace, fulfillment of vows, and prosperity. Includes 5 chapters of Satyanarayan Katha and Sirini offerings.',
+          keyInsights: [
+            'Revered Odia Satyanarayan Puja and Pala recitation.',
+            'Special Sirini prasadam made with flour, milk, banana, and sugar.',
+            'Fulfills desires, cures hardships, and unites family members.',
+            'Suitable for Purnima, Sankranti, birthdays, and housewarmings.',
+            'Complete puja material provided by certified Odia Pandits.'
+          ],
+          promise: ['Highly Qualified Vedic Odia Pandits.', 'All rituals follow authentic Odia Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 4500, priceMax: 10500, rating: 5.0, reviewCount: 52, duration: '2-3 hours', defaultLanguage: 'odia', imageType: 'pooja'
+        },
+        {
+          id: 'odia-vishwakarma-puja',
+          name: 'Vishwakarma Puja',
+          shortDesc: 'Worship of the divine architect for machinery, tools, and factories.',
+          description: 'Vishwakarma Puja is widely celebrated in Odisha to honor Lord Vishwakarma, the divine architect. Machinery, vehicles, tools, factories, and construction sites are worshipped for smooth operation and safety.',
+          keyInsights: [
+            'Annual worship of Lord Vishwakarma for industrial & technical success.',
+            'Blessing of tools, vehicles, machines, and software systems.',
+            'Prevents workplace accidents and equipment breakdown.',
+            'Promotes industrial productivity and craftsmanship.',
+            'Conducted by professional Odia Pandits at workplace or home.'
+          ],
+          promise: ['Highly Qualified Vedic Odia Pandits.', 'All rituals follow authentic Odia Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality and Authenticity.'],
+          priceMin: 4200, priceMax: 12000, rating: 4.8, reviewCount: 39, duration: '1-2 hours', defaultLanguage: 'odia', imageType: 'pooja'
+        }
+      ]
+    },
+    {
       id: 'ceremonies',
       name: 'Ceremonies',
       icon: '🪔',

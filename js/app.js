@@ -136,8 +136,27 @@ function initDropdowns() {
       langText.textContent = item.textContent;
       document.querySelectorAll('#lang-menu .vpp-dropdown__item').forEach(el => el.classList.remove('vpp-dropdown__item--active'));
       item.classList.add('vpp-dropdown__item--active');
+      handleRoute();
     }
   });
+
+  const footerCityLinks = document.getElementById('footer-city-links');
+  if (footerCityLinks) {
+    footerCityLinks.addEventListener('click', (e) => {
+      const link = e.target.closest('a[data-city]');
+      if (link) {
+        const cityId = link.dataset.city;
+        state.selectedCity = cityId;
+        const cityObj = (window.APP_DATA.cities || []).find(c => c.id === cityId);
+        if (cityObj && cityText) {
+          cityText.textContent = cityObj.name;
+        }
+        document.querySelectorAll('#city-menu .vpp-dropdown__item').forEach(el => {
+          el.classList.toggle('vpp-dropdown__item--active', el.dataset.value === cityId);
+        });
+      }
+    });
+  }
 }
 
 function handleRoute() {
@@ -169,6 +188,65 @@ function handleRoute() {
   renderHome();
 }
 
+function renderGroupedServices(services, categoryId, langName) {
+  const groups = {};
+  services.forEach(serv => {
+    const grp = serv.group || 'Pujas';
+    if (!groups[grp]) groups[grp] = [];
+    groups[grp].push(serv);
+  });
+
+  const groupIcons = {
+    'Pujas': '📿',
+    'Ceremonies': '🪔',
+    'Havans': '🔥',
+    'Festival pujas': '🎊',
+    'Jaaps': '📿',
+    'Paths': '📖',
+    'Shanti pujas': '☮️'
+  };
+
+  let html = '';
+  for (const groupName in groups) {
+    const groupIcon = groupIcons[groupName] || '📿';
+    const groupCards = groups[groupName].map(service => {
+      const imageUrl = getServiceImage(service);
+      return `
+        <div class="vpp-service-card slide-up" data-category="${categoryId}" data-service="${service.id}" onclick="window.location.hash='#/service/${categoryId}/${service.id}'">
+          <div class="vpp-service-card__image-wrap">
+            <img src="${imageUrl}" class="vpp-service-card__img" alt="${service.name}" loading="lazy">
+            <div class="vpp-service-card__gradient"></div>
+            <span class="vpp-service-card__badge">${service.group || langName + ' Puja'}</span>
+          </div>
+          <div class="vpp-service-card__body">
+            <h3 class="vpp-service-card__title">${service.name}</h3>
+            <p class="vpp-service-card__excerpt">${service.shortDesc || ''}</p>
+            <div class="vpp-service-card__footer">
+              <span class="vpp-service-card__price">₹${service.priceMin ? service.priceMin.toLocaleString('en-IN') : '0'}</span>
+              <span class="vpp-service-card__rating">
+                <span class="vpp-service-card__stars">${renderStars(service.rating || 0)}</span>
+                ${service.rating || 0}
+              </span>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    html += `
+      <div class="vpp-service-group-block" style="margin-bottom: 40px;">
+        <div class="vpp-subheader-banner" style="margin-bottom: 20px;">
+          <span class="vpp-subheader-title">${groupIcon} ${groupName}</span>
+        </div>
+        <div class="vpp-services-grid">
+          ${groupCards}
+        </div>
+      </div>
+    `;
+  }
+  return html;
+}
+
 function renderHome() {
   state.currentView = 'home';
   document.getElementById('hero-section').classList.remove('hidden');
@@ -178,7 +256,24 @@ function renderHome() {
 
   const content = document.getElementById('app-content');
   
-  let categoriesHtml = window.APP_DATA.categories.map(category => `
+  const currentLang = state.selectedLanguage || 'telugu';
+  const langObj = (window.APP_DATA.languages || []).find(l => l.id === currentLang);
+  const langName = langObj ? langObj.name : currentLang;
+
+  // Filter categories matching current selected language
+  let visibleCategories = window.APP_DATA.categories.filter(c => {
+    if (currentLang === 'telugu' || currentLang === 'english') {
+      return !c.defaultLanguage || c.defaultLanguage === 'telugu';
+    }
+    return c.defaultLanguage === currentLang;
+  });
+
+  // Fallback if no specific categories defined for selected language yet
+  if (visibleCategories.length === 0) {
+    visibleCategories = window.APP_DATA.categories.filter(c => !c.defaultLanguage || c.defaultLanguage === 'telugu');
+  }
+
+  let categoriesHtml = visibleCategories.map(category => `
     <div class="vpp-category-card slide-up" data-category="${category.id}" onclick="window.location.hash='#/category/${category.id}'">
       <div class="vpp-category-card__icon-wrap" style="background: ${category.gradient}">
         <span class="vpp-category-card__icon">${category.icon}</span>
@@ -195,8 +290,11 @@ function renderHome() {
     <section class="vpp-section">
       <div class="container">
         <div class="vpp-section__header">
-          <h2 class="vpp-section__title">Our Sacred Services</h2>
-          <p class="vpp-section__subtitle">Choose from over 120 authentic Vedic rituals performed by certified priests</p>
+          <div style="display: flex; justify-content: center; margin-bottom: 8px;">
+            <span class="vpp-badge--gold">Language: ${langName}</span>
+          </div>
+          <h2 class="vpp-section__title">${langName} Sacred Categories</h2>
+          <p class="vpp-section__subtitle">Explore authentic ${langName} ritual categories performed by certified priests</p>
         </div>
         <div class="vpp-categories-grid">
           ${categoriesHtml}
@@ -208,6 +306,7 @@ function renderHome() {
   initScrollObserver();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
 function renderAllServices() {
   state.currentView = 'all-services';
   document.getElementById('hero-section').classList.add('hidden');
@@ -222,7 +321,22 @@ function renderAllServices() {
 
   const content = document.getElementById('app-content');
   
-  let categoriesHtml = window.APP_DATA.categories.map(category => {
+  const currentLang = state.selectedLanguage || 'telugu';
+  const langObj = (window.APP_DATA.languages || []).find(l => l.id === currentLang);
+  const langName = langObj ? langObj.name : currentLang;
+
+  let targetCategories = window.APP_DATA.categories.filter(c => {
+    if (currentLang === 'telugu' || currentLang === 'english') {
+      return !c.defaultLanguage || c.defaultLanguage === 'telugu';
+    }
+    return c.defaultLanguage === currentLang;
+  });
+
+  if (targetCategories.length === 0) {
+    targetCategories = window.APP_DATA.categories.filter(c => !c.defaultLanguage || c.defaultLanguage === 'telugu');
+  }
+
+  let categoriesHtml = targetCategories.map(category => {
     let servicesListHtml = (category.services || []).map(service => `
       <a href="#/service/${category.id}/${service.id}" class="vpp-all-services__item">
         <span class="vpp-all-services__item-icon">${category.icon}</span>
@@ -247,8 +361,8 @@ function renderAllServices() {
     <section class="vpp-section" style="padding-top: 40px">
       <div class="container">
         <div class="vpp-section__header">
-          <h2 class="vpp-section__title">All Sacred Rituals</h2>
-          <p class="vpp-section__subtitle">Browse our complete list of 104+ Vedic services and ceremonies</p>
+          <h2 class="vpp-section__title">${langName} Sacred Categories</h2>
+          <p class="vpp-section__subtitle">Browse all authentic ${langName} services and ceremonies by category</p>
         </div>
         <div class="vpp-all-services-grid">
           ${categoriesHtml}
@@ -302,6 +416,12 @@ function renderCategory(categoryId) {
     `;
   }).join('');
 
+  let subheaderHtml = category.subheader ? `
+    <div class="vpp-subheader-banner">
+      <span class="vpp-subheader-title">📿 ${category.subheader}</span>
+    </div>
+  ` : '';
+
   content.innerHTML = `
     <section class="vpp-section" style="padding-top: 40px">
       <div class="container">
@@ -310,6 +430,7 @@ function renderCategory(categoryId) {
             <h2 class="vpp-services__title">${category.name}</h2>
             <span class="vpp-services__count">${category.services ? category.services.length : 0} services available</span>
           </div>
+          ${subheaderHtml}
           <div class="vpp-services-grid">
             ${servicesHtml}
           </div>
@@ -485,23 +606,33 @@ function renderGallery() {
   
   const content = document.getElementById('app-content');
   
-  let allServices = [];
-  if (window.APP_DATA && window.APP_DATA.categories) {
-    window.APP_DATA.categories.forEach(cat => {
-      if (cat.services) {
-        cat.services.forEach(serv => {
-          allServices.push({
-            ...serv,
-            categoryName: cat.name,
-            categoryId: cat.id,
-            categoryIcon: cat.icon
-          });
-        });
-      }
-    });
+  const currentLang = state.selectedLanguage || 'telugu';
+  let targetCategories = (window.APP_DATA.categories || []).filter(c => {
+    if (currentLang === 'telugu' || currentLang === 'english') {
+      return !c.defaultLanguage || c.defaultLanguage === 'telugu';
+    }
+    return c.defaultLanguage === currentLang;
+  });
+
+  if (targetCategories.length === 0) {
+    targetCategories = (window.APP_DATA.categories || []).filter(c => !c.defaultLanguage || c.defaultLanguage === 'telugu');
   }
 
-  const categoriesList = window.APP_DATA.categories || [];
+  let allServices = [];
+  targetCategories.forEach(cat => {
+    if (cat.services) {
+      cat.services.forEach(serv => {
+        allServices.push({
+          ...serv,
+          categoryName: cat.name,
+          categoryId: cat.id,
+          categoryIcon: cat.icon
+        });
+      });
+    }
+  });
+
+  const categoriesList = targetCategories;
   let filterButtonsHtml = `<button class="vpp-gallery-filter-btn vpp-gallery-filter-btn--active" data-filter="all">All Poojas</button>`;
   filterButtonsHtml += categoriesList.map(cat => 
     `<button class="vpp-gallery-filter-btn" data-filter="${cat.id}">${cat.name}</button>`
