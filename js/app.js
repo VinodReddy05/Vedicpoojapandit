@@ -1,14 +1,88 @@
 const state = {
-  currentView: 'home', // 'home' | 'category' | 'detail' | 'gallery'
+  currentView: 'home', // 'home' | 'category' | 'detail' | 'gallery' | 'admin'
   selectedCity: 'hyderabad',
   selectedLanguage: 'telugu',
   currentCategoryId: null,
   currentServiceId: null
 };
 
+// LocalStorage Admin Overrides Helpers
+function getCustomPrices() {
+  try {
+    return JSON.parse(localStorage.getItem('vpp_custom_prices') || '{}');
+  } catch (e) {
+    return {};
+  }
+}
+
+function saveCustomPrice(serviceId, priceMin, priceMax) {
+  const prices = getCustomPrices();
+  prices[serviceId] = {
+    priceMin: parseInt(priceMin) || 0,
+    priceMax: parseInt(priceMax) || 0
+  };
+  localStorage.setItem('vpp_custom_prices', JSON.stringify(prices));
+}
+
+function getCustomImages() {
+  try {
+    return JSON.parse(localStorage.getItem('vpp_custom_images') || '{}');
+  } catch (e) {
+    return {};
+  }
+}
+
+function saveCustomImage(serviceId, imageData) {
+  const images = getCustomImages();
+  images[serviceId] = imageData;
+  localStorage.setItem('vpp_custom_images', JSON.stringify(images));
+}
+
+function resetCustomService(serviceId) {
+  const prices = getCustomPrices();
+  delete prices[serviceId];
+  localStorage.setItem('vpp_custom_prices', JSON.stringify(prices));
+
+  const images = getCustomImages();
+  delete images[serviceId];
+  localStorage.setItem('vpp_custom_images', JSON.stringify(images));
+}
+
+function getEffectiveService(service) {
+  if (!service) return service;
+  const prices = getCustomPrices();
+  const images = getCustomImages();
+  
+  const customP = prices[service.id];
+  const customImg = images[service.id];
+
+  return {
+    ...service,
+    priceMin: customP ? customP.priceMin : service.priceMin,
+    priceMax: customP ? customP.priceMax : service.priceMax,
+    image: customImg ? customImg : service.image
+  };
+}
+
+function showToast(message) {
+  let toast = document.getElementById('vpp-toast-el');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'vpp-toast-el';
+    toast.className = 'vpp-toast';
+    document.body.appendChild(toast);
+  }
+  toast.innerHTML = `<span class="vpp-toast__icon">🕉️</span> <span>${message}</span>`;
+  toast.classList.add('vpp-toast--show');
+  setTimeout(() => {
+    toast.classList.remove('vpp-toast--show');
+  }, 3000);
+}
+
 // Image mapping helper function
-function getServiceImage(service) {
-  if (service.image) return service.image;
+function getServiceImage(rawService) {
+  const service = getEffectiveService(rawService);
+  if (service && service.image) return service.image;
   
   const specificImages = {
     'satyanarayana-pooja': 'assets/images/satyanarayana_pooja.png',
@@ -162,7 +236,10 @@ function initDropdowns() {
 function handleRoute() {
   const hash = window.location.hash;
   
-  if (hash === '#/all-services') {
+  if (hash.startsWith('#/admin')) {
+    renderAdmin();
+    return;
+  } else if (hash === '#/all-services') {
     renderAllServices();
     return;
   } else if (hash === '#/gallery') {
@@ -468,6 +545,10 @@ function renderDetail(categoryId, serviceId) {
   const insightsHtml = (service.keyInsights || []).map(i => `<li class="vpp-detail__insight-item">${i}</li>`).join('');
   const promiseHtml = (service.promise || []).map(p => `<li class="vpp-detail__promise-item">${p}</li>`).join('');
 
+  const cityObj = (window.APP_DATA.cities || []).find(c => c.id === state.selectedCity);
+  const cityName = cityObj ? cityObj.name : (state.selectedCity || 'Hyderabad');
+  const waText = encodeURIComponent(`Namaste! Karunakar pandit, I would like to book the ${service.name} service in ${cityName}.`);
+
   content.innerHTML = `
     <section class="vpp-detail">
       <div class="container">
@@ -502,8 +583,8 @@ function renderDetail(categoryId, serviceId) {
               </ul>
             </div>
             <div class="vpp-detail__actions">
-              <a href="https://wa.me/919014747545?text=Namaste!%20I%20would%20like%20to%20book%20the%20${encodeURIComponent(service.name)}%20service%20in%20${state.selectedCity}." target="_blank" class="vpp-btn vpp-btn--primary" style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: var(--shadow-gold);">🪔 Book Now</a>
-              <a href="https://wa.me/919014747545?text=Namaste!%20I%20would%20like%20to%20book%20the%20${encodeURIComponent(service.name)}%20service%20in%20${state.selectedCity}." target="_blank" class="vpp-btn vpp-btn--whatsapp" style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">💬 WhatsApp</a>
+              <a href="https://wa.me/919014747545?text=${waText}" target="_blank" class="vpp-btn vpp-btn--primary" style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: var(--shadow-gold);">🪔 Book Now</a>
+              <a href="https://wa.me/919014747545?text=${waText}" target="_blank" class="vpp-btn vpp-btn--whatsapp" style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">💬 WhatsApp</a>
             </div>
           </div>
         </div>
@@ -708,5 +789,378 @@ function renderGallery() {
   });
 
   initScrollObserver();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderAdmin() {
+  state.currentView = 'admin';
+  const hero = document.getElementById('hero-section');
+  if (hero) hero.classList.add('hidden');
+  
+  const breadcrumb = document.getElementById('breadcrumb');
+  if (breadcrumb) breadcrumb.classList.remove('hidden');
+
+  const hash = window.location.hash || '#/admin';
+  let initialSearch = '';
+  let initialCategory = 'all';
+
+  if (hash.includes('/category/')) {
+    const parts = hash.split('/');
+    if (parts[3]) initialCategory = parts[3];
+  } else if (hash.includes('/service/')) {
+    const parts = hash.split('/');
+    const targetServiceId = parts[parts.length - 1];
+    (window.APP_DATA.categories || []).forEach(c => {
+      (c.services || []).forEach(s => {
+        if (s.id === targetServiceId) {
+          initialSearch = s.name;
+          initialCategory = c.id;
+        }
+      });
+    });
+  }
+  
+  renderBreadcrumb([
+    { label: 'Home', hash: '#/' },
+    { label: 'Admin Portal', hash: '#/admin' }
+  ]);
+
+  const content = document.getElementById('app-content');
+  if (!content) return;
+
+  // Check Admin Session Authentication
+  let isAuth = false;
+  try {
+    isAuth = sessionStorage.getItem('vpp_admin_auth') === 'true';
+  } catch (e) {
+    isAuth = false;
+  }
+
+  if (!isAuth) {
+    content.innerHTML = `
+      <section class="vpp-section" style="padding-top: 40px;">
+        <div class="container">
+          <div class="vpp-admin-login-card" style="opacity: 1; visibility: visible;">
+            <span style="font-size: 3.2rem;">🔐</span>
+            <h2 style="color: var(--color-gold); font-size: 1.8rem; margin: 12px 0 6px 0;">Pandit Admin Login</h2>
+            <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; margin-bottom: 24px;">Enter credentials to manage prices and custom images.</p>
+            
+            <div style="text-align: left; margin-bottom: 16px;">
+              <label style="color: var(--color-gold); font-size: 0.8rem; font-weight: 600; margin-bottom: 6px; display: block; letter-spacing: 0.5px;">ADMIN EMAIL</label>
+              <input type="email" id="admin-email-input" class="vpp-admin-input" placeholder="admin@gmail.com" style="margin-bottom: 0;" autofocus>
+            </div>
+
+            <div style="text-align: left; margin-bottom: 24px;">
+              <label style="color: var(--color-gold); font-size: 0.8rem; font-weight: 600; margin-bottom: 6px; display: block; letter-spacing: 0.5px;">PASSWORD</label>
+              <input type="password" id="admin-pass-input" class="vpp-admin-input" placeholder="••••••••" style="margin-bottom: 0;">
+            </div>
+
+            <button id="admin-login-btn" class="vpp-btn vpp-btn--primary" style="width: 100%; border: none; padding: 12px; font-weight: 600; font-size: 1rem;">Login to Control Panel</button>
+            
+            <div id="admin-error-msg" style="color: #FF6B6B; font-size: 0.85rem; margin-top: 16px; display: none; background: rgba(255,0,0,0.15); padding: 10px 14px; border-radius: 6px; border: 1px solid rgba(255,0,0,0.3);">
+              ⚠️ Invalid Email or Password! Please try again.
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
+
+    const loginBtn = document.getElementById('admin-login-btn');
+    const emailInput = document.getElementById('admin-email-input');
+    const passInput = document.getElementById('admin-pass-input');
+    const errorMsg = document.getElementById('admin-error-msg');
+
+    function attemptLogin() {
+      const email = emailInput ? emailInput.value.trim().toLowerCase() : '';
+      const pass = passInput ? passInput.value : '';
+
+      if (email === 'admin@gmail.com' && pass === '12341234') {
+        sessionStorage.setItem('vpp_admin_auth', 'true');
+        renderAdmin();
+      } else if (errorMsg) {
+        errorMsg.style.display = 'block';
+      }
+    }
+
+    if (loginBtn) loginBtn.addEventListener('click', attemptLogin);
+    if (emailInput) emailInput.addEventListener('keyup', (e) => { if (e.key === 'Enter') attemptLogin(); });
+    if (passInput) passInput.addEventListener('keyup', (e) => { if (e.key === 'Enter') attemptLogin(); });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return;
+  }
+
+  // Admin Authenticated View
+  const languagesList = window.APP_DATA.languages || [];
+  let currentAdminLang = state.selectedLanguage || 'telugu';
+  let currentAdminCategory = initialCategory || 'all';
+
+  function buildAdminUI() {
+    let targetCategories = (window.APP_DATA.categories || []).filter(c => {
+      if (currentAdminLang === 'telugu' || currentAdminLang === 'english') {
+        return !c.defaultLanguage || c.defaultLanguage === 'telugu';
+      }
+      return c.defaultLanguage === currentAdminLang;
+    });
+
+    if (targetCategories.length === 0) {
+      targetCategories = (window.APP_DATA.categories || []).filter(c => !c.defaultLanguage || c.defaultLanguage === 'telugu');
+    }
+
+    const currentLangObj = languagesList.find(l => l.id === currentAdminLang);
+    const langName = currentLangObj ? currentLangObj.name : currentAdminLang;
+
+    // Category cards HTML
+    let categoryCardsHtml = targetCategories.map(cat => `
+      <div class="vpp-category-card ${currentAdminCategory === cat.id ? 'vpp-category-card--active' : ''}" style="cursor: pointer; ${currentAdminCategory === cat.id ? 'border: 2px solid var(--color-gold); background: rgba(212,175,55,0.15);' : ''}" onclick="window.setAdminCategory('${cat.id}')">
+        <div class="vpp-category-card__icon-wrap" style="background: ${cat.gradient}">
+          <span class="vpp-category-card__icon">${cat.icon}</span>
+        </div>
+        <div class="vpp-category-card__content">
+          <h3 class="vpp-category-card__title">${cat.name}</h3>
+          <p class="vpp-category-card__count">${cat.services ? cat.services.length : 0} services</p>
+        </div>
+      </div>
+    `).join('');
+
+    content.innerHTML = `
+      <section class="vpp-section" style="padding-top: 20px;">
+        <div class="container">
+          <!-- Control Panel Header -->
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; background: var(--color-maroon-dark); padding: 20px 24px; border-radius: var(--radius-md); border: 1px solid rgba(212, 175, 55, 0.4);">
+            <div>
+              <h2 style="color: var(--color-gold); font-size: 1.6rem; margin: 0 0 4px 0;">🔐 Pandit Admin Control Panel</h2>
+              <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin: 0;">Browse regional poojas by language & category, edit prices, and upload custom images directly from mobile gallery.</p>
+            </div>
+            <div style="display: flex; gap: 12px;">
+              <button id="admin-reset-all-btn" class="vpp-btn" style="background: rgba(255,255,255,0.1); color: #FFF; border: 1px solid rgba(255,255,255,0.3); font-size: 0.85rem; padding: 8px 14px;">🔄 Reset All Defaults</button>
+              <button id="admin-logout-btn" class="vpp-btn" style="background: rgba(229, 81, 0, 0.2); color: var(--color-gold); border: 1px solid var(--color-gold); font-size: 0.85rem; padding: 8px 14px;">🚪 Logout</button>
+            </div>
+          </div>
+
+          <!-- Language Selector Bar -->
+          <div style="background: #FFF; padding: 16px 20px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); margin-bottom: 24px; border: 1px solid var(--color-border);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+              <span style="font-weight: 600; color: var(--text-dark); font-size: 0.95rem;">🌐 SELECT LANGUAGE TO EDIT:</span>
+              <span class="vpp-badge--gold">${langName} Selected</span>
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              ${languagesList.map(lang => `
+                <button class="vpp-btn ${currentAdminLang === lang.id ? 'vpp-btn--primary' : ''}" style="${currentAdminLang !== lang.id ? 'background: #F0F0F0; color: #333;' : ''} font-size: 0.85rem; padding: 6px 14px;" onclick="window.setAdminLanguage('${lang.id}')">
+                  ${lang.name}
+                </button>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Language Category Cards Overview -->
+          <div style="margin-bottom: 32px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h3 style="font-size: 1.2rem; color: var(--text-dark); margin: 0;">${langName} Categories</h3>
+              <button class="vpp-btn" style="font-size: 0.8rem; padding: 4px 12px; background: ${currentAdminCategory === 'all' ? 'var(--color-saffron)' : '#E0E0E0'}; color: ${currentAdminCategory === 'all' ? '#FFF' : '#333'};" onclick="window.setAdminCategory('${currentAdminCategory === 'all' ? '' : 'all'}')">Show All Categories</button>
+            </div>
+            <div class="vpp-categories-grid">
+              ${categoryCardsHtml}
+            </div>
+          </div>
+
+          <!-- Search & Filter Bar -->
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; align-items: center;">
+            <input type="text" id="admin-search-input" value="${initialSearch}" placeholder="🔍 Search any pooja by name..." style="flex: 1; min-width: 240px; padding: 10px 16px; border-radius: 4px; border: 1px solid #CCC; font-size: 0.95rem;">
+            <span id="admin-services-count" style="font-size: 0.9rem; font-weight: 500; color: var(--text-light);"></span>
+          </div>
+
+          <!-- Admin Service Cards Grid -->
+          <div id="admin-services-grid" class="vpp-admin-grid"></div>
+        </div>
+      </section>
+    `;
+
+    // Window helper methods for category and language switching
+    window.setAdminLanguage = function(langId) {
+      currentAdminLang = langId;
+      currentAdminCategory = 'all';
+      buildAdminUI();
+    };
+
+    window.setAdminCategory = function(catId) {
+      currentAdminCategory = catId;
+      buildAdminUI();
+    };
+
+    // Render Grid
+    updateAdminGrid();
+
+    // Event listeners
+    const searchInput = document.getElementById('admin-search-input');
+    if (searchInput) searchInput.addEventListener('input', updateAdminGrid);
+
+    const logoutBtn = document.getElementById('admin-logout-btn');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', () => {
+        sessionStorage.removeItem('vpp_admin_auth');
+        window.location.hash = '#/';
+      });
+    }
+
+    const resetAllBtn = document.getElementById('admin-reset-all-btn');
+    if (resetAllBtn) {
+      resetAllBtn.addEventListener('click', () => {
+        if (confirm('Are you sure you want to reset all admin custom prices and images back to default?')) {
+          localStorage.removeItem('vpp_custom_prices');
+          localStorage.removeItem('vpp_custom_images');
+          buildAdminUI();
+          showToast('🔄 All custom edits reset to default!');
+        }
+      });
+    }
+  }
+
+  function updateAdminGrid() {
+    const searchEl = document.getElementById('admin-search-input');
+    const searchTerm = (searchEl && searchEl.value) ? String(searchEl.value).toLowerCase().trim() : '';
+
+    let categoryList = (window.APP_DATA.categories || []).filter(c => {
+      if (currentAdminLang === 'telugu' || currentAdminLang === 'english') {
+        return !c.defaultLanguage || c.defaultLanguage === 'telugu';
+      }
+      return c.defaultLanguage === currentAdminLang;
+    });
+
+    if (categoryList.length === 0) {
+      categoryList = (window.APP_DATA.categories || []).filter(c => !c.defaultLanguage || c.defaultLanguage === 'telugu');
+    }
+
+    if (currentAdminCategory !== 'all') {
+      categoryList = categoryList.filter(c => c.id === currentAdminCategory);
+    }
+
+    let servicesToDisplay = [];
+    categoryList.forEach(cat => {
+      (cat.services || []).forEach(serv => {
+        if (!searchTerm || serv.name.toLowerCase().includes(searchTerm)) {
+          servicesToDisplay.push({
+            ...serv,
+            categoryId: cat.id,
+            categoryName: cat.name,
+            categoryIcon: cat.icon
+          });
+        }
+      });
+    });
+
+    const countEl = document.getElementById('admin-services-count');
+    if (countEl) countEl.textContent = `Showing ${servicesToDisplay.length} Poojas`;
+
+    const gridEl = document.getElementById('admin-services-grid');
+    if (!gridEl) return;
+
+    if (servicesToDisplay.length === 0) {
+      gridEl.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #666; background: #FFF; border-radius: 8px;">No matching pooja services found for search/filter.</div>`;
+      return;
+    }
+
+    gridEl.innerHTML = servicesToDisplay.map(s => {
+      const eff = getEffectiveService(s);
+      const activeImg = getServiceImage(eff);
+
+      return `
+        <div class="vpp-admin-card" data-service-id="${s.id}">
+          <div class="vpp-admin-card__header">
+            <img src="${activeImg}" class="vpp-admin-card__thumb" id="admin-thumb-${s.id}" alt="${s.name}">
+            <div>
+              <span style="font-size: 0.75rem; background: rgba(230,81,0,0.1); color: var(--color-saffron); padding: 2px 8px; border-radius: 4px; font-weight: 600;">${s.categoryIcon || '📿'} ${s.categoryName}</span>
+              <h4 class="vpp-admin-card__title" style="margin-top: 4px;">${s.name}</h4>
+            </div>
+          </div>
+
+          <div style="background: #F9F9F9; padding: 10px; border-radius: 4px; display: flex; flex-direction: column; gap: 8px; border: 1px dashed #DDD;">
+            <span style="font-size: 0.75rem; font-weight: 600; color: #555;">📸 CUSTOM POOJA IMAGE:</span>
+            <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+              <label class="vpp-admin-file-label">
+                📱 Mobile Gallery / Camera
+                <input type="file" class="vpp-admin-file-input" data-service-id="${s.id}" accept="image/*">
+              </label>
+              <button class="vpp-admin-btn-reset admin-url-btn" data-service-id="${s.id}">🔗 URL Link</button>
+            </div>
+          </div>
+
+          <div class="vpp-admin-card__price-row">
+            <div class="vpp-admin-card__price-field">
+              <label class="vpp-admin-card__label">Price Min (₹):</label>
+              <input type="number" class="vpp-admin-card__input-num admin-min-price" value="${eff.priceMin || 0}" data-service-id="${s.id}">
+            </div>
+            <div class="vpp-admin-card__price-field">
+              <label class="vpp-admin-card__label">Price Max (₹):</label>
+              <input type="number" class="vpp-admin-card__input-num admin-max-price" value="${eff.priceMax || 0}" data-service-id="${s.id}">
+            </div>
+          </div>
+
+          <div class="vpp-admin-card__actions">
+            <button class="vpp-admin-btn-save admin-save-btn" data-service-id="${s.id}">💾 Save Changes</button>
+            <button class="vpp-admin-btn-reset admin-reset-service-btn" data-service-id="${s.id}">🔄 Reset</button>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // Attach File Input Listeners
+    document.querySelectorAll('.vpp-admin-file-input').forEach(input => {
+      input.addEventListener('change', (e) => {
+        const serviceId = e.target.dataset.serviceId;
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(evt) {
+            const base64Data = evt.target.result;
+            saveCustomImage(serviceId, base64Data);
+            const thumbEl = document.getElementById(`admin-thumb-${serviceId}`);
+            if (thumbEl) thumbEl.src = base64Data;
+            showToast('✅ Custom photo uploaded successfully!');
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    });
+
+    // Attach URL Listeners
+    document.querySelectorAll('.admin-url-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const serviceId = e.target.dataset.serviceId;
+        const url = prompt('Enter custom image URL link:');
+        if (url && url.trim()) {
+          saveCustomImage(serviceId, url.trim());
+          const thumbEl = document.getElementById(`admin-thumb-${serviceId}`);
+          if (thumbEl) thumbEl.src = url.trim();
+          showToast('✅ Custom image URL saved!');
+        }
+      });
+    });
+
+    // Attach Save Price Listeners
+    document.querySelectorAll('.admin-save-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const card = e.target.closest('.vpp-admin-card');
+        const serviceId = e.target.dataset.serviceId;
+        const minVal = card.querySelector('.admin-min-price').value;
+        const maxVal = card.querySelector('.admin-max-price').value;
+
+        saveCustomPrice(serviceId, minVal, maxVal);
+        showToast('💾 Price updated & published live!');
+      });
+    });
+
+    // Attach Reset Service Listeners
+    document.querySelectorAll('.admin-reset-service-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const serviceId = e.target.dataset.serviceId;
+        resetCustomService(serviceId);
+        updateAdminGrid();
+        showToast('🔄 Reset service to defaults!');
+      });
+    });
+  }
+
+  buildAdminUI();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }

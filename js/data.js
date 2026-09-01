@@ -17,14 +17,14 @@ window.APP_DATA = {
 
   languages: [
     { id: 'telugu', name: 'Telugu' },
-    { id: 'tamil', name: 'Tamil' },
-    { id: 'kannada', name: 'Kannada' },
     { id: 'hindi', name: 'Hindi' },
     { id: 'marathi', name: 'Marathi' },
     { id: 'gujarati', name: 'Gujarati' },
     { id: 'bengali', name: 'Bengali' },
     { id: 'malayalam', name: 'Malayalam' },
     { id: 'odia', name: 'Odia' },
+    { id: 'tamil', name: 'Tamil' },
+    { id: 'kannada', name: 'Kannada' },
     { id: 'english', name: 'English' }
   ],
   defaultLanguage: 'telugu',
@@ -2708,6 +2708,3176 @@ window.APP_DATA = {
           priceMin: 2000, priceMax: 7000, rating: 4.8, reviewCount: 35, duration: '1-2 hours', defaultLanguage: 'telugu', imageType: 'festival'
         }
       ]
+    },
+    {
+  "id": "hindi-pujas",
+  "name": "Pujas",
+  "icon": "📿",
+  "gradient": "linear-gradient(135deg, #FF6B00, #E65100)",
+  "description": "Authentic Hindi Pujas and sacred worship rituals",
+  "defaultLanguage": "hindi",
+  "services": [
+    {
+      "id": "hindi-annaprashan-puja",
+      "name": "Annaprashan Puja",
+      "shortDesc": "First solid grain feeding ceremony for baby as per Hindi tradition.",
+      "imageType": "ceremony",
+      "description": "Annaprashan Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Annaprashan Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-bhoomi-puja",
+      "name": "Bhoomi Puja",
+      "shortDesc": "Land blessing & Vastu purification before starting construction.",
+      "imageType": "pooja",
+      "description": "Bhoomi Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Bhoomi Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-brihaspati-vrat-udyapan",
+      "name": "Brihaspati Vrat Udyapan Puja",
+      "shortDesc": "Conclusion ritual for Thursday Jupiter fasts.",
+      "imageType": "vratam",
+      "description": "Brihaspati Vrat Udyapan Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Brihaspati Vrat Udyapan Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-durga-puja",
+      "name": "Durga Puja",
+      "shortDesc": "Worship of Goddess Durga for protection, power, and victory.",
+      "imageType": "devi",
+      "description": "Durga Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Durga Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-ekadashi-vrat-udyapan",
+      "name": "Ekadashi Vrat Udyapan Puja",
+      "shortDesc": "Sacred completion ceremony for Ekadashi fasts.",
+      "imageType": "vratam",
+      "description": "Ekadashi Vrat Udyapan Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Ekadashi Vrat Udyapan Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-engagement-sagai",
+      "name": "Engagement Puja-Sagai",
+      "shortDesc": "Traditional Hindi betrothal & ring exchange ceremony.",
+      "imageType": "ceremony",
+      "description": "Engagement Puja-Sagai performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Engagement Puja-Sagai as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-fix-your-muhurat",
+      "name": "Fix Your Muhurat",
+      "shortDesc": "Astrological consultation for fixing auspicious timings.",
+      "imageType": "pooja",
+      "description": "Fix Your Muhurat performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Fix Your Muhurat as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-gand-mool-nakshatra-shanti",
+      "name": "Gand Mool Nakshatra Shanti Puja",
+      "shortDesc": "Pacification ritual for babies born under Gand Mool Nakshatras.",
+      "imageType": "shanti",
+      "description": "Gand Mool Nakshatra Shanti Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Gand Mool Nakshatra Shanti Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-ganesh-puja",
+      "name": "Ganesh Puja",
+      "shortDesc": "Invocational worship of Lord Ganesha for obstacle-free success.",
+      "imageType": "pooja",
+      "description": "Ganesh Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Ganesh Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-ganpati-atharvashirsha-path-abhishek",
+      "name": "Ganpati Atharvashirsha Path & Abhishek",
+      "shortDesc": "Continuous recitation of Ganpati Atharvashirsha with Milk Abhishekam.",
+      "imageType": "pooja",
+      "description": "Ganpati Atharvashirsha Path & Abhishek performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Ganpati Atharvashirsha Path & Abhishek as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-godh-bharai-puja",
+      "name": "Godh Bharai Puja (Baby Shower)",
+      "shortDesc": "Traditional Hindi baby shower and mother blessing ceremony.",
+      "imageType": "ceremony",
+      "description": "Godh Bharai Puja (Baby Shower) performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Godh Bharai Puja (Baby Shower) as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-graha-shanti-puja",
+      "name": "Graha Shanti Puja",
+      "shortDesc": "Pacifying all nine planets for health, career, and harmony.",
+      "imageType": "shanti",
+      "description": "Graha Shanti Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Graha Shanti Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-griha-pravesh",
+      "name": "Griha Pravesh",
+      "shortDesc": "Sacred Hindi housewarming and Vastu purification ceremony.",
+      "imageType": "ceremony",
+      "description": "Griha Pravesh performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Griha Pravesh as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-haldi-ceremony",
+      "name": "Haldi Ceremony",
+      "shortDesc": "Pre-wedding turmeric blessing ceremony for bride/groom.",
+      "imageType": "ceremony",
+      "description": "Haldi Ceremony performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Haldi Ceremony as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-janamdin-birthday-puja",
+      "name": "Janamdin Puja - Birthday Puja",
+      "shortDesc": "Birthday prayer for health, longevity, and growth.",
+      "imageType": "pooja",
+      "description": "Janamdin Puja - Birthday Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Janamdin Puja - Birthday Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-kali-maa-pujan",
+      "name": "Kali Maa Pujan",
+      "shortDesc": "Worship of Maa Kali for destroying fear and negativity.",
+      "imageType": "devi",
+      "description": "Kali Maa Pujan performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Kali Maa Pujan as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-kuber-upasana-puja",
+      "name": "Kuber Upasana Puja",
+      "shortDesc": "Worship of Lord Kuber for financial growth.",
+      "imageType": "pooja",
+      "description": "Kuber Upasana Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Kuber Upasana Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-lalitha-sahasranam-puja",
+      "name": "Lalitha Sahasranam Puja",
+      "shortDesc": "Chanting 1000 divine names of Goddess Lalitha.",
+      "imageType": "devi",
+      "description": "Lalitha Sahasranam Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Lalitha Sahasranam Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-mahalaxmi-puja",
+      "name": "Mahalaxmi Puja",
+      "shortDesc": "Worship of Goddess Mahalaxmi for wealth and prosperity.",
+      "imageType": "pooja",
+      "description": "Mahalaxmi Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Mahalaxmi Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-mundan-chudakarana",
+      "name": "Mundan or Chudakarana Ceremony",
+      "shortDesc": "First head-shaving ritual for child health and purity.",
+      "imageType": "ceremony",
+      "description": "Mundan or Chudakarana Ceremony performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Mundan or Chudakarana Ceremony as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-murti-pran-pratishta",
+      "name": "Murti Pran Pratishta At Home",
+      "shortDesc": "Consecration of deity idol before home mandir worship.",
+      "imageType": "pooja",
+      "description": "Murti Pran Pratishta At Home performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Murti Pran Pratishta At Home as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-namkaran-puja",
+      "name": "Namkaran Puja",
+      "shortDesc": "Formal naming and blessing ceremony for newborn.",
+      "imageType": "ceremony",
+      "description": "Namkaran Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Namkaran Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-new-vehicle-puja",
+      "name": "New Vehicle Puja",
+      "shortDesc": "Blessing ritual for new car, bike, or commercial vehicle.",
+      "imageType": "pooja",
+      "description": "New Vehicle Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic New Vehicle Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-office-opening-puja",
+      "name": "Office Opening Puja",
+      "shortDesc": "Inaugural worship for new shop, office, or business premise.",
+      "imageType": "pooja",
+      "description": "Office Opening Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Office Opening Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-punsavan-sanskar",
+      "name": "Punsavan Sanskar",
+      "shortDesc": "Second prenatal Vedic ritual for healthy offspring.",
+      "imageType": "ceremony",
+      "description": "Punsavan Sanskar performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Punsavan Sanskar as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-roka-ceremony",
+      "name": "Roka Ceremony",
+      "shortDesc": "Initial family alliance & marriage commitment ceremony.",
+      "imageType": "ceremony",
+      "description": "Roka Ceremony performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Roka Ceremony as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-rudrabhishek-puja",
+      "name": "Rudrabhishek Puja",
+      "shortDesc": "Sacred bath to Shivling with Sri Rudram chanting.",
+      "imageType": "pooja",
+      "description": "Rudrabhishek Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Rudrabhishek Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-saraswati-puja",
+      "name": "Saraswati Puja",
+      "shortDesc": "Worship of Maa Saraswati for wisdom, education, and speech.",
+      "imageType": "pooja",
+      "description": "Saraswati Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Saraswati Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-satyanarayan-puja",
+      "name": "Satyanarayan Puja",
+      "shortDesc": "Traditional Satyanarayan Vratha & Katha for family peace.",
+      "imageType": "pooja",
+      "description": "Satyanarayan Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Satyanarayan Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-shuddhikaran-puja",
+      "name": "Shuddhikaran Puja",
+      "shortDesc": "Purification ritual for home, space, or individuals.",
+      "imageType": "pooja",
+      "description": "Shuddhikaran Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Shuddhikaran Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-solah-somvar-udyapan",
+      "name": "Solah Somvar Udyapan Puja",
+      "shortDesc": "Udyapan ceremony upon completing 16 Monday Shiva fasts.",
+      "imageType": "vratam",
+      "description": "Solah Somvar Udyapan Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Solah Somvar Udyapan Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-surya-puja",
+      "name": "Surya Puja",
+      "shortDesc": "Worship of Surya Devata for health, leadership, and fame.",
+      "imageType": "pooja",
+      "description": "Surya Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Surya Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-vastu-shanti-puja",
+      "name": "Vastu Shanti Puja",
+      "shortDesc": "Pacifying Vastu Purusha to clear architectural defects.",
+      "imageType": "shanti",
+      "description": "Vastu Shanti Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Vastu Shanti Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-vidyarambham-patti-pujan",
+      "name": "Vidyarambham (Patti Pujan)",
+      "shortDesc": "First learning initiation ritual for young children.",
+      "imageType": "ceremony",
+      "description": "Vidyarambham (Patti Pujan) performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Vidyarambham (Patti Pujan) as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-vishwakarma-puja",
+      "name": "Vishwakarma Puja",
+      "shortDesc": "Worship of divine architect Lord Vishwakarma for tools/machines.",
+      "imageType": "pooja",
+      "description": "Vishwakarma Puja performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Vishwakarma Puja as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-vivah-marriage",
+      "name": "Vivah (Marriage)",
+      "shortDesc": "Authentic Vedic Hindi wedding ceremony.",
+      "imageType": "ceremony",
+      "description": "Vivah (Marriage) performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Vivah (Marriage) as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
+    },
+    {
+      "id": "hindi-yagnopavit-sanskar",
+      "name": "Yagnopavit Sanskar",
+      "shortDesc": "Sacred thread ceremony (Janeu) for young boys.",
+      "imageType": "ceremony",
+      "description": "Yagnopavit Sanskar performed with complete Vedic rituals by expert Hindi Pandits.",
+      "keyInsights": [
+        "Authentic Yagnopavit Sanskar as per Hindi tradition.",
+        "Invokes divine grace & prosperity.",
+        "Conducted by certified Hindi Vedic Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri.",
+        "Guaranteed Punctuality."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi"
     }
+  ]
+},
+    {
+  "id": "hindi-havans",
+  "name": "Havans",
+  "icon": "🔥",
+  "gradient": "linear-gradient(135deg, #FF6B00, #FFA000)",
+  "description": "Sacred Hindi Fire Havan & Homam Rituals",
+  "defaultLanguage": "hindi",
+  "services": [
+    {
+      "id": "hindi-ayush-havan",
+      "name": "Ayush Havan",
+      "shortDesc": "Sacred Ayush Havan for health, prosperity, and divine protection.",
+      "description": "Ayush Havan performed in sacred fire with authentic Hindi Vedic mantras and herbal samagri.",
+      "keyInsights": [
+        "Sacred Ayush Havan fire ritual.",
+        "Destroys negative energy & karmic blocks.",
+        "Performed by senior Hindi Acharyas."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "homam"
+    },
+    {
+      "id": "hindi-chandi-havan",
+      "name": "Chandi Havan",
+      "shortDesc": "Sacred Chandi Havan for health, prosperity, and divine protection.",
+      "description": "Chandi Havan performed in sacred fire with authentic Hindi Vedic mantras and herbal samagri.",
+      "keyInsights": [
+        "Sacred Chandi Havan fire ritual.",
+        "Destroys negative energy & karmic blocks.",
+        "Performed by senior Hindi Acharyas."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "homam"
+    },
+    {
+      "id": "hindi-dhanvantri-havan",
+      "name": "Dhanvantri Havan",
+      "shortDesc": "Sacred Dhanvantri Havan for health, prosperity, and divine protection.",
+      "description": "Dhanvantri Havan performed in sacred fire with authentic Hindi Vedic mantras and herbal samagri.",
+      "keyInsights": [
+        "Sacred Dhanvantri Havan fire ritual.",
+        "Destroys negative energy & karmic blocks.",
+        "Performed by senior Hindi Acharyas."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "homam"
+    },
+    {
+      "id": "hindi-ganapathi-havan",
+      "name": "Ganapathi Havan",
+      "shortDesc": "Sacred Ganapathi Havan for health, prosperity, and divine protection.",
+      "description": "Ganapathi Havan performed in sacred fire with authentic Hindi Vedic mantras and herbal samagri.",
+      "keyInsights": [
+        "Sacred Ganapathi Havan fire ritual.",
+        "Destroys negative energy & karmic blocks.",
+        "Performed by senior Hindi Acharyas."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "homam"
+    },
+    {
+      "id": "hindi-gayatri-havan",
+      "name": "Gayatri Havan",
+      "shortDesc": "Sacred Gayatri Havan for health, prosperity, and divine protection.",
+      "description": "Gayatri Havan performed in sacred fire with authentic Hindi Vedic mantras and herbal samagri.",
+      "keyInsights": [
+        "Sacred Gayatri Havan fire ritual.",
+        "Destroys negative energy & karmic blocks.",
+        "Performed by senior Hindi Acharyas."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "homam"
+    },
+    {
+      "id": "hindi-laxmi-kubera-havan",
+      "name": "Laxmi Kubera Havan",
+      "shortDesc": "Sacred Laxmi Kubera Havan for health, prosperity, and divine protection.",
+      "description": "Laxmi Kubera Havan performed in sacred fire with authentic Hindi Vedic mantras and herbal samagri.",
+      "keyInsights": [
+        "Sacred Laxmi Kubera Havan fire ritual.",
+        "Destroys negative energy & karmic blocks.",
+        "Performed by senior Hindi Acharyas."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "homam"
+    },
+    {
+      "id": "hindi-laxmi-narasimha-havan",
+      "name": "Laxmi Narasimha Havan",
+      "shortDesc": "Sacred Laxmi Narasimha Havan for health, prosperity, and divine protection.",
+      "description": "Laxmi Narasimha Havan performed in sacred fire with authentic Hindi Vedic mantras and herbal samagri.",
+      "keyInsights": [
+        "Sacred Laxmi Narasimha Havan fire ritual.",
+        "Destroys negative energy & karmic blocks.",
+        "Performed by senior Hindi Acharyas."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "homam"
+    },
+    {
+      "id": "hindi-mrityunjaya-havan",
+      "name": "Mrityunjaya Havan",
+      "shortDesc": "Sacred Mrityunjaya Havan for health, prosperity, and divine protection.",
+      "description": "Mrityunjaya Havan performed in sacred fire with authentic Hindi Vedic mantras and herbal samagri.",
+      "keyInsights": [
+        "Sacred Mrityunjaya Havan fire ritual.",
+        "Destroys negative energy & karmic blocks.",
+        "Performed by senior Hindi Acharyas."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "homam"
+    },
+    {
+      "id": "hindi-navagraha-havan",
+      "name": "Navagraha Havan",
+      "shortDesc": "Sacred Navagraha Havan for health, prosperity, and divine protection.",
+      "description": "Navagraha Havan performed in sacred fire with authentic Hindi Vedic mantras and herbal samagri.",
+      "keyInsights": [
+        "Sacred Navagraha Havan fire ritual.",
+        "Destroys negative energy & karmic blocks.",
+        "Performed by senior Hindi Acharyas."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "homam"
+    },
+    {
+      "id": "hindi-rudra-havan",
+      "name": "Rudra Havan",
+      "shortDesc": "Sacred Rudra Havan for health, prosperity, and divine protection.",
+      "description": "Rudra Havan performed in sacred fire with authentic Hindi Vedic mantras and herbal samagri.",
+      "keyInsights": [
+        "Sacred Rudra Havan fire ritual.",
+        "Destroys negative energy & karmic blocks.",
+        "Performed by senior Hindi Acharyas."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "homam"
+    },
+    {
+      "id": "hindi-saraswati-havan",
+      "name": "Saraswati Havan",
+      "shortDesc": "Sacred Saraswati Havan for health, prosperity, and divine protection.",
+      "description": "Saraswati Havan performed in sacred fire with authentic Hindi Vedic mantras and herbal samagri.",
+      "keyInsights": [
+        "Sacred Saraswati Havan fire ritual.",
+        "Destroys negative energy & karmic blocks.",
+        "Performed by senior Hindi Acharyas."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "homam"
+    },
+    {
+      "id": "hindi-sri-sukta-havan",
+      "name": "Sri Sukta Havan",
+      "shortDesc": "Sacred Sri Sukta Havan for health, prosperity, and divine protection.",
+      "description": "Sri Sukta Havan performed in sacred fire with authentic Hindi Vedic mantras and herbal samagri.",
+      "keyInsights": [
+        "Sacred Sri Sukta Havan fire ritual.",
+        "Destroys negative energy & karmic blocks.",
+        "Performed by senior Hindi Acharyas."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "homam"
+    },
+    {
+      "id": "hindi-sudarshan-havan",
+      "name": "Sudarshan Havan",
+      "shortDesc": "Sacred Sudarshan Havan for health, prosperity, and divine protection.",
+      "description": "Sudarshan Havan performed in sacred fire with authentic Hindi Vedic mantras and herbal samagri.",
+      "keyInsights": [
+        "Sacred Sudarshan Havan fire ritual.",
+        "Destroys negative energy & karmic blocks.",
+        "Performed by senior Hindi Acharyas."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards & High Quality Samagri."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "homam"
+    }
+  ]
+},
+    {
+  "id": "hindi-jaaps",
+  "name": "Jaaps",
+  "icon": "📿",
+  "gradient": "linear-gradient(135deg, #1565C0, #42A5F5)",
+  "description": "Mantra Jaaps & Graha Shanti Recitations in Hindi custom",
+  "defaultLanguage": "hindi",
+  "services": [
+    {
+      "id": "hindi-budha-graha-shanti-jaap",
+      "name": "Budha Graha Shanti Jaap",
+      "shortDesc": "Continuous Budha Graha Shanti Jaap for planetary peace and mental clarity.",
+      "description": "Continuous mantra recitation for Budha Graha Shanti Jaap to balance planetary energies and resolve horoscope doshas.",
+      "keyInsights": [
+        "Mantra chanting for Budha Graha Shanti Jaap.",
+        "Mitigates malefic planetary transits.",
+        "Performed by expert Vedic Chanting Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards."
+      ],
+      "priceMin": 3800,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "3-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-chandra-graha-shanti-jaap",
+      "name": "Chandra Graha Shanti Jaap",
+      "shortDesc": "Continuous Chandra Graha Shanti Jaap for planetary peace and mental clarity.",
+      "description": "Continuous mantra recitation for Chandra Graha Shanti Jaap to balance planetary energies and resolve horoscope doshas.",
+      "keyInsights": [
+        "Mantra chanting for Chandra Graha Shanti Jaap.",
+        "Mitigates malefic planetary transits.",
+        "Performed by expert Vedic Chanting Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards."
+      ],
+      "priceMin": 3800,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "3-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-gayatri-mantra-jaap",
+      "name": "Gayatri Mantra Jaap",
+      "shortDesc": "Continuous Gayatri Mantra Jaap for planetary peace and mental clarity.",
+      "description": "Continuous mantra recitation for Gayatri Mantra Jaap to balance planetary energies and resolve horoscope doshas.",
+      "keyInsights": [
+        "Mantra chanting for Gayatri Mantra Jaap.",
+        "Mitigates malefic planetary transits.",
+        "Performed by expert Vedic Chanting Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards."
+      ],
+      "priceMin": 3800,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "3-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-guru-graha-shanti-jaap",
+      "name": "Guru Graha Shanti Jaap",
+      "shortDesc": "Continuous Guru Graha Shanti Jaap for planetary peace and mental clarity.",
+      "description": "Continuous mantra recitation for Guru Graha Shanti Jaap to balance planetary energies and resolve horoscope doshas.",
+      "keyInsights": [
+        "Mantra chanting for Guru Graha Shanti Jaap.",
+        "Mitigates malefic planetary transits.",
+        "Performed by expert Vedic Chanting Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards."
+      ],
+      "priceMin": 3800,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "3-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-ketu-graha-shanti-jaap",
+      "name": "Ketu Graha Shanti Jaap",
+      "shortDesc": "Continuous Ketu Graha Shanti Jaap for planetary peace and mental clarity.",
+      "description": "Continuous mantra recitation for Ketu Graha Shanti Jaap to balance planetary energies and resolve horoscope doshas.",
+      "keyInsights": [
+        "Mantra chanting for Ketu Graha Shanti Jaap.",
+        "Mitigates malefic planetary transits.",
+        "Performed by expert Vedic Chanting Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards."
+      ],
+      "priceMin": 3800,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "3-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-maha-mrityunjaya-jaap",
+      "name": "Maha Mrityunjaya Jaap",
+      "shortDesc": "Continuous Maha Mrityunjaya Jaap for planetary peace and mental clarity.",
+      "description": "Continuous mantra recitation for Maha Mrityunjaya Jaap to balance planetary energies and resolve horoscope doshas.",
+      "keyInsights": [
+        "Mantra chanting for Maha Mrityunjaya Jaap.",
+        "Mitigates malefic planetary transits.",
+        "Performed by expert Vedic Chanting Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards."
+      ],
+      "priceMin": 3800,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "3-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-mangal-graha-shanti-jaap",
+      "name": "Mangal Graha Shanti Jaap",
+      "shortDesc": "Continuous Mangal Graha Shanti Jaap for planetary peace and mental clarity.",
+      "description": "Continuous mantra recitation for Mangal Graha Shanti Jaap to balance planetary energies and resolve horoscope doshas.",
+      "keyInsights": [
+        "Mantra chanting for Mangal Graha Shanti Jaap.",
+        "Mitigates malefic planetary transits.",
+        "Performed by expert Vedic Chanting Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards."
+      ],
+      "priceMin": 3800,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "3-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-rahu-graha-shanti-jaap",
+      "name": "Rahu Graha Shanti Jaap",
+      "shortDesc": "Continuous Rahu Graha Shanti Jaap for planetary peace and mental clarity.",
+      "description": "Continuous mantra recitation for Rahu Graha Shanti Jaap to balance planetary energies and resolve horoscope doshas.",
+      "keyInsights": [
+        "Mantra chanting for Rahu Graha Shanti Jaap.",
+        "Mitigates malefic planetary transits.",
+        "Performed by expert Vedic Chanting Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards."
+      ],
+      "priceMin": 3800,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "3-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-santan-gopal-mantra-jaap",
+      "name": "Santan Gopal Mantra Jaap",
+      "shortDesc": "Continuous Santan Gopal Mantra Jaap for planetary peace and mental clarity.",
+      "description": "Continuous mantra recitation for Santan Gopal Mantra Jaap to balance planetary energies and resolve horoscope doshas.",
+      "keyInsights": [
+        "Mantra chanting for Santan Gopal Mantra Jaap.",
+        "Mitigates malefic planetary transits.",
+        "Performed by expert Vedic Chanting Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards."
+      ],
+      "priceMin": 3800,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "3-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-shani-graha-shanti-jaap",
+      "name": "Shani Graha Shanti Jaap",
+      "shortDesc": "Continuous Shani Graha Shanti Jaap for planetary peace and mental clarity.",
+      "description": "Continuous mantra recitation for Shani Graha Shanti Jaap to balance planetary energies and resolve horoscope doshas.",
+      "keyInsights": [
+        "Mantra chanting for Shani Graha Shanti Jaap.",
+        "Mitigates malefic planetary transits.",
+        "Performed by expert Vedic Chanting Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards."
+      ],
+      "priceMin": 3800,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "3-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-shukra-graha-shanti-jaap",
+      "name": "Shukra Graha Shanti Jaap",
+      "shortDesc": "Continuous Shukra Graha Shanti Jaap for planetary peace and mental clarity.",
+      "description": "Continuous mantra recitation for Shukra Graha Shanti Jaap to balance planetary energies and resolve horoscope doshas.",
+      "keyInsights": [
+        "Mantra chanting for Shukra Graha Shanti Jaap.",
+        "Mitigates malefic planetary transits.",
+        "Performed by expert Vedic Chanting Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards."
+      ],
+      "priceMin": 3800,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "3-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-surya-graha-shanti-jaap",
+      "name": "Surya Graha Shanti Jaap",
+      "shortDesc": "Continuous Surya Graha Shanti Jaap for planetary peace and mental clarity.",
+      "description": "Continuous mantra recitation for Surya Graha Shanti Jaap to balance planetary energies and resolve horoscope doshas.",
+      "keyInsights": [
+        "Mantra chanting for Surya Graha Shanti Jaap.",
+        "Mitigates malefic planetary transits.",
+        "Performed by expert Vedic Chanting Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits.",
+        "Vedic Standards."
+      ],
+      "priceMin": 3800,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "3-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    }
+  ]
+},
+    {
+  "id": "hindi-paths",
+  "name": "Paths",
+  "icon": "📖",
+  "gradient": "linear-gradient(135deg, #2E7D32, #66BB6A)",
+  "description": "Sacred Scriptures Recitations & Paths in Hindi",
+  "defaultLanguage": "hindi",
+  "services": [
+    {
+      "id": "hindi-akhand-ramayan-path",
+      "name": "Akhand Ramayan Path",
+      "shortDesc": "Sacred recitation of Akhand Ramayan Path for peace and protection.",
+      "description": "Complete recitation of Akhand Ramayan Path bringing divine aura, courage, and spiritual joy into the household.",
+      "keyInsights": [
+        "Sacred recitation of Akhand Ramayan Path.",
+        "Creates positive energy shield.",
+        "Conducted by devoted Hindi Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits."
+      ],
+      "priceMin": 3500,
+      "priceMax": 25000,
+      "rating": 4.9,
+      "reviewCount": 45,
+      "duration": "2-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "hindi-chandi-path-durga-saptashati-path-",
+      "name": "Chandi Path (Durga Saptashati Path)",
+      "shortDesc": "Sacred recitation of Chandi Path (Durga Saptashati Path) for peace and protection.",
+      "description": "Complete recitation of Chandi Path (Durga Saptashati Path) bringing divine aura, courage, and spiritual joy into the household.",
+      "keyInsights": [
+        "Sacred recitation of Chandi Path (Durga Saptashati Path).",
+        "Creates positive energy shield.",
+        "Conducted by devoted Hindi Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits."
+      ],
+      "priceMin": 3500,
+      "priceMax": 25000,
+      "rating": 4.9,
+      "reviewCount": 45,
+      "duration": "2-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "hindi-hanuman-chalisa-path",
+      "name": "Hanuman Chalisa Path",
+      "shortDesc": "Sacred recitation of Hanuman Chalisa Path for peace and protection.",
+      "description": "Complete recitation of Hanuman Chalisa Path bringing divine aura, courage, and spiritual joy into the household.",
+      "keyInsights": [
+        "Sacred recitation of Hanuman Chalisa Path.",
+        "Creates positive energy shield.",
+        "Conducted by devoted Hindi Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits."
+      ],
+      "priceMin": 3500,
+      "priceMax": 25000,
+      "rating": 4.9,
+      "reviewCount": 45,
+      "duration": "2-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "hindi-shanti-path",
+      "name": "Shanti Path",
+      "shortDesc": "Sacred recitation of Shanti Path for peace and protection.",
+      "description": "Complete recitation of Shanti Path bringing divine aura, courage, and spiritual joy into the household.",
+      "keyInsights": [
+        "Sacred recitation of Shanti Path.",
+        "Creates positive energy shield.",
+        "Conducted by devoted Hindi Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits."
+      ],
+      "priceMin": 3500,
+      "priceMax": 25000,
+      "rating": 4.9,
+      "reviewCount": 45,
+      "duration": "2-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "hindi-shrimad-bhagwat-mool-path",
+      "name": "Shrimad Bhagwat Mool Path",
+      "shortDesc": "Sacred recitation of Shrimad Bhagwat Mool Path for peace and protection.",
+      "description": "Complete recitation of Shrimad Bhagwat Mool Path bringing divine aura, courage, and spiritual joy into the household.",
+      "keyInsights": [
+        "Sacred recitation of Shrimad Bhagwat Mool Path.",
+        "Creates positive energy shield.",
+        "Conducted by devoted Hindi Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits."
+      ],
+      "priceMin": 3500,
+      "priceMax": 25000,
+      "rating": 4.9,
+      "reviewCount": 45,
+      "duration": "2-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "hindi-sunderkand-path",
+      "name": "Sunderkand Path",
+      "shortDesc": "Sacred recitation of Sunderkand Path for peace and protection.",
+      "description": "Complete recitation of Sunderkand Path bringing divine aura, courage, and spiritual joy into the household.",
+      "keyInsights": [
+        "Sacred recitation of Sunderkand Path.",
+        "Creates positive energy shield.",
+        "Conducted by devoted Hindi Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits."
+      ],
+      "priceMin": 3500,
+      "priceMax": 25000,
+      "rating": 4.9,
+      "reviewCount": 45,
+      "duration": "2-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "hindi-vishnu-sahasranam-path",
+      "name": "Vishnu Sahasranam Path",
+      "shortDesc": "Sacred recitation of Vishnu Sahasranam Path for peace and protection.",
+      "description": "Complete recitation of Vishnu Sahasranam Path bringing divine aura, courage, and spiritual joy into the household.",
+      "keyInsights": [
+        "Sacred recitation of Vishnu Sahasranam Path.",
+        "Creates positive energy shield.",
+        "Conducted by devoted Hindi Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits."
+      ],
+      "priceMin": 3500,
+      "priceMax": 25000,
+      "rating": 4.9,
+      "reviewCount": 45,
+      "duration": "2-4 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "pooja"
+    }
+  ]
+},
+    {
+  "id": "hindi-festival-pujas",
+  "name": "Festival Pujas",
+  "icon": "🎊",
+  "gradient": "linear-gradient(135deg, #F9A825, #FFEE58)",
+  "description": "Hindi Festive Celebrations and Vratam Worship",
+  "defaultLanguage": "hindi",
+  "services": [
+    {
+      "id": "hindi-diwali-lakshmi-puja",
+      "name": "Diwali Lakshmi Puja",
+      "shortDesc": "Festive Diwali Lakshmi Puja worship as per Hindi tradition.",
+      "description": "Auspicious Diwali Lakshmi Puja celebrated with complete Shodasopachara rituals, Bhog offering, and Aarti.",
+      "keyInsights": [
+        "Traditional Diwali Lakshmi Puja celebration.",
+        "Brings joy & divine blessings.",
+        "Performed by certified Hindi Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "festival"
+    },
+    {
+      "id": "hindi-dussehra-puja",
+      "name": "Dussehra Puja",
+      "shortDesc": "Festive Dussehra Puja worship as per Hindi tradition.",
+      "description": "Auspicious Dussehra Puja celebrated with complete Shodasopachara rituals, Bhog offering, and Aarti.",
+      "keyInsights": [
+        "Traditional Dussehra Puja celebration.",
+        "Brings joy & divine blessings.",
+        "Performed by certified Hindi Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "festival"
+    },
+    {
+      "id": "hindi-ganesh-sthapana-and-visarjan-puja",
+      "name": "Ganesh Sthapana and Visarjan Puja",
+      "shortDesc": "Festive Ganesh Sthapana and Visarjan Puja worship as per Hindi tradition.",
+      "description": "Auspicious Ganesh Sthapana and Visarjan Puja celebrated with complete Shodasopachara rituals, Bhog offering, and Aarti.",
+      "keyInsights": [
+        "Traditional Ganesh Sthapana and Visarjan Puja celebration.",
+        "Brings joy & divine blessings.",
+        "Performed by certified Hindi Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "festival"
+    },
+    {
+      "id": "hindi-hartalika-teej-puja",
+      "name": "Hartalika Teej Puja",
+      "shortDesc": "Festive Hartalika Teej Puja worship as per Hindi tradition.",
+      "description": "Auspicious Hartalika Teej Puja celebrated with complete Shodasopachara rituals, Bhog offering, and Aarti.",
+      "keyInsights": [
+        "Traditional Hartalika Teej Puja celebration.",
+        "Brings joy & divine blessings.",
+        "Performed by certified Hindi Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "festival"
+    },
+    {
+      "id": "hindi-holika-puja",
+      "name": "Holika Puja",
+      "shortDesc": "Festive Holika Puja worship as per Hindi tradition.",
+      "description": "Auspicious Holika Puja celebrated with complete Shodasopachara rituals, Bhog offering, and Aarti.",
+      "keyInsights": [
+        "Traditional Holika Puja celebration.",
+        "Brings joy & divine blessings.",
+        "Performed by certified Hindi Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "festival"
+    },
+    {
+      "id": "hindi-janmashtami-puja",
+      "name": "Janmashtami Puja",
+      "shortDesc": "Festive Janmashtami Puja worship as per Hindi tradition.",
+      "description": "Auspicious Janmashtami Puja celebrated with complete Shodasopachara rituals, Bhog offering, and Aarti.",
+      "keyInsights": [
+        "Traditional Janmashtami Puja celebration.",
+        "Brings joy & divine blessings.",
+        "Performed by certified Hindi Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "festival"
+    },
+    {
+      "id": "hindi-navratri-kalash-sthapana-puja-and-havan",
+      "name": "Navratri Kalash Sthapana Puja and Havan",
+      "shortDesc": "Festive Navratri Kalash Sthapana Puja and Havan worship as per Hindi tradition.",
+      "description": "Auspicious Navratri Kalash Sthapana Puja and Havan celebrated with complete Shodasopachara rituals, Bhog offering, and Aarti.",
+      "keyInsights": [
+        "Traditional Navratri Kalash Sthapana Puja and Havan celebration.",
+        "Brings joy & divine blessings.",
+        "Performed by certified Hindi Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "festival"
+    },
+    {
+      "id": "hindi-tulsi-vivah-puja",
+      "name": "Tulsi Vivah Puja",
+      "shortDesc": "Festive Tulsi Vivah Puja worship as per Hindi tradition.",
+      "description": "Auspicious Tulsi Vivah Puja celebrated with complete Shodasopachara rituals, Bhog offering, and Aarti.",
+      "keyInsights": [
+        "Traditional Tulsi Vivah Puja celebration.",
+        "Brings joy & divine blessings.",
+        "Performed by certified Hindi Pandits."
+      ],
+      "promise": [
+        "Highly Qualified Hindi Pandits."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 40,
+      "duration": "2 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "festival"
+    }
+  ]
+},
+    {
+  "id": "hindi-shanti-pujas",
+  "name": "Shanti Pujas",
+  "icon": "☮️",
+  "gradient": "linear-gradient(135deg, #7B1FA2, #CE93D8)",
+  "description": "Special Remedy & Shanti Rituals in Hindi custom",
+  "defaultLanguage": "hindi",
+  "services": [
+    {
+      "id": "hindi-ark-vivah-for-male",
+      "name": "Ark Vivah For Male",
+      "shortDesc": "Remedial Ark Vivah For Male to clear severe horoscope doshas.",
+      "description": "Remedial Shanti ritual for Ark Vivah For Male to absorb negative planetary influences and grant lifelong harmony.",
+      "keyInsights": [
+        "Remedial ritual for Ark Vivah For Male.",
+        "Resolves severe astrological doshas.",
+        "Conducted by specialized Vedic Shanti Acharyas."
+      ],
+      "promise": [
+        "Certified Vedic Shanti Acharyas."
+      ],
+      "priceMin": 6500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-grahan-yog-shanti-puja",
+      "name": "Grahan Yog Shanti Puja",
+      "shortDesc": "Remedial Grahan Yog Shanti Puja to clear severe horoscope doshas.",
+      "description": "Remedial Shanti ritual for Grahan Yog Shanti Puja to absorb negative planetary influences and grant lifelong harmony.",
+      "keyInsights": [
+        "Remedial ritual for Grahan Yog Shanti Puja.",
+        "Resolves severe astrological doshas.",
+        "Conducted by specialized Vedic Shanti Acharyas."
+      ],
+      "promise": [
+        "Certified Vedic Shanti Acharyas."
+      ],
+      "priceMin": 6500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-guru-chandal-yoga-shanti",
+      "name": "Guru Chandal Yoga Shanti",
+      "shortDesc": "Remedial Guru Chandal Yoga Shanti to clear severe horoscope doshas.",
+      "description": "Remedial Shanti ritual for Guru Chandal Yoga Shanti to absorb negative planetary influences and grant lifelong harmony.",
+      "keyInsights": [
+        "Remedial ritual for Guru Chandal Yoga Shanti.",
+        "Resolves severe astrological doshas.",
+        "Conducted by specialized Vedic Shanti Acharyas."
+      ],
+      "promise": [
+        "Certified Vedic Shanti Acharyas."
+      ],
+      "priceMin": 6500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-kaal-sarp-dosh-puja",
+      "name": "Kaal Sarp Dosh Puja",
+      "shortDesc": "Remedial Kaal Sarp Dosh Puja to clear severe horoscope doshas.",
+      "description": "Remedial Shanti ritual for Kaal Sarp Dosh Puja to absorb negative planetary influences and grant lifelong harmony.",
+      "keyInsights": [
+        "Remedial ritual for Kaal Sarp Dosh Puja.",
+        "Resolves severe astrological doshas.",
+        "Conducted by specialized Vedic Shanti Acharyas."
+      ],
+      "promise": [
+        "Certified Vedic Shanti Acharyas."
+      ],
+      "priceMin": 6500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-kumbh-vivah-for-female",
+      "name": "Kumbh Vivah For Female",
+      "shortDesc": "Remedial Kumbh Vivah For Female to clear severe horoscope doshas.",
+      "description": "Remedial Shanti ritual for Kumbh Vivah For Female to absorb negative planetary influences and grant lifelong harmony.",
+      "keyInsights": [
+        "Remedial ritual for Kumbh Vivah For Female.",
+        "Resolves severe astrological doshas.",
+        "Conducted by specialized Vedic Shanti Acharyas."
+      ],
+      "promise": [
+        "Certified Vedic Shanti Acharyas."
+      ],
+      "priceMin": 6500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-shani-chandra-vish-yog-nivaran",
+      "name": "Shani Chandra Vish Yog Nivaran",
+      "shortDesc": "Remedial Shani Chandra Vish Yog Nivaran to clear severe horoscope doshas.",
+      "description": "Remedial Shanti ritual for Shani Chandra Vish Yog Nivaran to absorb negative planetary influences and grant lifelong harmony.",
+      "keyInsights": [
+        "Remedial ritual for Shani Chandra Vish Yog Nivaran.",
+        "Resolves severe astrological doshas.",
+        "Conducted by specialized Vedic Shanti Acharyas."
+      ],
+      "promise": [
+        "Certified Vedic Shanti Acharyas."
+      ],
+      "priceMin": 6500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-shani-ketu-shrapit-dosh-nivaran",
+      "name": "Shani Ketu Shrapit Dosh Nivaran",
+      "shortDesc": "Remedial Shani Ketu Shrapit Dosh Nivaran to clear severe horoscope doshas.",
+      "description": "Remedial Shanti ritual for Shani Ketu Shrapit Dosh Nivaran to absorb negative planetary influences and grant lifelong harmony.",
+      "keyInsights": [
+        "Remedial ritual for Shani Ketu Shrapit Dosh Nivaran.",
+        "Resolves severe astrological doshas.",
+        "Conducted by specialized Vedic Shanti Acharyas."
+      ],
+      "promise": [
+        "Certified Vedic Shanti Acharyas."
+      ],
+      "priceMin": 6500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-shani-rahu-shrapit-dosh-nivaran",
+      "name": "Shani Rahu Shrapit Dosh Nivaran",
+      "shortDesc": "Remedial Shani Rahu Shrapit Dosh Nivaran to clear severe horoscope doshas.",
+      "description": "Remedial Shanti ritual for Shani Rahu Shrapit Dosh Nivaran to absorb negative planetary influences and grant lifelong harmony.",
+      "keyInsights": [
+        "Remedial ritual for Shani Rahu Shrapit Dosh Nivaran.",
+        "Resolves severe astrological doshas.",
+        "Conducted by specialized Vedic Shanti Acharyas."
+      ],
+      "promise": [
+        "Certified Vedic Shanti Acharyas."
+      ],
+      "priceMin": 6500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-vishnu-vivah-for-female",
+      "name": "Vishnu Vivah For Female",
+      "shortDesc": "Remedial Vishnu Vivah For Female to clear severe horoscope doshas.",
+      "description": "Remedial Shanti ritual for Vishnu Vivah For Female to absorb negative planetary influences and grant lifelong harmony.",
+      "keyInsights": [
+        "Remedial ritual for Vishnu Vivah For Female.",
+        "Resolves severe astrological doshas.",
+        "Conducted by specialized Vedic Shanti Acharyas."
+      ],
+      "promise": [
+        "Certified Vedic Shanti Acharyas."
+      ],
+      "priceMin": 6500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    },
+    {
+      "id": "hindi-vishti-karan-bhadra-shanti-puja",
+      "name": "Vishti Karan (Bhadra) Shanti Puja",
+      "shortDesc": "Remedial Vishti Karan (Bhadra) Shanti Puja to clear severe horoscope doshas.",
+      "description": "Remedial Shanti ritual for Vishti Karan (Bhadra) Shanti Puja to absorb negative planetary influences and grant lifelong harmony.",
+      "keyInsights": [
+        "Remedial ritual for Vishti Karan (Bhadra) Shanti Puja.",
+        "Resolves severe astrological doshas.",
+        "Conducted by specialized Vedic Shanti Acharyas."
+      ],
+      "promise": [
+        "Certified Vedic Shanti Acharyas."
+      ],
+      "priceMin": 6500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 35,
+      "duration": "3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "shanti"
+    }
+  ]
+},
+    {
+  "id": "hindi-pitru-pujas",
+  "name": "Pitru Pujas",
+  "icon": "🕯️",
+  "gradient": "linear-gradient(135deg, #4E342E, #8D6E63)",
+  "description": "Ancestor & Shradh Ceremonies in Hindi custom",
+  "defaultLanguage": "hindi",
+  "services": [
+    {
+      "id": "hindi-amavasya-tarpan",
+      "name": "Amavasya Tarpan",
+      "shortDesc": "Sacred Amavasya Tarpan for ancestor peace and blessings.",
+      "description": "Amavasya Tarpan performed with reverence to honor ancestors, grant peace to departed souls, and receive Pitru blessings.",
+      "keyInsights": [
+        "Sacred Amavasya Tarpan ritual.",
+        "Honors ancestors & grants soul peace.",
+        "Conducted by experienced Vedic Priests."
+      ],
+      "promise": [
+        "Experienced Vedic Shradh Priests."
+      ],
+      "priceMin": 3000,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "ancestor"
+    },
+    {
+      "id": "hindi-antim-sanskar-last-rites",
+      "name": "Antim Sanskar - Last Rites",
+      "shortDesc": "Sacred Antim Sanskar - Last Rites for ancestor peace and blessings.",
+      "description": "Antim Sanskar - Last Rites performed with reverence to honor ancestors, grant peace to departed souls, and receive Pitru blessings.",
+      "keyInsights": [
+        "Sacred Antim Sanskar - Last Rites ritual.",
+        "Honors ancestors & grants soul peace.",
+        "Conducted by experienced Vedic Priests."
+      ],
+      "promise": [
+        "Experienced Vedic Shradh Priests."
+      ],
+      "priceMin": 3000,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "ancestor"
+    },
+    {
+      "id": "hindi-asthi-visarjan",
+      "name": "Asthi Visarjan",
+      "shortDesc": "Sacred Asthi Visarjan for ancestor peace and blessings.",
+      "description": "Asthi Visarjan performed with reverence to honor ancestors, grant peace to departed souls, and receive Pitru blessings.",
+      "keyInsights": [
+        "Sacred Asthi Visarjan ritual.",
+        "Honors ancestors & grants soul peace.",
+        "Conducted by experienced Vedic Priests."
+      ],
+      "promise": [
+        "Experienced Vedic Shradh Priests."
+      ],
+      "priceMin": 3000,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "ancestor"
+    },
+    {
+      "id": "hindi-barsi-ceremony",
+      "name": "Barsi Ceremony",
+      "shortDesc": "Sacred Barsi Ceremony for ancestor peace and blessings.",
+      "description": "Barsi Ceremony performed with reverence to honor ancestors, grant peace to departed souls, and receive Pitru blessings.",
+      "keyInsights": [
+        "Sacred Barsi Ceremony ritual.",
+        "Honors ancestors & grants soul peace.",
+        "Conducted by experienced Vedic Priests."
+      ],
+      "promise": [
+        "Experienced Vedic Shradh Priests."
+      ],
+      "priceMin": 3000,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "ancestor"
+    },
+    {
+      "id": "hindi-brahmins-for-bhojan",
+      "name": "Brahmins for Bhojan",
+      "shortDesc": "Sacred Brahmins for Bhojan for ancestor peace and blessings.",
+      "description": "Brahmins for Bhojan performed with reverence to honor ancestors, grant peace to departed souls, and receive Pitru blessings.",
+      "keyInsights": [
+        "Sacred Brahmins for Bhojan ritual.",
+        "Honors ancestors & grants soul peace.",
+        "Conducted by experienced Vedic Priests."
+      ],
+      "promise": [
+        "Experienced Vedic Shradh Priests."
+      ],
+      "priceMin": 3000,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "ancestor"
+    },
+    {
+      "id": "hindi-garud-puran-path",
+      "name": "Garud Puran Path",
+      "shortDesc": "Sacred Garud Puran Path for ancestor peace and blessings.",
+      "description": "Garud Puran Path performed with reverence to honor ancestors, grant peace to departed souls, and receive Pitru blessings.",
+      "keyInsights": [
+        "Sacred Garud Puran Path ritual.",
+        "Honors ancestors & grants soul peace.",
+        "Conducted by experienced Vedic Priests."
+      ],
+      "promise": [
+        "Experienced Vedic Shradh Priests."
+      ],
+      "priceMin": 3000,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "ancestor"
+    },
+    {
+      "id": "hindi-pitru-paksha-mahalaya-shradh-puja",
+      "name": "Pitru Paksha (Mahalaya) Shradh Puja",
+      "shortDesc": "Sacred Pitru Paksha (Mahalaya) Shradh Puja for ancestor peace and blessings.",
+      "description": "Pitru Paksha (Mahalaya) Shradh Puja performed with reverence to honor ancestors, grant peace to departed souls, and receive Pitru blessings.",
+      "keyInsights": [
+        "Sacred Pitru Paksha (Mahalaya) Shradh Puja ritual.",
+        "Honors ancestors & grants soul peace.",
+        "Conducted by experienced Vedic Priests."
+      ],
+      "promise": [
+        "Experienced Vedic Shradh Priests."
+      ],
+      "priceMin": 3000,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "ancestor"
+    },
+    {
+      "id": "hindi-shradh",
+      "name": "Shradh",
+      "shortDesc": "Sacred Shradh for ancestor peace and blessings.",
+      "description": "Shradh performed with reverence to honor ancestors, grant peace to departed souls, and receive Pitru blessings.",
+      "keyInsights": [
+        "Sacred Shradh ritual.",
+        "Honors ancestors & grants soul peace.",
+        "Conducted by experienced Vedic Priests."
+      ],
+      "promise": [
+        "Experienced Vedic Shradh Priests."
+      ],
+      "priceMin": 3000,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "ancestor"
+    },
+    {
+      "id": "hindi-swayampaka-seedha-daan-for-brahmins",
+      "name": "Swayampaka/Seedha Daan for Brahmins",
+      "shortDesc": "Sacred Swayampaka/Seedha Daan for Brahmins for ancestor peace and blessings.",
+      "description": "Swayampaka/Seedha Daan for Brahmins performed with reverence to honor ancestors, grant peace to departed souls, and receive Pitru blessings.",
+      "keyInsights": [
+        "Sacred Swayampaka/Seedha Daan for Brahmins ritual.",
+        "Honors ancestors & grants soul peace.",
+        "Conducted by experienced Vedic Priests."
+      ],
+      "promise": [
+        "Experienced Vedic Shradh Priests."
+      ],
+      "priceMin": 3000,
+      "priceMax": 15000,
+      "rating": 4.8,
+      "reviewCount": 30,
+      "duration": "2-3 hours",
+      "defaultLanguage": "hindi",
+      "imageType": "ancestor"
+    }
+  ]
+},
+    {
+  "id": "marathi-pujas",
+  "name": "Puja",
+  "icon": "📿",
+  "gradient": "linear-gradient(135deg, #FF6B00, #E65100)",
+  "description": "Traditional Marathi Puja and sacred worship rituals",
+  "defaultLanguage": "marathi",
+  "services": [
+    {
+      "id": "marathi-annaprashan-puja",
+      "name": "Annaprashan Puja",
+      "shortDesc": "Traditional Marathi Annaprashan Puja as per Vedic tradition.",
+      "description": "Annaprashan Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Annaprashan Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-bhoomi-puja",
+      "name": "Bhoomi Puja",
+      "shortDesc": "Traditional Marathi Bhoomi Puja as per Vedic tradition.",
+      "description": "Bhoomi Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Bhoomi Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-durga-puja",
+      "name": "Durga Puja",
+      "shortDesc": "Traditional Marathi Durga Puja as per Vedic tradition.",
+      "description": "Durga Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Durga Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-engagement-sakharpuda",
+      "name": "Engagement/Sakharpuda",
+      "shortDesc": "Traditional Marathi Engagement/Sakharpuda as per Vedic tradition.",
+      "description": "Engagement/Sakharpuda performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Engagement/Sakharpuda.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-fix-your-muhurat",
+      "name": "Fix Your Muhurat",
+      "shortDesc": "Traditional Marathi Fix Your Muhurat as per Vedic tradition.",
+      "description": "Fix Your Muhurat performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Fix Your Muhurat.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-ganesh-puja",
+      "name": "Ganesh Puja",
+      "shortDesc": "Traditional Marathi Ganesh Puja as per Vedic tradition.",
+      "description": "Ganesh Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Ganesh Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-ganpati-atharvashirsha-abhishek",
+      "name": "Ganpati Atharvashirsha Abhishek",
+      "shortDesc": "Traditional Marathi Ganpati Atharvashirsha Abhishek as per Vedic tradition.",
+      "description": "Ganpati Atharvashirsha Abhishek performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Ganpati Atharvashirsha Abhishek.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-griha-pravesh-puja",
+      "name": "Griha Pravesh Puja",
+      "shortDesc": "Traditional Marathi Griha Pravesh Puja as per Vedic tradition.",
+      "description": "Griha Pravesh Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Griha Pravesh Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-janamdin-puja-birthday-puja",
+      "name": "Janamdin Puja-Birthday Puja",
+      "shortDesc": "Traditional Marathi Janamdin Puja-Birthday Puja as per Vedic tradition.",
+      "description": "Janamdin Puja-Birthday Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Janamdin Puja-Birthday Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-kuber-upasana-puja",
+      "name": "Kuber Upasana Puja",
+      "shortDesc": "Traditional Marathi Kuber Upasana Puja as per Vedic tradition.",
+      "description": "Kuber Upasana Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Kuber Upasana Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-lagna-marriage-puja",
+      "name": "Lagna-Marriage Puja",
+      "shortDesc": "Traditional Marathi Lagna-Marriage Puja as per Vedic tradition.",
+      "description": "Lagna-Marriage Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Lagna-Marriage Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-mahalaxmi-puja",
+      "name": "Mahalaxmi Puja",
+      "shortDesc": "Traditional Marathi Mahalaxmi Puja as per Vedic tradition.",
+      "description": "Mahalaxmi Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Mahalaxmi Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-mangla-gauri-puja",
+      "name": "Mangla Gauri Puja",
+      "shortDesc": "Traditional Marathi Mangla Gauri Puja as per Vedic tradition.",
+      "description": "Mangla Gauri Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Mangla Gauri Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-mundan-ceremony",
+      "name": "Mundan Ceremony",
+      "shortDesc": "Traditional Marathi Mundan Ceremony as per Vedic tradition.",
+      "description": "Mundan Ceremony performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Mundan Ceremony.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-munja-ceremony",
+      "name": "Munja Ceremony",
+      "shortDesc": "Traditional Marathi Munja Ceremony as per Vedic tradition.",
+      "description": "Munja Ceremony performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Munja Ceremony.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-murti-pran-pratishta-at-home",
+      "name": "Murti Pran Pratishta At Home",
+      "shortDesc": "Traditional Marathi Murti Pran Pratishta At Home as per Vedic tradition.",
+      "description": "Murti Pran Pratishta At Home performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Murti Pran Pratishta At Home.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-namkaran-puja",
+      "name": "Namkaran Puja",
+      "shortDesc": "Traditional Marathi Namkaran Puja as per Vedic tradition.",
+      "description": "Namkaran Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Namkaran Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-new-office-opening-puja",
+      "name": "New Office Opening Puja",
+      "shortDesc": "Traditional Marathi New Office Opening Puja as per Vedic tradition.",
+      "description": "New Office Opening Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi New Office Opening Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-rudrabhishek-puja",
+      "name": "Rudrabhishek Puja",
+      "shortDesc": "Traditional Marathi Rudrabhishek Puja as per Vedic tradition.",
+      "description": "Rudrabhishek Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Rudrabhishek Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-saptashati-path",
+      "name": "Saptashati Path",
+      "shortDesc": "Traditional Marathi Saptashati Path as per Vedic tradition.",
+      "description": "Saptashati Path performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Saptashati Path.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-saraswati-puja",
+      "name": "Saraswati Puja",
+      "shortDesc": "Traditional Marathi Saraswati Puja as per Vedic tradition.",
+      "description": "Saraswati Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Saraswati Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-satyanarayan-puja",
+      "name": "Satyanarayan Puja",
+      "shortDesc": "Traditional Marathi Satyanarayan Puja as per Vedic tradition.",
+      "description": "Satyanarayan Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Satyanarayan Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-sunderkand-path",
+      "name": "Sunderkand Path",
+      "shortDesc": "Traditional Marathi Sunderkand Path as per Vedic tradition.",
+      "description": "Sunderkand Path performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Sunderkand Path.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-surya-puja",
+      "name": "Surya Puja",
+      "shortDesc": "Traditional Marathi Surya Puja as per Vedic tradition.",
+      "description": "Surya Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Surya Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-udaka-shanti-puja",
+      "name": "Udaka Shanti Puja",
+      "shortDesc": "Traditional Marathi Udaka Shanti Puja as per Vedic tradition.",
+      "description": "Udaka Shanti Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Udaka Shanti Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-vastu-shanti-puja",
+      "name": "Vastu Shanti Puja",
+      "shortDesc": "Traditional Marathi Vastu Shanti Puja as per Vedic tradition.",
+      "description": "Vastu Shanti Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Vastu Shanti Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-vishkumbha-yog-shanti-puja",
+      "name": "Vishkumbha Yog Shanti Puja",
+      "shortDesc": "Traditional Marathi Vishkumbha Yog Shanti Puja as per Vedic tradition.",
+      "description": "Vishkumbha Yog Shanti Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Vishkumbha Yog Shanti Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-vishnu-sahasranam-path",
+      "name": "Vishnu Sahasranam Path",
+      "shortDesc": "Traditional Marathi Vishnu Sahasranam Path as per Vedic tradition.",
+      "description": "Vishnu Sahasranam Path performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Vishnu Sahasranam Path.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-vishti-karan-bhadra-shanti-pooja",
+      "name": "Vishti Karan (Bhadra) Shanti Pooja",
+      "shortDesc": "Traditional Marathi Vishti Karan (Bhadra) Shanti Pooja as per Vedic tradition.",
+      "description": "Vishti Karan (Bhadra) Shanti Pooja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Vishti Karan (Bhadra) Shanti Pooja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-vishwakarma-puja",
+      "name": "Vishwakarma Puja",
+      "shortDesc": "Traditional Marathi Vishwakarma Puja as per Vedic tradition.",
+      "description": "Vishwakarma Puja performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Vishwakarma Puja.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    },
+    {
+      "id": "marathi-vyatipat-yog-shanti",
+      "name": "Vyatipat Yog Shanti",
+      "shortDesc": "Traditional Marathi Vyatipat Yog Shanti as per Vedic tradition.",
+      "description": "Vyatipat Yog Shanti performed in authentic Marathi tradition by certified Gurujis & Purohits.",
+      "keyInsights": [
+        "Traditional Marathi Vyatipat Yog Shanti.",
+        "Invokes divine blessings & prosperity.",
+        "Conducted by certified Marathi Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis.",
+        "Vedic Standards & Samagri."
+      ],
+      "priceMin": 3500,
+      "priceMax": 15000,
+      "rating": 4.9,
+      "reviewCount": 38,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "pooja"
+    }
+  ]
+},
+    {
+  "id": "marathi-havans",
+  "name": "Havan",
+  "icon": "🔥",
+  "gradient": "linear-gradient(135deg, #FF6B00, #FFA000)",
+  "description": "Sacred Marathi Havan & Homam Rituals",
+  "defaultLanguage": "marathi",
+  "services": [
+    {
+      "id": "marathi-chandi-havan",
+      "name": "Chandi Havan",
+      "shortDesc": "Sacred Marathi Chandi Havan fire ritual.",
+      "description": "Chandi Havan performed in sacred fire with authentic Vedic mantras and herbal offerings.",
+      "keyInsights": [
+        "Sacred Marathi Chandi Havan.",
+        "Brings divine protection & health.",
+        "Conducted by expert Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 32,
+      "duration": "2-3 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "homam"
+    },
+    {
+      "id": "marathi-dhanvantri-havan",
+      "name": "Dhanvantri Havan",
+      "shortDesc": "Sacred Marathi Dhanvantri Havan fire ritual.",
+      "description": "Dhanvantri Havan performed in sacred fire with authentic Vedic mantras and herbal offerings.",
+      "keyInsights": [
+        "Sacred Marathi Dhanvantri Havan.",
+        "Brings divine protection & health.",
+        "Conducted by expert Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 32,
+      "duration": "2-3 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "homam"
+    },
+    {
+      "id": "marathi-ganapathi-havan",
+      "name": "Ganapathi Havan",
+      "shortDesc": "Sacred Marathi Ganapathi Havan fire ritual.",
+      "description": "Ganapathi Havan performed in sacred fire with authentic Vedic mantras and herbal offerings.",
+      "keyInsights": [
+        "Sacred Marathi Ganapathi Havan.",
+        "Brings divine protection & health.",
+        "Conducted by expert Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 32,
+      "duration": "2-3 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "homam"
+    },
+    {
+      "id": "marathi-laxmi-kubera-havan",
+      "name": "Laxmi Kubera Havan",
+      "shortDesc": "Sacred Marathi Laxmi Kubera Havan fire ritual.",
+      "description": "Laxmi Kubera Havan performed in sacred fire with authentic Vedic mantras and herbal offerings.",
+      "keyInsights": [
+        "Sacred Marathi Laxmi Kubera Havan.",
+        "Brings divine protection & health.",
+        "Conducted by expert Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 32,
+      "duration": "2-3 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "homam"
+    },
+    {
+      "id": "marathi-mrityunjaya-havan",
+      "name": "Mrityunjaya Havan",
+      "shortDesc": "Sacred Marathi Mrityunjaya Havan fire ritual.",
+      "description": "Mrityunjaya Havan performed in sacred fire with authentic Vedic mantras and herbal offerings.",
+      "keyInsights": [
+        "Sacred Marathi Mrityunjaya Havan.",
+        "Brings divine protection & health.",
+        "Conducted by expert Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 32,
+      "duration": "2-3 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "homam"
+    },
+    {
+      "id": "marathi-navagraha-havan",
+      "name": "Navagraha Havan",
+      "shortDesc": "Sacred Marathi Navagraha Havan fire ritual.",
+      "description": "Navagraha Havan performed in sacred fire with authentic Vedic mantras and herbal offerings.",
+      "keyInsights": [
+        "Sacred Marathi Navagraha Havan.",
+        "Brings divine protection & health.",
+        "Conducted by expert Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 32,
+      "duration": "2-3 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "homam"
+    },
+    {
+      "id": "marathi-saraswati-havan",
+      "name": "Saraswati Havan",
+      "shortDesc": "Sacred Marathi Saraswati Havan fire ritual.",
+      "description": "Saraswati Havan performed in sacred fire with authentic Vedic mantras and herbal offerings.",
+      "keyInsights": [
+        "Sacred Marathi Saraswati Havan.",
+        "Brings divine protection & health.",
+        "Conducted by expert Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 32,
+      "duration": "2-3 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "homam"
+    },
+    {
+      "id": "marathi-sudarshan-havan",
+      "name": "Sudarshan Havan",
+      "shortDesc": "Sacred Marathi Sudarshan Havan fire ritual.",
+      "description": "Sudarshan Havan performed in sacred fire with authentic Vedic mantras and herbal offerings.",
+      "keyInsights": [
+        "Sacred Marathi Sudarshan Havan.",
+        "Brings divine protection & health.",
+        "Conducted by expert Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis."
+      ],
+      "priceMin": 5500,
+      "priceMax": 18000,
+      "rating": 4.9,
+      "reviewCount": 32,
+      "duration": "2-3 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "homam"
+    }
+  ]
+},
+    {
+  "id": "marathi-festival-pujas",
+  "name": "Festival Puja",
+  "icon": "🎊",
+  "gradient": "linear-gradient(135deg, #F9A825, #FFEE58)",
+  "description": "Marathi Festive Celebrations and Vratam Worship",
+  "defaultLanguage": "marathi",
+  "services": [
+    {
+      "id": "marathi-diwali-lakshmi-puja",
+      "name": "Diwali Lakshmi Puja",
+      "shortDesc": "Traditional Marathi Diwali Lakshmi Puja festival worship.",
+      "description": "Sacred Diwali Lakshmi Puja performed during festive occasions in traditional Marathi Vidhi.",
+      "keyInsights": [
+        "Traditional Marathi Diwali Lakshmi Puja.",
+        "Brings joy & festive prosperity.",
+        "Conducted by expert Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 42,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "festival"
+    },
+    {
+      "id": "marathi-ganapathi-sthapana-and-visarjan-puja",
+      "name": "Ganapathi Sthapana and Visarjan Puja",
+      "shortDesc": "Traditional Marathi Ganapathi Sthapana and Visarjan Puja festival worship.",
+      "description": "Sacred Ganapathi Sthapana and Visarjan Puja performed during festive occasions in traditional Marathi Vidhi.",
+      "keyInsights": [
+        "Traditional Marathi Ganapathi Sthapana and Visarjan Puja.",
+        "Brings joy & festive prosperity.",
+        "Conducted by expert Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 42,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "festival"
+    },
+    {
+      "id": "marathi-janmashtami-puja",
+      "name": "Janmashtami Puja",
+      "shortDesc": "Traditional Marathi Janmashtami Puja festival worship.",
+      "description": "Sacred Janmashtami Puja performed during festive occasions in traditional Marathi Vidhi.",
+      "keyInsights": [
+        "Traditional Marathi Janmashtami Puja.",
+        "Brings joy & festive prosperity.",
+        "Conducted by expert Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 42,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "festival"
+    },
+    {
+      "id": "marathi-navratri-ghatasthapana-puja-and-havan",
+      "name": "Navratri Ghatasthapana Puja and Havan",
+      "shortDesc": "Traditional Marathi Navratri Ghatasthapana Puja and Havan festival worship.",
+      "description": "Sacred Navratri Ghatasthapana Puja and Havan performed during festive occasions in traditional Marathi Vidhi.",
+      "keyInsights": [
+        "Traditional Marathi Navratri Ghatasthapana Puja and Havan.",
+        "Brings joy & festive prosperity.",
+        "Conducted by expert Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 42,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "festival"
+    },
+    {
+      "id": "marathi-tulsi-vivah-puja",
+      "name": "Tulsi Vivah Puja",
+      "shortDesc": "Traditional Marathi Tulsi Vivah Puja festival worship.",
+      "description": "Sacred Tulsi Vivah Puja performed during festive occasions in traditional Marathi Vidhi.",
+      "keyInsights": [
+        "Traditional Marathi Tulsi Vivah Puja.",
+        "Brings joy & festive prosperity.",
+        "Conducted by expert Gurujis."
+      ],
+      "promise": [
+        "Certified Marathi Gurujis."
+      ],
+      "priceMin": 3500,
+      "priceMax": 12000,
+      "rating": 4.9,
+      "reviewCount": 42,
+      "duration": "2 hours",
+      "defaultLanguage": "marathi",
+      "imageType": "festival"
+    }
+  ]
+}
   ]
 };
