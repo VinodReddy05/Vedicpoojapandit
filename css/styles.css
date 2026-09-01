@@ -1873,6 +1873,56 @@ ul, ol {
   gap: 8px;
 }
 
+/* Header Admin Button */
+.vpp-header__admin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid var(--color-gold);
+  border-radius: 50px;
+  color: var(--color-gold);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.vpp-header__admin-btn:hover {
+  background: var(--gradient-gold);
+  color: var(--color-maroon-dark);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-1px);
+}
+
+.vpp-header__admin-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .vpp-header__admin-text {
+    display: inline-block;
+    font-size: 0.75rem;
+  }
+  
+  .vpp-header__admin-btn {
+    padding: 4px 10px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    justify-content: center;
+    border: 1px solid var(--color-gold);
+    background: var(--gradient-sacred);
+    color: #FFFFFF !important;
+    font-size: 0.8rem;
+    box-shadow: var(--shadow-sm);
+  }
+}
+
 /* --------------------------------------------------------------------------
    ADMIN PORTAL STYLES
    -------------------------------------------------------------------------- */

@@ -932,9 +932,11 @@ function renderAdmin() {
               <h2 style="color: var(--color-gold); font-size: 1.6rem; margin: 0 0 4px 0;">🔐 Pandit Admin Control Panel</h2>
               <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin: 0;">Browse regional poojas by language & category, edit prices, and upload custom images directly from mobile gallery.</p>
             </div>
-            <div style="display: flex; gap: 12px;">
-              <button id="admin-reset-all-btn" class="vpp-btn" style="background: rgba(255,255,255,0.1); color: #FFF; border: 1px solid rgba(255,255,255,0.3); font-size: 0.85rem; padding: 8px 14px;">🔄 Reset All Defaults</button>
-              <button id="admin-logout-btn" class="vpp-btn" style="background: rgba(229, 81, 0, 0.2); color: var(--color-gold); border: 1px solid var(--color-gold); font-size: 0.85rem; padding: 8px 14px;">🚪 Logout</button>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <button id="admin-export-btn" class="vpp-btn" style="background: rgba(212,175,55,0.2); color: var(--color-gold); border: 1px solid var(--color-gold); font-size: 0.85rem; padding: 8px 14px;">📥 Export Config</button>
+              <button id="admin-import-btn" class="vpp-btn" style="background: rgba(212,175,55,0.2); color: var(--color-gold); border: 1px solid var(--color-gold); font-size: 0.85rem; padding: 8px 14px;">📤 Import Config</button>
+              <button id="admin-reset-all-btn" class="vpp-btn" style="background: rgba(255,255,255,0.1); color: #FFF; border: 1px solid rgba(255,255,255,0.3); font-size: 0.85rem; padding: 8px 14px;">🔄 Reset Defaults</button>
+              <button id="admin-logout-btn" class="vpp-btn" style="background: rgba(229, 81, 0, 0.2); color: #FF9800; border: 1px solid #FF9800; font-size: 0.85rem; padding: 8px 14px;">🚪 Logout</button>
             </div>
           </div>
 
@@ -994,6 +996,41 @@ function renderAdmin() {
     // Event listeners
     const searchInput = document.getElementById('admin-search-input');
     if (searchInput) searchInput.addEventListener('input', updateAdminGrid);
+
+    const exportBtn = document.getElementById('admin-export-btn');
+    if (exportBtn) {
+      exportBtn.addEventListener('click', () => {
+        const prices = getCustomPrices();
+        const images = getCustomImages();
+        const exportData = JSON.stringify({ prices, images }, null, 2);
+        
+        const blob = new Blob([exportData], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'vedic_pooja_admin_config.json';
+        a.click();
+        showToast('📥 Admin sync config exported!');
+      });
+    }
+
+    const importBtn = document.getElementById('admin-import-btn');
+    if (importBtn) {
+      importBtn.addEventListener('click', () => {
+        const jsonStr = prompt('Paste your Admin JSON config data (or contents of exported file):');
+        if (jsonStr) {
+          try {
+            const parsed = JSON.parse(jsonStr);
+            if (parsed.prices) localStorage.setItem('vpp_custom_prices', JSON.stringify(parsed.prices));
+            if (parsed.images) localStorage.setItem('vpp_custom_images', JSON.stringify(parsed.images));
+            buildAdminUI();
+            showToast('📤 Admin data imported & updated live!');
+          } catch (err) {
+            alert('Invalid JSON format!');
+          }
+        }
+      });
+    }
 
     const logoutBtn = document.getElementById('admin-logout-btn');
     if (logoutBtn) {
