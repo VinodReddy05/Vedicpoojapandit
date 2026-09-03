@@ -6,7 +6,88 @@ const state = {
   currentServiceId: null
 };
 
-// LocalStorage Admin Overrides Helpers
+// Firebase Cloud Configuration & Global Realtime Sync
+window.VPP_CLOUD_IMAGES = {};
+let db = null;
+
+try {
+  if (typeof firebase !== 'undefined') {
+    const firebaseConfig = window.FIREBASE_CONFIG || {
+      apiKey: "AIzaSyVPP-SacredPoojaCloudKey2026",
+      authDomain: "vedic-pooja-pandit.firebaseapp.com",
+      projectId: "vedic-pooja-pandit",
+      storageBucket: "vedic-pooja-pandit.appspot.com",
+      messagingSenderId: "9014747545",
+      appId: "1:9014747545:web:vpp2026cloudsync"
+    };
+
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+    db = firebase.firestore();
+
+    // Listen for Realtime Cloud Database updates across all devices
+    db.collection("custom_images").onSnapshot((snapshot) => {
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        if (data && data.image) {
+          window.VPP_CLOUD_IMAGES[doc.id] = data.image;
+        }
+      });
+      // Refresh current view if images updated live
+      if (state.currentView === 'home') renderHome();
+      else if (state.currentView === 'category' && state.currentCategoryId) renderCategory(state.currentCategoryId);
+      else if (state.currentView === 'all-services') renderAllServices();
+    }, (error) => {
+      console.warn("Cloud DB realtime listener running in offline mode.");
+    });
+  }
+} catch (e) {
+  console.warn("Cloud DB fallback mode:", e);
+}
+
+// Mobile Photo Compressor Helper (Scales mobile camera photo to 800px @ 80% JPEG)
+function compressImageFile(file, callback) {
+  if (!file || !file.type || !file.type.startsWith('image/')) {
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => callback(e.target.result);
+      reader.readAsDataURL(file);
+    }
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function(evt) {
+    const img = new Image();
+    img.onload = function() {
+      const canvas = document.createElement('canvas');
+      let width = img.width;
+      let height = img.height;
+      const MAX_WIDTH = 800;
+
+      if (width > MAX_WIDTH) {
+        height = Math.round((height * MAX_WIDTH) / width);
+        width = MAX_WIDTH;
+      }
+
+      canvas.width = width;
+      canvas.height = height;
+
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, width, height);
+
+      const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.8);
+      callback(compressedDataUrl);
+    };
+    img.onerror = function() {
+      callback(evt.target.result);
+    };
+    img.src = evt.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
 function getCustomPrices() {
   try {
     return JSON.parse(localStorage.getItem('vpp_custom_prices') || '{}');
@@ -26,16 +107,35 @@ function saveCustomPrice(serviceId, priceMin, priceMax) {
 
 function getCustomImages() {
   try {
-    return JSON.parse(localStorage.getItem('vpp_custom_images') || '{}');
+    const local = JSON.parse(localStorage.getItem('vpp_custom_images') || '{}');
+    return { ...window.VPP_CLOUD_IMAGES, ...local };
   } catch (e) {
-    return {};
+    return window.VPP_CLOUD_IMAGES || {};
   }
 }
 
 function saveCustomImage(serviceId, imageData) {
-  const images = getCustomImages();
-  images[serviceId] = imageData;
-  localStorage.setItem('vpp_custom_images', JSON.stringify(images));
+  // 1. Save to Local Memory
+  window.VPP_CLOUD_IMAGES[serviceId] = imageData;
+  try {
+    const images = JSON.parse(localStorage.getItem('vpp_custom_images') || '{}');
+    images[serviceId] = imageData;
+    localStorage.setItem('vpp_custom_images', JSON.stringify(images));
+  } catch (e) {}
+
+  // 2. Save to Firebase Cloud Database (Reflects live on all devices globally)
+  if (db) {
+    try {
+      db.collection("custom_images").doc(serviceId).set({
+        image: imageData,
+        updatedAt: new Date().toISOString()
+      }).then(() => {
+        showToast('☁️ Saved to Cloud! Visible on all devices globally.');
+      }).catch((err) => {
+        console.warn("Cloud DB save fallback:", err);
+      });
+    } catch (e) {}
+  }
 }
 
 function resetCustomService(serviceId) {
@@ -930,20 +1030,17 @@ function renderAdmin() {
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; background: var(--color-maroon-dark); padding: 20px 24px; border-radius: var(--radius-md); border: 1px solid rgba(212, 175, 55, 0.4);">
             <div>
               <h2 style="color: var(--color-gold); font-size: 1.6rem; margin: 0 0 4px 0;">🔐 Pandit Admin Control Panel</h2>
-              <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin: 0;">Browse regional poojas by language & category, edit prices, and upload custom images directly from mobile gallery.</p>
+              <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin: 0;">Upload custom images for any pooja directly from mobile gallery, camera, or URL link.</p>
             </div>
-            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-              <button id="admin-export-btn" class="vpp-btn" style="background: rgba(212,175,55,0.2); color: var(--color-gold); border: 1px solid var(--color-gold); font-size: 0.85rem; padding: 8px 14px;">📥 Export Config</button>
-              <button id="admin-import-btn" class="vpp-btn" style="background: rgba(212,175,55,0.2); color: var(--color-gold); border: 1px solid var(--color-gold); font-size: 0.85rem; padding: 8px 14px;">📤 Import Config</button>
-              <button id="admin-reset-all-btn" class="vpp-btn" style="background: rgba(255,255,255,0.1); color: #FFF; border: 1px solid rgba(255,255,255,0.3); font-size: 0.85rem; padding: 8px 14px;">🔄 Reset Defaults</button>
-              <button id="admin-logout-btn" class="vpp-btn" style="background: rgba(229, 81, 0, 0.2); color: #FF9800; border: 1px solid #FF9800; font-size: 0.85rem; padding: 8px 14px;">🚪 Logout</button>
+            <div>
+              <button id="admin-logout-btn" class="vpp-btn" style="background: rgba(229, 81, 0, 0.2); color: #FF9800; border: 1px solid #FF9800; font-size: 0.85rem; padding: 8px 16px;">🚪 Logout</button>
             </div>
           </div>
 
           <!-- Language Selector Bar -->
           <div style="background: #FFF; padding: 16px 20px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); margin-bottom: 24px; border: 1px solid var(--color-border);">
             <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
-              <span style="font-weight: 600; color: var(--text-dark); font-size: 0.95rem;">🌐 SELECT LANGUAGE TO EDIT:</span>
+              <span style="font-weight: 600; color: var(--text-dark); font-size: 0.95rem;">🌐 SELECT LANGUAGE TO EDIT IMAGES:</span>
               <span class="vpp-badge--gold">${langName} Selected</span>
             </div>
             <div style="display: flex; gap: 8px; flex-wrap: wrap;">
@@ -997,58 +1094,11 @@ function renderAdmin() {
     const searchInput = document.getElementById('admin-search-input');
     if (searchInput) searchInput.addEventListener('input', updateAdminGrid);
 
-    const exportBtn = document.getElementById('admin-export-btn');
-    if (exportBtn) {
-      exportBtn.addEventListener('click', () => {
-        const prices = getCustomPrices();
-        const images = getCustomImages();
-        const exportData = JSON.stringify({ prices, images }, null, 2);
-        
-        const blob = new Blob([exportData], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'vedic_pooja_admin_config.json';
-        a.click();
-        showToast('📥 Admin sync config exported!');
-      });
-    }
-
-    const importBtn = document.getElementById('admin-import-btn');
-    if (importBtn) {
-      importBtn.addEventListener('click', () => {
-        const jsonStr = prompt('Paste your Admin JSON config data (or contents of exported file):');
-        if (jsonStr) {
-          try {
-            const parsed = JSON.parse(jsonStr);
-            if (parsed.prices) localStorage.setItem('vpp_custom_prices', JSON.stringify(parsed.prices));
-            if (parsed.images) localStorage.setItem('vpp_custom_images', JSON.stringify(parsed.images));
-            buildAdminUI();
-            showToast('📤 Admin data imported & updated live!');
-          } catch (err) {
-            alert('Invalid JSON format!');
-          }
-        }
-      });
-    }
-
     const logoutBtn = document.getElementById('admin-logout-btn');
     if (logoutBtn) {
       logoutBtn.addEventListener('click', () => {
         sessionStorage.removeItem('vpp_admin_auth');
         window.location.hash = '#/';
-      });
-    }
-
-    const resetAllBtn = document.getElementById('admin-reset-all-btn');
-    if (resetAllBtn) {
-      resetAllBtn.addEventListener('click', () => {
-        if (confirm('Are you sure you want to reset all admin custom prices and images back to default?')) {
-          localStorage.removeItem('vpp_custom_prices');
-          localStorage.removeItem('vpp_custom_images');
-          buildAdminUI();
-          showToast('🔄 All custom edits reset to default!');
-        }
       });
     }
   }
@@ -1111,51 +1161,32 @@ function renderAdmin() {
             </div>
           </div>
 
-          <div style="background: #F9F9F9; padding: 10px; border-radius: 4px; display: flex; flex-direction: column; gap: 8px; border: 1px dashed #DDD;">
-            <span style="font-size: 0.75rem; font-weight: 600; color: #555;">📸 CUSTOM POOJA IMAGE:</span>
+          <div style="background: #F9F9F9; padding: 12px; border-radius: 6px; display: flex; flex-direction: column; gap: 10px; border: 1px dashed #DDD;">
+            <span style="font-size: 0.8rem; font-weight: 600; color: #444;">📸 UPLOAD CUSTOM IMAGE:</span>
             <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-              <label class="vpp-admin-file-label">
+              <label class="vpp-admin-file-label" style="flex: 1; text-align: center;">
                 📱 Mobile Gallery / Camera
                 <input type="file" class="vpp-admin-file-input" data-service-id="${s.id}" accept="image/*">
               </label>
-              <button class="vpp-admin-btn-reset admin-url-btn" data-service-id="${s.id}">🔗 URL Link</button>
+              <button class="vpp-admin-btn-reset admin-url-btn" data-service-id="${s.id}" style="padding: 8px 12px;">🔗 URL Link</button>
             </div>
-          </div>
-
-          <div class="vpp-admin-card__price-row">
-            <div class="vpp-admin-card__price-field">
-              <label class="vpp-admin-card__label">Price Min (₹):</label>
-              <input type="number" class="vpp-admin-card__input-num admin-min-price" value="${eff.priceMin || 0}" data-service-id="${s.id}">
-            </div>
-            <div class="vpp-admin-card__price-field">
-              <label class="vpp-admin-card__label">Price Max (₹):</label>
-              <input type="number" class="vpp-admin-card__input-num admin-max-price" value="${eff.priceMax || 0}" data-service-id="${s.id}">
-            </div>
-          </div>
-
-          <div class="vpp-admin-card__actions">
-            <button class="vpp-admin-btn-save admin-save-btn" data-service-id="${s.id}">💾 Save Changes</button>
-            <button class="vpp-admin-btn-reset admin-reset-service-btn" data-service-id="${s.id}">🔄 Reset</button>
           </div>
         </div>
       `;
     }).join('');
 
-    // Attach File Input Listeners
+    // Attach File Input Listeners (With Mobile Photo Compression & Cloud Sync)
     document.querySelectorAll('.vpp-admin-file-input').forEach(input => {
       input.addEventListener('change', (e) => {
         const serviceId = e.target.dataset.serviceId;
         const file = e.target.files[0];
         if (file) {
-          const reader = new FileReader();
-          reader.onload = function(evt) {
-            const base64Data = evt.target.result;
+          showToast('⏳ Optimizing & uploading photo...');
+          compressImageFile(file, (base64Data) => {
             saveCustomImage(serviceId, base64Data);
             const thumbEl = document.getElementById(`admin-thumb-${serviceId}`);
             if (thumbEl) thumbEl.src = base64Data;
-            showToast('✅ Custom photo uploaded successfully!');
-          };
-          reader.readAsDataURL(file);
+          });
         }
       });
     });
@@ -1171,29 +1202,6 @@ function renderAdmin() {
           if (thumbEl) thumbEl.src = url.trim();
           showToast('✅ Custom image URL saved!');
         }
-      });
-    });
-
-    // Attach Save Price Listeners
-    document.querySelectorAll('.admin-save-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const card = e.target.closest('.vpp-admin-card');
-        const serviceId = e.target.dataset.serviceId;
-        const minVal = card.querySelector('.admin-min-price').value;
-        const maxVal = card.querySelector('.admin-max-price').value;
-
-        saveCustomPrice(serviceId, minVal, maxVal);
-        showToast('💾 Price updated & published live!');
-      });
-    });
-
-    // Attach Reset Service Listeners
-    document.querySelectorAll('.admin-reset-service-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const serviceId = e.target.dataset.serviceId;
-        resetCustomService(serviceId);
-        updateAdminGrid();
-        showToast('🔄 Reset service to defaults!');
       });
     });
   }

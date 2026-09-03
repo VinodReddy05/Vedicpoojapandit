@@ -1,5 +1,12 @@
 // Automatically generated mappings for Pooja images
 window.SERVICE_IMAGES = {
+  "aksharabhyasam": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Swaraswatialtar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "annaprasanam": "assets/images/ceremony.png",
+  "barasala": "https://upload.wikimedia.org/wikipedia/commons/4/49/Early_piercing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "bhima-ratha-shanti": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Homa_or_Yajna_at_a_rural_village_home_during_puja.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "shashti-abda-poorthi": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Homa_or_Yajna_at_a_rural_village_home_during_puja.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "satabhishekam": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Homa_or_Yajna_at_a_rural_village_home_during_puja.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "nischitartham": "assets/images/marriage.png",
   "gruhapravesam": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Griha_Pravesh_Puja_Ceremony.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
   "karna-vedha": "https://upload.wikimedia.org/wikipedia/commons/4/49/Early_piercing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
   "marriage": "https://upload.wikimedia.org/wikipedia/commons/1/10/Diya_at_a_wedding_in_Tamil_Nadu_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
