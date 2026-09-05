@@ -9,6 +9,8 @@ const state = {
 // Firebase Cloud Configuration & Global Realtime Sync
 window.VPP_CLOUD_IMAGES = {};
 let db = null;
+let storage = null;
+let auth = null;
 
 try {
   if (typeof firebase !== 'undefined') {
@@ -25,6 +27,8 @@ try {
       firebase.initializeApp(firebaseConfig);
     }
     db = firebase.firestore();
+    if (firebase.storage) storage = firebase.storage();
+    if (firebase.auth) auth = firebase.auth();
 
     // Listen for Realtime Cloud Database updates across all devices
     db.collection("custom_images").onSnapshot((snapshot) => {
@@ -38,6 +42,7 @@ try {
       if (state.currentView === 'home') renderHome();
       else if (state.currentView === 'category' && state.currentCategoryId) renderCategory(state.currentCategoryId);
       else if (state.currentView === 'all-services') renderAllServices();
+      else if (state.currentView === 'gallery') renderGallery();
     }, (error) => {
       console.warn("Cloud DB realtime listener running in offline mode.");
     });
@@ -114,8 +119,8 @@ function getCustomImages() {
   }
 }
 
-function saveCustomImage(serviceId, imageData) {
-  // 1. Save to Local Memory
+function saveCustomImage(serviceId, imageData, fileBlob) {
+  // 1. Save to Local Memory & LocalStorage
   window.VPP_CLOUD_IMAGES[serviceId] = imageData;
   try {
     const images = JSON.parse(localStorage.getItem('vpp_custom_images') || '{}');
@@ -123,14 +128,37 @@ function saveCustomImage(serviceId, imageData) {
     localStorage.setItem('vpp_custom_images', JSON.stringify(images));
   } catch (e) {}
 
-  // 2. Save to Firebase Cloud Database (Reflects live on all devices globally)
+  // 2. Upload to Firebase Cloud Storage if file Blob is available
+  if (storage && fileBlob) {
+    try {
+      const storageRef = storage.ref(`pooja_images/${serviceId}_${Date.now()}.jpg`);
+      storageRef.put(fileBlob).then((snapshot) => {
+        return snapshot.ref.getDownloadURL();
+      }).then((downloadURL) => {
+        window.VPP_CLOUD_IMAGES[serviceId] = downloadURL;
+        if (db) {
+          db.collection("custom_images").doc(serviceId).set({
+            image: downloadURL,
+            updatedAt: new Date().toISOString()
+          });
+        }
+        showToast('☁️ Uploaded to Firebase Cloud Storage! Live on all devices.');
+      }).catch((err) => {
+        console.warn("Firebase Storage upload fallback:", err);
+      });
+    } catch (e) {
+      console.warn("Storage exception:", e);
+    }
+  }
+
+  // 3. Save to Firebase Cloud Firestore DB (Reflects live on all devices globally)
   if (db) {
     try {
       db.collection("custom_images").doc(serviceId).set({
         image: imageData,
         updatedAt: new Date().toISOString()
       }).then(() => {
-        showToast('☁️ Saved to Cloud! Visible on all devices globally.');
+        showToast('☁️ Saved to Firebase Cloud! Visible on all devices globally.');
       }).catch((err) => {
         console.warn("Cloud DB save fallback:", err);
       });
@@ -472,17 +500,160 @@ function renderHome() {
           </div>
           <h2 class="vpp-section__title">${langName} Sacred Categories</h2>
           <p class="vpp-section__subtitle">Explore authentic ${langName} ritual categories performed by certified priests</p>
+          
+          <!-- Sacred Search Bar Below Telugu Sacred Categories -->
+          <div class="vpp-home-search-wrap" style="max-width: 720px; margin: 24px auto 16px; position: relative;">
+            <div style="position: relative; display: flex; align-items: center;">
+              <span style="position: absolute; left: 18px; font-size: 1.2rem; color: var(--color-gold); pointer-events: none;">🔍</span>
+              <input type="text" id="home-sacred-search" placeholder="Search ${langName} categories, rituals (e.g. Rudrabhishekam, Vara Pashupatham, Gruhapravesam, Astrologer)..." style="width: 100%; padding: 14px 44px 14px 50px; border-radius: 50px; border: 2px solid var(--color-gold); background: #FFF; font-size: 1rem; font-family: var(--font-body); box-shadow: var(--shadow-gold); outline: none; transition: all 0.3s ease;">
+              <button id="home-search-clear" style="position: absolute; right: 16px; background: rgba(0,0,0,0.1); border: none; border-radius: 50%; width: 24px; height: 24px; font-size: 0.8rem; color: #555; cursor: pointer; display: none; align-items: center; justify-content: center;">✖</button>
+            </div>
+            
+            <div class="vpp-search-tags" style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 14px;">
+              <span class="vpp-search-pill" onclick="window.setHomeSearch('Rudrabhishekam')">🔱 Rudrabhishekam</span>
+              <span class="vpp-search-pill" onclick="window.setHomeSearch('Vara Pashupatham')">⚔️ Vara Pashupatham</span>
+              <span class="vpp-search-pill" onclick="window.setHomeSearch('Kanya Pashupatham')">🌸 Kanya Pashupatham</span>
+              <span class="vpp-search-pill" onclick="window.setHomeSearch('Gruhapravesam')">🪔 Gruhapravesam</span>
+              <span class="vpp-search-pill" onclick="window.setHomeSearch('Satyanarayana')">✨ Satyanarayana</span>
+              <span class="vpp-search-pill" onclick="window.setHomeSearch('Astrologer')">🔮 Astrologer</span>
+              <span class="vpp-search-pill" onclick="window.setHomeSearch('Homam')">🔥 Homam</span>
+            </div>
+          </div>
         </div>
-        <div class="vpp-categories-grid">
+
+        <div id="home-search-results-area" style="display: none; margin-bottom: 40px;"></div>
+
+        <div class="vpp-categories-grid" id="home-categories-grid">
           ${categoriesHtml}
         </div>
       </div>
     </section>
   `;
   
+  // Attach Home Live Search Listeners
+  const searchInput = document.getElementById('home-sacred-search');
+  const clearBtn = document.getElementById('home-search-clear');
+  
+  window.setHomeSearch = function(query) {
+    if (searchInput) {
+      searchInput.value = query;
+      performHomeSearch(query);
+    }
+  };
+
+  function performHomeSearch(query) {
+    const term = query.toLowerCase().trim();
+    if (clearBtn) clearBtn.style.display = term ? 'flex' : 'none';
+
+    const categoriesGrid = document.getElementById('home-categories-grid');
+    const resultsArea = document.getElementById('home-search-results-area');
+
+    if (!term) {
+      if (categoriesGrid) categoriesGrid.style.display = 'grid';
+      if (resultsArea) {
+        resultsArea.style.display = 'none';
+        resultsArea.innerHTML = '';
+      }
+      return;
+    }
+
+    // Filter matching categories and services
+    let matchingCategories = visibleCategories.filter(c => c.name.toLowerCase().includes(term) || (c.description && c.description.toLowerCase().includes(term)));
+    
+    let matchingServices = [];
+    visibleCategories.forEach(cat => {
+      (cat.services || []).forEach(s => {
+        if (s.name.toLowerCase().includes(term) || (s.shortDesc && s.shortDesc.toLowerCase().includes(term)) || (s.description && s.description.toLowerCase().includes(term))) {
+          matchingServices.push({ service: s, category: cat });
+        }
+      });
+    });
+
+    if (categoriesGrid) categoriesGrid.style.display = 'none';
+    if (resultsArea) {
+      resultsArea.style.display = 'block';
+
+      if (matchingCategories.length === 0 && matchingServices.length === 0) {
+        resultsArea.innerHTML = `
+          <div style="text-align: center; padding: 40px; background: #FFF; border-radius: 12px; border: 1px dashed var(--color-gold);">
+            <span style="font-size: 2rem;">🔍</span>
+            <h3 style="color: var(--text-dark); margin: 12px 0 6px;">No sacred rituals found for "${query}"</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Try searching for "Rudrabhishekam", "Vara Pashupatham", "Astrologer", or "Homam".</p>
+          </div>
+        `;
+      } else {
+        let html = '';
+        if (matchingCategories.length > 0) {
+          html += `
+            <div style="margin-bottom: 24px;">
+              <h3 style="font-size: 1.2rem; color: var(--color-saffron); margin-bottom: 12px;">📁 Matching Categories (${matchingCategories.length})</h3>
+              <div class="vpp-categories-grid">
+                ${matchingCategories.map(cat => `
+                  <div class="vpp-category-card" onclick="window.location.hash='#/category/${cat.id}'">
+                    <div class="vpp-category-card__icon-wrap" style="background: ${cat.gradient}">
+                      <span class="vpp-category-card__icon">${cat.icon}</span>
+                    </div>
+                    <div class="vpp-category-card__content">
+                      <h3 class="vpp-category-card__title">${cat.name}</h3>
+                      <p class="vpp-category-card__count">${cat.services ? cat.services.length : 0} services</p>
+                    </div>
+                    <span class="vpp-category-card__arrow">→</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        }
+
+        if (matchingServices.length > 0) {
+          html += `
+            <div>
+              <h3 style="font-size: 1.2rem; color: var(--color-saffron); margin-bottom: 12px;">📿 Matching Rituals & Services (${matchingServices.length})</h3>
+              <div class="vpp-services-grid">
+                ${matchingServices.map(m => {
+                  const eff = getEffectiveService(m.service);
+                  const img = getServiceImage(eff);
+                  return `
+                    <div class="vpp-service-card slide-up" onclick="window.location.hash='#/service/${m.category.id}/${m.service.id}'">
+                      <div class="vpp-service-card__image-wrap">
+                        <img src="${img}" class="vpp-service-card__img" alt="${m.service.name}" loading="lazy">
+                        <div class="vpp-service-card__gradient"></div>
+                        <span class="vpp-service-card__badge">${m.category.name}</span>
+                      </div>
+                      <div class="vpp-service-card__body">
+                        <h3 class="vpp-service-card__title">${m.service.name}</h3>
+                        <p class="vpp-service-card__excerpt">${m.service.shortDesc || ''}</p>
+                        <div class="vpp-service-card__footer">
+                          <span class="vpp-service-card__price">₹${eff.priceMin ? eff.priceMin.toLocaleString('en-IN') : '0'} - ₹${eff.priceMax ? eff.priceMax.toLocaleString('en-IN') : '0'}</span>
+                          <span class="vpp-service-card__rating">★ ${m.service.rating || 5.0}</span>
+                        </div>
+                      </div>
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          `;
+        }
+        resultsArea.innerHTML = html;
+      }
+    }
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => performHomeSearch(e.target.value));
+  }
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      performHomeSearch('');
+    });
+  }
+
   initScrollObserver();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
 
 function renderAllServices() {
   state.currentView = 'all-services';
@@ -782,111 +953,138 @@ function renderGallery() {
   
   renderBreadcrumb([
     { label: 'Home', hash: '#/' },
-    { label: 'Pooja Gallery', hash: '' }
+    { label: 'My Gallery 📸', hash: '' }
   ]);
   
   const content = document.getElementById('app-content');
-  
-  const currentLang = state.selectedLanguage || 'telugu';
-  let targetCategories = (window.APP_DATA.categories || []).filter(c => {
-    if (currentLang === 'telugu' || currentLang === 'english') {
-      return !c.defaultLanguage || c.defaultLanguage === 'telugu';
-    }
-    return c.defaultLanguage === currentLang;
-  });
+  const galleryImages = window.MY_GALLERY_IMAGES || [];
 
-  if (targetCategories.length === 0) {
-    targetCategories = (window.APP_DATA.categories || []).filter(c => !c.defaultLanguage || c.defaultLanguage === 'telugu');
-  }
+  const filterCategories = [
+    { id: 'all', name: '✨ All Photos (43+)' },
+    { id: 'Rudrabhishekam & Pashupatham', name: '🔱 Rudrabhishekam & Pashupatham' },
+    { id: 'Homams & Yagnas', name: '🔥 Homams & Yagnas' },
+    { id: 'Sacred Ceremonies', name: '🪔 Sacred Ceremonies' },
+    { id: 'Astrologer & Rituals', name: '🔮 Astrologer & Rituals' },
+    { id: 'Divine Priests', name: '🕉️ Divine Priests' }
+  ];
 
-  let allServices = [];
-  targetCategories.forEach(cat => {
-    if (cat.services) {
-      cat.services.forEach(serv => {
-        allServices.push({
-          ...serv,
-          categoryName: cat.name,
-          categoryId: cat.id,
-          categoryIcon: cat.icon
-        });
-      });
-    }
-  });
-
-  const categoriesList = targetCategories;
-  let filterButtonsHtml = `<button class="vpp-gallery-filter-btn vpp-gallery-filter-btn--active" data-filter="all">All Poojas</button>`;
-  filterButtonsHtml += categoriesList.map(cat => 
-    `<button class="vpp-gallery-filter-btn" data-filter="${cat.id}">${cat.name}</button>`
+  let filterButtonsHtml = filterCategories.map((cat, idx) => 
+    `<button class="vpp-gallery-filter-btn ${idx === 0 ? 'vpp-gallery-filter-btn--active' : ''}" data-filter="${cat.id}">${cat.name}</button>`
   ).join('');
 
-  function buildGridHtml(filteredServices) {
-    return filteredServices.map(service => {
-      const imageUrl = getServiceImage(service);
-      return `
-        <div class="vpp-gallery-card slide-up" data-category="${service.categoryId}">
-          <div class="vpp-gallery-card__image-container">
-            <img src="${imageUrl}" class="vpp-gallery-card__img" alt="${service.name}" loading="lazy">
-            <span class="vpp-gallery-card__tag">${service.categoryName}</span>
-            <div class="vpp-gallery-card__overlay">
-              <a href="#/service/${service.categoryId}/${service.id}" class="vpp-gallery-card__btn" title="View Details" style="width: auto; height: auto; padding: 10px 20px; border-radius: 50px;">👁️ View Details</a>
-            </div>
-          </div>
-          <div class="vpp-gallery-card__body">
-            <div>
-              <h4 class="vpp-gallery-card__title">${service.name}</h4>
-              <p class="vpp-gallery-card__desc">${service.shortDesc || ''}</p>
-            </div>
-            <div class="vpp-gallery-card__actions">
-              <a href="#/service/${service.categoryId}/${service.id}" class="vpp-gallery-card__view-link" style="flex-grow: 1; text-align: center;">
-                View Details
-              </a>
-            </div>
+  function buildGalleryGridHtml(images) {
+    return images.map((imgObj, idx) => `
+      <div class="vpp-gallery-card-100c slide-up" data-category="${imgObj.category}" data-index="${idx}" onclick="window.openGalleryLightbox(${idx})" style="cursor: pointer;">
+        <div class="vpp-gallery-card-100c__image-container" style="height: 280px;">
+          <img src="${imgObj.path}" class="vpp-gallery-card-100c__img" alt="Gallery Photo" loading="lazy">
+          <div class="vpp-gallery-card-100c__overlay">
+            <span style="color: var(--color-gold); font-size: 2.2rem; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));">🔍</span>
           </div>
         </div>
-      `;
-    }).join('');
+      </div>
+    `).join('');
   }
 
   content.innerHTML = `
-    <section class="vpp-section vpp-gallery-section">
+    <section class="vpp-section vpp-gallery-section" style="padding-top: 30px;">
       <div class="container">
         <div class="vpp-section__header">
-          <h2 class="vpp-section__title">Divine Image Gallery</h2>
-          <p class="vpp-section__subtitle">Explore and download high-quality images of our sacred poojas, homams, and ceremonies</p>
+          <div style="display: flex; justify-content: center; margin-bottom: 12px;">
+             <span class="vpp-badge--gold">👑 LUXURY GALLERY</span>
+          </div>
+          <h2 class="vpp-section__title">Vedic Pooja Pandit Divine Gallery</h2>
+          <p class="vpp-section__subtitle">Browse high-resolution photos of sacred poojas, homams, Pashupatham rituals, and certified Patashala pandits.</p>
         </div>
         
-        <div class="vpp-gallery-filter-bar" id="gallery-filter-bar">
-          ${filterButtonsHtml}
-        </div>
+      
         
-        <div class="vpp-gallery-grid" id="gallery-grid">
-          ${buildGridHtml(allServices)}
+        <div class="vpp-gallery-100c-grid" id="gallery-grid">
+          ${buildGalleryGridHtml(galleryImages)}
         </div>
       </div>
     </section>
+
+    <!-- Fullscreen Lightbox Modal -->
+    <div id="vpp-lightbox-modal" class="vpp-lightbox-modal" style="display: none;">
+      <div class="vpp-lightbox-backdrop" onclick="window.closeGalleryLightbox()"></div>
+      <div class="vpp-lightbox-content">
+        <button class="vpp-lightbox-close" onclick="window.closeGalleryLightbox()">✕</button>
+        <button class="vpp-lightbox-nav vpp-lightbox-prev" onclick="window.navGalleryLightbox(-1)">❮</button>
+        <button class="vpp-lightbox-nav vpp-lightbox-next" onclick="window.navGalleryLightbox(1)">❯</button>
+        
+        <div class="vpp-lightbox-img-wrap" style="margin-bottom: 0;">
+          <img id="lightbox-img" src="" alt="Gallery Image">
+        </div>
+        
+        <div class="vpp-lightbox-info" style="margin-top: 16px;">
+          <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <a id="lightbox-dl-btn" href="#" download class="vpp-btn vpp-btn--primary" style="padding: 8px 20px; font-size: 0.9rem;">⬇ Download HD Photo</a>
+            <a id="lightbox-wa-btn" href="#" target="_blank" class="vpp-btn vpp-btn--whatsapp" style="padding: 8px 20px; font-size: 0.9rem;">💬 Share on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
   `;
 
+  // Gallery Lightbox Logic
+  let currentLightboxIdx = 0;
+
+  window.openGalleryLightbox = function(index) {
+    if (index < 0 || index >= galleryImages.length) return;
+    currentLightboxIdx = index;
+    const imgObj = galleryImages[index];
+
+    const modal = document.getElementById('vpp-lightbox-modal');
+    const img = document.getElementById('lightbox-img');
+    const dlBtn = document.getElementById('lightbox-dl-btn');
+    const waBtn = document.getElementById('lightbox-wa-btn');
+
+    if (img) img.src = imgObj.path;
+    if (dlBtn) dlBtn.href = imgObj.path;
+    if (waBtn) {
+      const waMsg = encodeURIComponent(`Check out this sacred ritual photo from Vedic Pooja Pandit`);
+      waBtn.href = `https://wa.me/?text=${waMsg}`;
+    }
+
+    if (modal) modal.style.display = 'flex';
+  };
+
+  window.closeGalleryLightbox = function() {
+    const modal = document.getElementById('vpp-lightbox-modal');
+    if (modal) modal.style.display = 'none';
+  };
+
+  window.navGalleryLightbox = function(step) {
+    let nextIdx = currentLightboxIdx + step;
+    if (nextIdx < 0) nextIdx = galleryImages.length - 1;
+    if (nextIdx >= galleryImages.length) nextIdx = 0;
+    window.openGalleryLightbox(nextIdx);
+  };
+
+  // Filter bar listener
   const filterBar = document.getElementById('gallery-filter-bar');
   const grid = document.getElementById('gallery-grid');
   
-  filterBar.addEventListener('click', (e) => {
-    const btn = e.target.closest('.vpp-gallery-filter-btn');
-    if (!btn) return;
-    
-    filterBar.querySelectorAll('.vpp-gallery-filter-btn').forEach(b => b.classList.remove('vpp-gallery-filter-btn--active'));
-    btn.classList.add('vpp-gallery-filter-btn--active');
-    
-    const filter = btn.dataset.filter;
-    const cards = grid.querySelectorAll('.vpp-gallery-card');
-    
-    cards.forEach(card => {
-      if (filter === 'all' || card.dataset.category === filter) {
-        card.style.display = 'flex';
-      } else {
-        card.style.display = 'none';
-      }
+  if (filterBar && grid) {
+    filterBar.addEventListener('click', (e) => {
+      const btn = e.target.closest('.vpp-gallery-filter-btn');
+      if (!btn) return;
+      
+      filterBar.querySelectorAll('.vpp-gallery-filter-btn').forEach(b => b.classList.remove('vpp-gallery-filter-btn--active'));
+      btn.classList.add('vpp-gallery-filter-btn--active');
+      
+      const filter = btn.dataset.filter;
+      const cards = grid.querySelectorAll('.vpp-gallery-card-100c');
+      
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     });
-  });
+  }
 
   initScrollObserver();
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -922,7 +1120,7 @@ function renderAdmin() {
   
   renderBreadcrumb([
     { label: 'Home', hash: '#/' },
-    { label: 'Admin Portal', hash: '#/admin' }
+    { label: 'Admin Control Panel', hash: '#/admin' }
   ]);
 
   const content = document.getElementById('app-content');
@@ -947,7 +1145,7 @@ function renderAdmin() {
             
             <div style="text-align: left; margin-bottom: 16px;">
               <label style="color: var(--color-gold); font-size: 0.8rem; font-weight: 600; margin-bottom: 6px; display: block; letter-spacing: 0.5px;">ADMIN EMAIL</label>
-              <input type="email" id="admin-email-input" class="vpp-admin-input" placeholder="admin@gmail.com" style="margin-bottom: 0;" autofocus>
+              <input type="email" id="admin-email-input" class="vpp-admin-input" placeholder="byasadevp632@gmail.com" style="margin-bottom: 0;" autofocus>
             </div>
 
             <div style="text-align: left; margin-bottom: 24px;">
@@ -974,7 +1172,8 @@ function renderAdmin() {
       const email = emailInput ? emailInput.value.trim().toLowerCase() : '';
       const pass = passInput ? passInput.value : '';
 
-      if (email === 'admin@gmail.com' && pass === '12341234') {
+      // Admin Credentials Check: byasadevp632@gmail.com / byasadevp632@202
+      if (email === 'byasadevp632@gmail.com' && pass === 'byasadevp632@202') {
         sessionStorage.setItem('vpp_admin_auth', 'true');
         renderAdmin();
       } else if (errorMsg) {
@@ -1030,7 +1229,7 @@ function renderAdmin() {
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; background: var(--color-maroon-dark); padding: 20px 24px; border-radius: var(--radius-md); border: 1px solid rgba(212, 175, 55, 0.4);">
             <div>
               <h2 style="color: var(--color-gold); font-size: 1.6rem; margin: 0 0 4px 0;">🔐 Pandit Admin Control Panel</h2>
-              <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin: 0;">Upload custom images for any pooja directly from mobile gallery, camera, or URL link.</p>
+              <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin: 0;">Manage service prices & upload custom images directly from mobile gallery, camera, or URL link.</p>
             </div>
             <div>
               <button id="admin-logout-btn" class="vpp-btn" style="background: rgba(229, 81, 0, 0.2); color: #FF9800; border: 1px solid #FF9800; font-size: 0.85rem; padding: 8px 16px;">🚪 Logout</button>
@@ -1040,7 +1239,7 @@ function renderAdmin() {
           <!-- Language Selector Bar -->
           <div style="background: #FFF; padding: 16px 20px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); margin-bottom: 24px; border: 1px solid var(--color-border);">
             <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
-              <span style="font-weight: 600; color: var(--text-dark); font-size: 0.95rem;">🌐 SELECT LANGUAGE TO EDIT IMAGES:</span>
+              <span style="font-weight: 600; color: var(--text-dark); font-size: 0.95rem;">🌐 SELECT LANGUAGE TO EDIT:</span>
               <span class="vpp-badge--gold">${langName} Selected</span>
             </div>
             <div style="display: flex; gap: 8px; flex-wrap: wrap;">
@@ -1161,6 +1360,24 @@ function renderAdmin() {
             </div>
           </div>
 
+          <!-- Price Range Section -->
+          <div style="background: #FFFDF5; padding: 12px; border-radius: 6px; border: 1px solid rgba(212, 175, 55, 0.4); margin-bottom: 12px;">
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--color-saffron); display: block; margin-bottom: 6px;">💰 PRICE RANGE UPDATE (₹):</span>
+            <div style="display: flex; gap: 8px; align-items: flex-end; flex-wrap: wrap;">
+              <div style="display: flex; flex-direction: column; flex: 1; min-width: 90px;">
+                <label style="font-size: 0.7rem; color: #666; font-weight: 600; margin-bottom: 2px;">MIN PRICE (₹)</label>
+                <input type="number" id="price-min-${s.id}" class="vpp-admin-input" value="${eff.priceMin !== undefined ? eff.priceMin : ''}" placeholder="${s.priceMin || 0}" style="margin: 0; padding: 6px 8px; font-size: 0.9rem; background: #FFF;">
+              </div>
+              <div style="display: flex; flex-direction: column; flex: 1; min-width: 90px;">
+                <label style="font-size: 0.7rem; color: #666; font-weight: 600; margin-bottom: 2px;">MAX PRICE (₹)</label>
+                <input type="number" id="price-max-${s.id}" class="vpp-admin-input" value="${eff.priceMax !== undefined ? eff.priceMax : ''}" placeholder="${s.priceMax || 0}" style="margin: 0; padding: 6px 8px; font-size: 0.9rem; background: #FFF;">
+              </div>
+              <button class="vpp-btn vpp-btn--primary admin-price-save-btn" data-service-id="${s.id}" data-orig-min="${s.priceMin || 0}" data-orig-max="${s.priceMax || 0}" style="padding: 8px 12px; font-size: 0.8rem; height: 34px; margin-bottom: 1px;">💾 Save Price</button>
+            </div>
+            <span style="font-size: 0.72rem; color: #777; margin-top: 4px; display: block;">* Leave empty to keep existing price intact</span>
+          </div>
+
+          <!-- Image Section -->
           <div style="background: #F9F9F9; padding: 12px; border-radius: 6px; display: flex; flex-direction: column; gap: 10px; border: 1px dashed #DDD;">
             <span style="font-size: 0.8rem; font-weight: 600; color: #444;">📸 UPLOAD CUSTOM IMAGE:</span>
             <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
@@ -1175,15 +1392,42 @@ function renderAdmin() {
       `;
     }).join('');
 
+    // Attach Price Save Listeners
+    document.querySelectorAll('.admin-price-save-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const serviceId = e.target.dataset.serviceId;
+        const origMin = parseInt(e.target.dataset.origMin, 10) || 0;
+        const origMax = parseInt(e.target.dataset.origMax, 10) || 0;
+        
+        const minEl = document.getElementById(`price-min-${serviceId}`);
+        const maxEl = document.getElementById(`price-max-${serviceId}`);
+        
+        const minValStr = minEl ? minEl.value.trim() : '';
+        const maxValStr = maxEl ? maxEl.value.trim() : '';
+        
+        // Fetch current effective price
+        const customP = getCustomPrices()[serviceId] || {};
+        const currentEffMin = customP.priceMin !== undefined ? customP.priceMin : origMin;
+        const currentEffMax = customP.priceMax !== undefined ? customP.priceMax : origMax;
+        
+        // Rule: if empty given input then remains same (retains existing value)
+        const finalMin = minValStr !== '' ? parseInt(minValStr, 10) : currentEffMin;
+        const finalMax = maxValStr !== '' ? parseInt(maxValStr, 10) : currentEffMax;
+        
+        saveCustomPrice(serviceId, finalMin, finalMax);
+        showToast(`💰 Price range updated: ₹${finalMin.toLocaleString('en-IN')} - ₹${finalMax.toLocaleString('en-IN')}`);
+      });
+    });
+
     // Attach File Input Listeners (With Mobile Photo Compression & Cloud Sync)
     document.querySelectorAll('.vpp-admin-file-input').forEach(input => {
       input.addEventListener('change', (e) => {
         const serviceId = e.target.dataset.serviceId;
         const file = e.target.files[0];
         if (file) {
-          showToast('⏳ Optimizing & uploading photo...');
+          showToast('⏳ Optimizing & uploading photo to Firebase Cloud Storage...');
           compressImageFile(file, (base64Data) => {
-            saveCustomImage(serviceId, base64Data);
+            saveCustomImage(serviceId, base64Data, file);
             const thumbEl = document.getElementById(`admin-thumb-${serviceId}`);
             if (thumbEl) thumbEl.src = base64Data;
           });
@@ -1209,3 +1453,4 @@ function renderAdmin() {
   buildAdminUI();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+

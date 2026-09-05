@@ -2081,5 +2081,279 @@ ul, ol {
   display: none;
 }
 
+/* ==========================================================================
+   100-CRORE LUXURY GALLERY, LIGHTBOX MODAL & HOME SEARCH STYLES
+   ========================================================================== */
+
+/* Search Pills & Input */
+.vpp-search-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: 50px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.vpp-search-pill:hover {
+  background: var(--gradient-sacred);
+  color: #FFF;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+#home-sacred-search:focus {
+  border-color: var(--color-saffron) !important;
+  box-shadow: 0 0 20px rgba(230, 81, 0, 0.3) !important;
+}
+
+/* 100-Crore Gallery Masonry Grid */
+.vpp-gallery-100c-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.vpp-gallery-card-100c {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+.vpp-gallery-card-100c:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.35);
+  border-color: var(--color-gold);
+}
+
+.vpp-gallery-card-100c__image-container {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.vpp-gallery-card-100c__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.vpp-gallery-card-100c:hover .vpp-gallery-card-100c__img {
+  transform: scale(1.1);
+}
+
+.vpp-gallery-card-100c__tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--gradient-sacred);
+  color: #FFF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  z-index: 2;
+}
+
+.vpp-gallery-card-100c__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(42, 10, 10, 0.85), transparent 70%);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.vpp-gallery-card-100c:hover .vpp-gallery-card-100c__overlay {
+  opacity: 1;
+}
+
+.vpp-gallery-card-100c__zoom-btn {
+  background: var(--gradient-gold);
+  color: var(--color-maroon-dark);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
+  transform: translateY(10px);
+  transition: transform 0.3s ease, background 0.2s ease;
+}
+
+.vpp-gallery-card-100c:hover .vpp-gallery-card-100c__zoom-btn {
+  transform: translateY(0);
+}
+
+.vpp-gallery-card-100c__body {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.vpp-gallery-card-100c__title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.vpp-gallery-card-100c__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-gold);
+}
+
+.vpp-gallery-card-100c__cat-name {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.vpp-gallery-card-100c__dl-btn {
+  background: rgba(230, 81, 0, 0.1);
+  color: var(--color-saffron);
+  border: 1px solid rgba(230, 81, 0, 0.3);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vpp-gallery-card-100c__dl-btn:hover {
+  background: var(--color-saffron);
+  color: #FFF;
+}
+
+/* Lightbox Modal */
+.vpp-lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.vpp-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 5, 5, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.vpp-lightbox-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  width: 100%;
+  background: var(--color-maroon-dark);
+  border: 2px solid var(--color-gold);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: scaleIn 0.3s ease;
+}
+
+.vpp-lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: rgba(255,255,255,0.15);
+  color: #FFF;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s ease;
+}
+
+.vpp-lightbox-close:hover {
+  background: var(--color-saffron);
+}
+
+.vpp-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.vpp-lightbox-nav:hover {
+  background: var(--color-gold);
+  color: var(--color-maroon-dark);
+}
+
+.vpp-lightbox-prev { left: 16px; }
+.vpp-lightbox-next { right: 16px; }
+
+.vpp-lightbox-img-wrap {
+  max-height: 550px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+  background: #000;
+}
+
+.vpp-lightbox-img-wrap img {
+  max-height: 550px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.vpp-lightbox-info {
+  text-align: center;
+  width: 100%;
+}
+
+
 
 

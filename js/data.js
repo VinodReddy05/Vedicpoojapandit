@@ -993,6 +993,130 @@ window.APP_DATA = {
       ]
     },
     {
+      id: 'rudrabhishekam-pashupatham',
+      name: 'Rudrabhishekam & Pashupatham',
+      icon: '🔱',
+      gradient: 'linear-gradient(135deg, #8E0E00, #1F1C1C)',
+      description: 'Sacred Maha Rudrabhishekam and 7 Powerful Pashupatha Homam & Abhishekam Rituals for divine boons, health, victory, wealth, and marital bliss.',
+      defaultLanguage: 'telugu',
+      services: [
+        {
+          id: 'rudrabhishekam-pooja',
+          name: 'Rudrabhishekam Pooja',
+          shortDesc: 'Sacred bath offering to Lord Shiva with Sri Rudram chanting.',
+          description: 'Rudrabhishekam is an intense pooja where Lord Shiva is worshipped by bathing the Shiva Linga with holy substances (milk, ghee, honey, Panchamrut) while chanting the powerful Sri Rudram.',
+          keyInsights: [
+            'One of the most powerful poojas for Lord Shiva.',
+            'Bathing is done with milk, ghee, honey, and sacred Gangajal.',
+            'Removes doshas and grants peace of mind.',
+            'Highly beneficial during Pradosham or Mondays.',
+            'Cures diseases and brings prosperity.'
+          ],
+          promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 4800, priceMax: 47700, rating: 5.0, reviewCount: 45, duration: '2-4 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+        },
+        {
+          id: 'vara-pashupatham',
+          name: 'Vara Pashupatham',
+          shortDesc: 'Vara Pashupatha Homam for divine boons, wish fulfillment & success.',
+          description: 'Vara Pashupatham is a revered Shiva-Shakti ritual invoking Pashupatinatha with Sri Vara Pashupatha Mantra. It bestows divine boons, fulfills deep desires, and grants ultimate success in life.',
+          keyInsights: [
+            'Grants divine boons and wish fulfillment.',
+            'Eliminates major life blockages & failures.',
+            'Invokes Pashupatinatha & Parvati for grace.',
+            'Ideal for achieving major personal goals.',
+            'Conducted by certified Vedic Shivacharyas.'
+          ],
+          promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 5500, priceMax: 25000, rating: 5.0, reviewCount: 38, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+        },
+        {
+          id: 'kanya-pashupatham',
+          name: 'Kanya Pashupatham',
+          shortDesc: 'Kanya Pashupatha Abhishekam for marriage obstacles & suitable partner.',
+          description: 'Kanya Pashupatham is performed for eligible women facing delays in marriage or obstacles in finding a suitable life partner. It removes marital doshas and blesses with a harmonious marriage.',
+          keyInsights: [
+            'Removes severe delays and obstacles in marriage.',
+            'Invokes Goddess Parvati & Lord Pashupati.',
+            'Blesses with a compatible and loving life partner.',
+            'Restores peace in marital discussions.',
+            'Performed by specialized Vedic priests.'
+          ],
+          promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 5000, priceMax: 21000, rating: 4.9, reviewCount: 42, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+        },
+        {
+          id: 'vijay-pashupatham',
+          name: 'Vijaya Pashupatham',
+          shortDesc: 'Vijaya Pashupatha Homam for victory over enemies & legal disputes.',
+          description: 'Vijaya Pashupatham invokes the victorious aspect of Lord Pashupati to overcome fierce competition, court cases, legal disputes, corporate rivalries, and enemy obstacles.',
+          keyInsights: [
+            'Grants victory in court cases and legal matters.',
+            'Neutralizes enemy conspiracies and opposition.',
+            'Ensures success in high-stakes ventures.',
+            'Protects against malice and evil eye.',
+            'Conducted by senior Vedic Acharyas.'
+          ],
+          promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 6000, priceMax: 28000, rating: 5.0, reviewCount: 36, duration: '3-4 hours', defaultLanguage: 'telugu', imageType: 'homam'
+        },
+        {
+          id: 'aarogya-pashupatham',
+          name: 'Aarogya Pashupatham',
+          shortDesc: 'Aarogya Pashupatha Abhishekam for radiant health & vitality.',
+          description: 'Aarogya Pashupatham is performed for physical health, mental strength, and protection from illnesses. Sacred herbal juices and bilva patra are offered to Lord Pashupati.',
+          keyInsights: [
+            'Restores physical energy and immunity.',
+            'Wards off chronic health ailments & mental stress.',
+            'Includes Bilva Archana and Sacred Abhishekam.',
+            'Promotes long life and wellness.',
+            'Performed by certified Shivacharya Brahmins.'
+          ],
+          promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 5200, priceMax: 22500, rating: 4.9, reviewCount: 40, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'pooja'
+        },
+        {
+          id: 'dhanvantari-pashupatham',
+          name: 'Dhanvantari Pashupatham',
+          shortDesc: 'Dhanvantari Pashupatha Homam for supreme healing & chronic relief.',
+          description: 'Combines the divine healing attributes of Lord Dhanvantari and Pashupatinatha. Medicinal ghee, herbs, and lotus petals are offered into the sacred fire to cure long-standing health issues.',
+          keyInsights: ['Supreme fire ritual for healing critical illness.', 'Invokes divine doctors Dhanvantari & Lord Shiva.', 'Offers 108 medicinal herbs into holy fire.', 'Accelerates medical recovery and vitality.', 'Conducted by senior Vedic Pandits.'],
+          promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 6500, priceMax: 32000, rating: 5.0, reviewCount: 35, duration: '3-4 hours', defaultLanguage: 'telugu', imageType: 'homam'
+        },
+        {
+          id: 'kubera-pashupatham',
+          name: 'Kubera Pashupatham',
+          shortDesc: 'Kubera Pashupatha Homam for wealth, business luck & abundance.',
+          description: 'Kubera Pashupatham invokes Lord Kubera and Pashupati Shiva to unlock financial prosperity, clear business debts, attract wealth, and expand commercial revenue.',
+          keyInsights: [
+            'Attracts immense financial wealth and profit.',
+            'Resolves financial stagnation and heavy debts.',
+            'Offerings of Lotus flowers, gold coins & ghee.',
+            'Blesses commercial establishments & investments.',
+            'Performed by certified Vedic Priests.'
+          ],
+          promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 7000, priceMax: 35000, rating: 5.0, reviewCount: 48, duration: '3-4 hours', defaultLanguage: 'telugu', imageType: 'homam'
+        },
+        {
+          id: 'kalyanam-pashupatham',
+          name: 'Kalyana Pashupatham',
+          shortDesc: 'Kalyana Pashupatha Homam for marital harmony, love & relationship bliss.',
+          description: 'Kalyana Pashupatham is performed for married couples to enhance mutual love, resolve marital friction, ensure family harmony, and bless with blissful togetherness.',
+          keyInsights: [
+            'Restores deep love and trust between husband & wife.',
+            'Resolves marital conflicts and family misunderstandings.',
+            'Includes Shiva-Parvati Kalyanam & Special Homam.',
+            'Ensures lifelong relationship stability.',
+            'Conducted by senior Vedic Brahmins.'
+          ],
+          promise: ['Vedic Patashala certified and experienced priests.', 'All rituals follow Vedic Standards.', 'High-quality Samagri included.', 'Guaranteed Punctuality.'],
+          priceMin: 5800, priceMax: 26000, rating: 4.9, reviewCount: 44, duration: '2-3 hours', defaultLanguage: 'telugu', imageType: 'homam'
+        }
+      ]
+    },
+    {
       id: 'ceremonies',
       name: 'Ceremonies',
       icon: '🪔',
@@ -5881,3 +6005,90 @@ window.APP_DATA = {
 }
   ]
 };
+
+// Auto-ensure Astrologer Category exists across ALL languages
+(function ensureAstrologerInAllLanguages() {
+  if (!window.APP_DATA || !window.APP_DATA.languages || !window.APP_DATA.categories) return;
+
+  window.APP_DATA.languages.forEach(lang => {
+    const langId = lang.id;
+    const catId = langId === 'telugu' ? 'astrologer' : `${langId}-astrologer`;
+    const exists = window.APP_DATA.categories.some(c => c.id === catId || (c.defaultLanguage === langId && c.name.toLowerCase().includes('astrologer')));
+
+    if (!exists) {
+      window.APP_DATA.categories.push({
+        id: catId,
+        name: 'Astrologer',
+        icon: '🔮',
+        gradient: 'linear-gradient(135deg, #4A148C, #7B1FA2)',
+        description: `Authentic Jyotishya, Horoscope, and Astrological Consultation by Certified Vedic Astrologers in ${lang.name}.`,
+        defaultLanguage: langId,
+        services: [
+          {
+            id: `${langId}-fix-your-muhurat`,
+            name: 'Fix Your Muhurtham',
+            shortDesc: 'Astrological consultation for fixing auspicious timings & Panchang.',
+            description: 'Consult expert Vedic astrologers and Jyotish pandits to calculate the most auspicious Muhurtham (timing) based on birth charts for marriage, housewarming, or new business.',
+            keyInsights: ['Panchang calculation based on exact birth details.', 'Avoids Rahu Kaal and inauspicious planetary transits.', 'Tailored for marriage, Griha Pravesh, and business.', 'Ensures long-term success.', 'Provided by certified Jyotishis.'],
+            promise: ['Experienced Astrologers.', 'Accurate Panchang Calculation.', 'Detailed Report Provided.'],
+            priceMin: 500, priceMax: 2500, rating: 4.8, reviewCount: 55, duration: '1 hour', defaultLanguage: langId, imageType: 'pooja'
+          },
+          {
+            id: `${langId}-janam-kundali-matching`,
+            name: 'Janam Kundali & Jathakam Matching',
+            shortDesc: 'Comprehensive horoscope matching for marriage & compatibility.',
+            description: 'Detailed Ashta Koota and Dasha Sandhi horoscope analysis for bride and groom to check marital harmony, longevity, Kuja dosha, and family prosperity.',
+            keyInsights: ['36 Gun Milan & Ashta Koota matching.', 'Kuja/Mangal Dosha & Papa Samyam check.', 'Analysis of 7th and 8th house transits.', 'Remedy suggestions for marital peace.', 'Conducted by senior Jyotish Acharyas.'],
+            promise: ['Certified Astrologers.', '100% Confidential Consultation.', 'Detailed Matching Report.'],
+            priceMin: 1100, priceMax: 5000, rating: 4.9, reviewCount: 62, duration: '1-2 hours', defaultLanguage: langId, imageType: 'pooja'
+          },
+          {
+            id: `${langId}-career-business-astrology`,
+            name: 'Career & Business Astrology Reading',
+            shortDesc: 'Astrological guidance for job promotion, business growth & finance.',
+            description: 'In-depth analysis of 10th house (Karma Bhava) and 11th house (Gain Bhava) to resolve career stagnation, job loss, partnership issues, and financial bottlenecks.',
+            keyInsights: ['Career path guidance & job switch muhurat.', 'Business expansion & partnership compatibility.', 'Financial luck remedies & Dasha analysis.', 'Conducted by experienced Astrologers.'],
+            promise: ['Expert Jyotish Consultation.', 'Clear Remedies & Guidance.'],
+            priceMin: 1500, priceMax: 7500, rating: 4.9, reviewCount: 48, duration: '1 hour', defaultLanguage: langId, imageType: 'pooja'
+          },
+          {
+            id: `${langId}-marriage-compatibility-horoscope`,
+            name: 'Marriage & Compatibility Horoscope',
+            shortDesc: 'Solving marital delays, relationship disputes & Kuja dosha.',
+            description: 'Expert horoscope reading to remove obstacles in finding a life partner, mitigate Manglik/Kuja doshas, and restore harmony between spouses.',
+            keyInsights: ['Mitigates Mangal & Rahu/Ketu marriage delays.', 'Relationship harmony remedies.', 'Personalized mantra and Yantra suggestions.'],
+            promise: ['Authentic Vedic Remedy Advice.', 'Experienced Astrologers.'],
+            priceMin: 1200, priceMax: 5500, rating: 4.8, reviewCount: 40, duration: '1 hour', defaultLanguage: langId, imageType: 'pooja'
+          },
+          {
+            id: `${langId}-dosha-nivarana-consultation`,
+            name: 'Dosha Nivarana & Remedy Advice',
+            shortDesc: 'Identification and remedy guidance for Kaal Sarp, Sade Sati & Pitru dosha.',
+            description: 'Comprehensive analysis of affliction in Janam Kundali to prescribe effective Vedic remedies, Mantra Japams, and Havan rituals for relief.',
+            keyInsights: ['Kaal Sarp & Shani Sade Sati remedies.', 'Pitru & Rahu/Ketu affliction remedies.', 'Customized Pooja & Havan recommendations.'],
+            promise: ['Effective Vedic Remedies.', 'Detailed Horoscope Report.'],
+            priceMin: 1500, priceMax: 6000, rating: 4.9, reviewCount: 50, duration: '1 hour', defaultLanguage: langId, imageType: 'shanti'
+          },
+          {
+            id: `${langId}-vastu-astrology-guidance`,
+            name: 'Vastu & Birth Chart Astrology Services',
+            shortDesc: 'Directional Vastu alignment based on individual horoscope.',
+            description: 'Combines home/commercial Vastu principles with personal planetary charts to maximize health, peace, and wealth flow into the living space.',
+            keyInsights: ['Horoscope-aligned Vastu evaluation.', 'Removes spatial and energy blockages.', 'Commercial & residential site guidance.'],
+            promise: ['Senior Vastu Experts.', 'Practical Non-Demolition Remedies.'],
+            priceMin: 2500, priceMax: 11000, rating: 5.0, reviewCount: 38, duration: '2 hours', defaultLanguage: langId, imageType: 'shanti'
+          },
+          {
+            id: `${langId}-gemstone-rudraksha-recommendation`,
+            name: 'Gemstone & Rudraksha Selection Advice',
+            shortDesc: 'Auspicious gemstone and authentic Rudraksha consultation.',
+            description: 'Scientific astrological recommendation of lucky gemstones (Ratna) and sacred Rudraksha beads based on Lagna lord and planetary strength.',
+            keyInsights: ['Determines correct Ratna (Ruby, Emerald, Sapphire, etc.).', 'Authentic Mukhi Rudraksha prescription.', 'Prana Pratishtha method for wearing.'],
+            promise: ['100% Authentic Astrological Advice.', 'No Forced Commercial Selling.'],
+            priceMin: 1100, priceMax: 4500, rating: 4.9, reviewCount: 45, duration: '45 mins', defaultLanguage: langId, imageType: 'pooja'
+          }
+        ]
+      });
+    }
+  });
+})();
