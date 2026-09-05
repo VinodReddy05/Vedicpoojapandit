@@ -38,11 +38,10 @@ try {
           window.VPP_CLOUD_IMAGES[doc.id] = data.image;
         }
       });
-      // Refresh current view if images updated live
-      if (state.currentView === 'home') renderHome();
-      else if (state.currentView === 'category' && state.currentCategoryId) renderCategory(state.currentCategoryId);
-      else if (state.currentView === 'all-services') renderAllServices();
-      else if (state.currentView === 'gallery') renderGallery();
+      // Refresh current view live on all devices when cloud image updates
+      if (typeof handleRoute === 'function') {
+        handleRoute();
+      }
     }, (error) => {
       console.warn("Cloud DB realtime listener running in offline mode.");
     });
@@ -113,14 +112,14 @@ function saveCustomPrice(serviceId, priceMin, priceMax) {
 function getCustomImages() {
   try {
     const local = JSON.parse(localStorage.getItem('vpp_custom_images') || '{}');
-    return { ...window.VPP_CLOUD_IMAGES, ...local };
+    return { ...local, ...window.VPP_CLOUD_IMAGES }; // LIVE CLOUD DB ALWAYS WINS OVER LOCAL STALE CACHE!
   } catch (e) {
     return window.VPP_CLOUD_IMAGES || {};
   }
 }
 
 function saveCustomImage(serviceId, imageData, fileBlob) {
-  // 1. Save to Local Memory & LocalStorage
+  // 1. Save to Local Memory & LocalStorage (Instant local feedback)
   window.VPP_CLOUD_IMAGES[serviceId] = imageData;
   try {
     const images = JSON.parse(localStorage.getItem('vpp_custom_images') || '{}');
@@ -128,39 +127,38 @@ function saveCustomImage(serviceId, imageData, fileBlob) {
     localStorage.setItem('vpp_custom_images', JSON.stringify(images));
   } catch (e) {}
 
-  // 2. Upload to Firebase Cloud Storage if file Blob is available
-  if (storage && fileBlob) {
-    try {
-      const storageRef = storage.ref(`pooja_images/${serviceId}_${Date.now()}.jpg`);
-      storageRef.put(fileBlob).then((snapshot) => {
-        return snapshot.ref.getDownloadURL();
-      }).then((downloadURL) => {
-        window.VPP_CLOUD_IMAGES[serviceId] = downloadURL;
-        if (db) {
-          db.collection("custom_images").doc(serviceId).set({
-            image: downloadURL,
-            updatedAt: new Date().toISOString()
-          });
-        }
-        showToast('☁️ Uploaded to Firebase Cloud Storage! Live on all devices.');
-      }).catch((err) => {
-        console.warn("Firebase Storage upload fallback:", err);
-      });
-    } catch (e) {
-      console.warn("Storage exception:", e);
-    }
-  }
-
-  // 3. Save to Firebase Cloud Firestore DB (Reflects live on all devices globally)
+  // 2. Primary: Save to Firebase Firestore Cloud DB (100% CORS-Free Realtime Cloud Sync across all devices)
   if (db) {
     try {
       db.collection("custom_images").doc(serviceId).set({
         image: imageData,
         updatedAt: new Date().toISOString()
       }).then(() => {
-        showToast('☁️ Saved to Firebase Cloud! Visible on all devices globally.');
+        showToast('☁️ Saved to Firebase Cloud! Visible live on all devices globally.');
       }).catch((err) => {
-        console.warn("Cloud DB save fallback:", err);
+        console.warn("Cloud Firestore save fallback:", err);
+      });
+    } catch (e) {}
+  }
+
+  // 3. Secondary: Try Firebase Storage upload (Swallow CORS preflight errors gracefully)
+  if (storage && fileBlob) {
+    try {
+      const storageRef = storage.ref(`pooja_images/${serviceId}_${Date.now()}.jpg`);
+      storageRef.put(fileBlob).then((snapshot) => {
+        return snapshot.ref.getDownloadURL();
+      }).then((downloadURL) => {
+        if (downloadURL) {
+          window.VPP_CLOUD_IMAGES[serviceId] = downloadURL;
+          if (db) {
+            db.collection("custom_images").doc(serviceId).set({
+              image: downloadURL,
+              updatedAt: new Date().toISOString()
+            });
+          }
+        }
+      }).catch((err) => {
+        console.info("Firebase Storage CORS notice: Firestore Realtime Cloud distribution active.");
       });
     } catch (e) {}
   }
@@ -209,8 +207,22 @@ function showToast(message) {
 
 // Image mapping helper function
 function getServiceImage(rawService) {
+  if (!rawService) return 'assets/images/devotion.png';
+  
+  // 1. Check live custom cloud image FIRST!
+  const customImages = getCustomImages();
+  if (customImages[rawService.id]) {
+    return customImages[rawService.id];
+  }
+  
+  // 2. Check service object property
   const service = getEffectiveService(rawService);
   if (service && service.image) return service.image;
+  
+  // 3. Use dynamically matched image if available
+  if (window.SERVICE_IMAGES && window.SERVICE_IMAGES[service.id]) {
+    return window.SERVICE_IMAGES[service.id];
+  }
   
   const specificImages = {
     'satyanarayana-pooja': 'assets/images/satyanarayana_pooja.png',
@@ -221,17 +233,12 @@ function getServiceImage(rawService) {
     'varalakshmi-pooja': 'assets/images/varalakshmi_vratham.png',
     'upanayanam': 'assets/images/upanayanam.png',
     'vastu-shanti-pooja': 'assets/images/vastu_shanti.png',
-    'rudrabhishekam-pooja': 'assets/images/rudrabhishekam.png',
+    'rudrabhishekam-pooja': 'assets/images/Vedicpoojapandi/IMG-20260905-WA0023.jpg',
     'ayudha-pooja': 'assets/images/ayudha_pooja.png'
   };
   
   if (specificImages[service.id]) {
     return specificImages[service.id];
-  }
-  
-  // Use dynamically matched image if available
-  if (window.SERVICE_IMAGES && window.SERVICE_IMAGES[service.id]) {
-    return window.SERVICE_IMAGES[service.id];
   }
   
   const fallbacks = {
@@ -1172,8 +1179,8 @@ function renderAdmin() {
       const email = emailInput ? emailInput.value.trim().toLowerCase() : '';
       const pass = passInput ? passInput.value : '';
 
-      // Admin Credentials Check: byasadevp632@gmail.com / byasadevp632@202
-      if (email === 'byasadevp632@gmail.com' && pass === 'byasadevp632@202') {
+      // Admin Credentials Check: byasadevp632@gmail.com / byasadevp632@2004
+      if (email === 'byasadevp632@gmail.com' && pass === 'byasadevp632@2004') {
         sessionStorage.setItem('vpp_admin_auth', 'true');
         renderAdmin();
       } else if (errorMsg) {

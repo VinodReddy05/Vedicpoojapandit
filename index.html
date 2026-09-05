@@ -6,6 +6,7 @@
   <title>Vedic Pooja Pandit | Sacred Rituals, Divine Experience</title>
   <meta name="description" content="Book experienced Vedic priests for poojas, homams, ceremonies and rituals across 13 cities in India. Trusted by 50,000+ families.">
   <meta name="keywords" content="pooja, pandit, vedic, homam, ceremony, hindu rituals, priest booking">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%235C0614'/><text y='.88em' font-size='72' x='14' fill='%23D4AF37'>🕉</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -66,24 +67,56 @@
     <section class="vpp-hero" id="hero-section">
       <div class="vpp-hero__mandala"></div>
       <div class="vpp-hero__content container">
-        <div class="vpp-hero__badge">🪔 Trusted by 50,000+ Families Across India</div>
-        <h1 class="vpp-hero__title">Sacred <span class="text-gold">Vedic Rituals</span> at Your Doorstep</h1>
-        <p class="vpp-hero__subtitle">Book experienced, Vedic Patashala certified priests for poojas, homams, ceremonies and rituals in your city.</p>
-        <div style="margin-bottom: 40px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-          <a href="#/all-services" class="vpp-btn vpp-btn--primary" style="box-shadow: var(--shadow-gold);">📿 Browse All 104+ Rituals</a>
-        </div>
-        <div class="vpp-hero__stats">
-          <div class="vpp-hero__stat">
-            <span class="vpp-hero__stat-number">500+</span>
-            <span class="vpp-hero__stat-label">Certified Priests</span>
+        <div class="vpp-hero__grid">
+          <!-- Left Column: Content -->
+          <div class="vpp-hero__text-col">
+            <div class="vpp-hero__badge">🪔 Trusted by 50,000+ Families Across India</div>
+            <h1 class="vpp-hero__title">Sacred <span class="text-gold">Vedic Rituals</span> at Your Doorstep</h1>
+            <p class="vpp-hero__subtitle">Book experienced, Vedic Patashala certified priests for poojas, homams, ceremonies and rituals in your city.</p>
+            
+            <div class="vpp-hero__actions">
+              <a href="#/all-services" class="vpp-btn vpp-btn--primary" style="box-shadow: var(--shadow-gold);">📿 Browse 104+ Rituals</a>
+              <a href="tel:+919014747545" class="vpp-btn vpp-hero__call-btn">📞 Call: +91 9014747545</a>
+            </div>
+
+            <div class="vpp-hero__stats">
+              <div class="vpp-hero__stat">
+                <span class="vpp-hero__stat-number">500+</span>
+                <span class="vpp-hero__stat-label">Certified Priests</span>
+              </div>
+              <div class="vpp-hero__stat">
+                <span class="vpp-hero__stat-number">13</span>
+                <span class="vpp-hero__stat-label">Cities</span>
+              </div>
+              <div class="vpp-hero__stat">
+                <span class="vpp-hero__stat-number">120+</span>
+                <span class="vpp-hero__stat-label">Rituals</span>
+              </div>
+            </div>
           </div>
-          <div class="vpp-hero__stat">
-            <span class="vpp-hero__stat-number">13</span>
-            <span class="vpp-hero__stat-label">Cities</span>
-          </div>
-          <div class="vpp-hero__stat">
-            <span class="vpp-hero__stat-number">120+</span>
-            <span class="vpp-hero__stat-label">Rituals</span>
+
+          <!-- Right Column: Large Visible Pandit Portrait Showcase -->
+          <div class="vpp-hero__pandit-col">
+            <div class="vpp-hero__pandit-card">
+              <div class="vpp-hero__pandit-img-frame">
+                <img src="assets/images/pandit_profile.jpg" alt="Pandit Karunakara Sharma" class="vpp-hero__pandit-portrait">
+                <div class="vpp-hero__pandit-status-badge">
+                  <span class="vpp-hero__pandit-live-dot"></span>
+                  Available for Booking
+                </div>
+              </div>
+              <div class="vpp-hero__pandit-card-info">
+                <h3 class="vpp-hero__pandit-card-name">Pandit Karunakara Sharma</h3>
+                <p class="vpp-hero__pandit-card-role">Chief Vedic Scholar & Master Astrologer</p>
+                <div class="vpp-hero__pandit-card-tags">
+                  <span class="vpp-hero__pandit-tag-chip">📜 Patashala Certified</span>
+                  <span class="vpp-hero__pandit-tag-chip">⭐ 20+ Yrs Exp</span>
+                </div>
+                <a href="https://wa.me/919014747545?text=Namaste%20Pandit%20Ji%2C%20I%20would%20like%20to%20book%20a%20pooja." target="_blank" rel="noopener noreferrer" class="vpp-hero__pandit-card-wa-btn">
+                  💬 Chat & Book on WhatsApp
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -100,6 +133,22 @@
     <div id="app-content"></div>
   </main>
 
+  <!-- FLOATING WHATSAPP POPUP WIDGET (Bottom Right Corner) -->
+  <div class="vpp-floating-whatsapp" id="floating-whatsapp">
+    <a href="https://wa.me/919014747545?text=Namaste%20Pandit%20Ji%2C%20I%20would%20like%20to%20book%20a%20pooja." target="_blank" rel="noopener noreferrer" class="vpp-floating-whatsapp__link" aria-label="Chat on WhatsApp">
+      <div class="vpp-floating-whatsapp__icon-box">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span class="vpp-floating-whatsapp__dot"></span>
+      </div>
+      <div class="vpp-floating-whatsapp__text">
+        <span class="vpp-floating-whatsapp__title">Chat with Panditji</span>
+        <span class="vpp-floating-whatsapp__num">📲 +91 9014747545</span>
+      </div>
+    </a>
+  </div>
+
   <!-- FOOTER -->
   <footer class="vpp-footer">
     <div class="vpp-footer__inner container">
@@ -108,10 +157,12 @@
           <h3 class="vpp-footer__title">🕉️ Vedic Pooja Pandit</h3>
           <p class="vpp-footer__text">We connect you with experienced, Vedic Patashala certified priests for authentic poojas, homams, and ceremonies. Our mission is to make sacred rituals accessible and convenient for every family.</p>
           <div class="vpp-footer__social">
-            <a href="#" class="vpp-footer__social-link" aria-label="Facebook">f</a>
-            <a href="#" class="vpp-footer__social-link" aria-label="Instagram">📷</a>
-            <a href="#" class="vpp-footer__social-link" aria-label="YouTube">▶</a>
-            <a href="#" class="vpp-footer__social-link" aria-label="WhatsApp">💬</a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="vpp-footer__social-link" aria-label="Facebook">f</a>
+            <a href="https://www.instagram.com/pandit_karunakara?igsi=NDZvNGt2Y2lsNzY2" target="_blank" rel="noopener noreferrer" class="vpp-footer__social-link vpp-footer__social-link--instagram" aria-label="Instagram" title="Follow Pandit Karunakara on Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="vpp-footer__social-link" aria-label="YouTube">▶</a>
+            <a href="https://wa.me/919014747545" target="_blank" rel="noopener noreferrer" class="vpp-footer__social-link" aria-label="WhatsApp">💬</a>
           </div>
         </div>
         <div class="vpp-footer__col">
@@ -137,9 +188,13 @@
         </div>
         <div class="vpp-footer__col">
           <h3 class="vpp-footer__title">Contact Us</h3>
-          <div class="vpp-footer__contact">📞 +91 9014747545</div>
-          <div class="vpp-footer__contact">📧 info@vedicpoojapandit.com</div>
-          <div class="vpp-footer__contact">📍 Hyderabad, Telangana</div>
+          <div class="vpp-footer__contact">📞 <a href="tel:+919014747545" style="color: inherit; text-decoration: none;">+91 9014747545</a></div>
+          <div class="vpp-footer__contact">📧 <a href="mailto:info@vedicpoojapandit.com" style="color: inherit; text-decoration: none;">info@vedicpoojapandit.com</a></div>
+          <div class="vpp-footer__contact">
+            <a href="https://maps.app.goo.gl/NbzPRU7amDYaMKEV8?g_st=aw" target="_blank" rel="noopener noreferrer" class="vpp-footer__map-link" title="Open Temple Location on Google Maps">
+              📍 <span>Temple Location: Hyderabad 🗺️</span>
+            </a>
+          </div>
         </div>
       </div>
       <div class="vpp-footer__bottom">

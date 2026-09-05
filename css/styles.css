@@ -364,10 +364,20 @@ ul, ol {
 .vpp-hero__content {
   position: relative;
   z-index: 1;
-  text-align: center;
-  max-width: 800px;
+  max-width: var(--container-max);
   margin: 0 auto;
-  padding: 10px 24px;
+  padding: 40px 24px;
+}
+
+.vpp-hero__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.vpp-hero__text-col {
+  text-align: left;
 }
 
 .vpp-hero__badge {
@@ -399,15 +409,42 @@ ul, ol {
 
 .vpp-hero__subtitle {
   font-size: 1.15rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   max-width: 600px;
-  margin: 0 auto 40px;
+  margin: 0 0 32px;
   line-height: 1.6;
+}
+
+.vpp-hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.vpp-hero__call-btn {
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold-light) !important;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+  text-decoration: none;
+}
+
+.vpp-hero__call-btn:hover {
+  background: var(--color-gold);
+  color: var(--color-maroon-dark) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
 }
 
 .vpp-hero__stats {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 48px;
 }
 
@@ -428,6 +465,168 @@ ul, ol {
   color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+/* Prominent Pandit Showcase Card (Right Column) */
+.vpp-hero__pandit-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vpp-hero__pandit-card {
+  width: 100%;
+  max-width: 360px;
+  background: rgba(42, 10, 10, 0.75);
+  border: 2px solid var(--color-gold);
+  border-radius: var(--radius-xl);
+  padding: 16px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.vpp-hero__pandit-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 45px rgba(212, 175, 55, 0.5);
+  border-color: var(--color-saffron-light);
+}
+
+.vpp-hero__pandit-img-frame {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.vpp-hero__pandit-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s ease;
+}
+
+.vpp-hero__pandit-card:hover .vpp-hero__pandit-portrait {
+  transform: scale(1.05);
+}
+
+.vpp-hero__pandit-status-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(42, 10, 10, 0.85);
+  border: 1px solid #2E7D32;
+  color: #81C784;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(8px);
+}
+
+.vpp-hero__pandit-live-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #4CAF50;
+  animation: waPulse 1.5s infinite;
+}
+
+.vpp-hero__pandit-card-info {
+  padding-top: 16px;
+  text-align: center;
+}
+
+.vpp-hero__pandit-card-name {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--color-gold-light);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.vpp-hero__pandit-card-role {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 12px;
+}
+
+.vpp-hero__pandit-card-tags {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.vpp-hero__pandit-tag-chip {
+  background: rgba(230, 81, 0, 0.25);
+  border: 1px solid rgba(255, 153, 51, 0.4);
+  color: var(--color-saffron-light);
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.vpp-hero__pandit-card-wa-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+  color: #FFFFFF;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+  transition: all 0.3s ease;
+}
+
+.vpp-hero__pandit-card-wa-btn:hover {
+  background: linear-gradient(135deg, #075E54 0%, #128C7E 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+}
+
+@media (max-width: 992px) {
+  .vpp-hero__grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 32px;
+  }
+  .vpp-hero__text-col {
+    text-align: center;
+  }
+  .vpp-hero__subtitle {
+    margin: 0 auto 32px;
+  }
+  .vpp-hero__actions {
+    justify-content: center;
+  }
+  .vpp-hero__stats {
+    justify-content: center;
+  }
+  .vpp-hero__pandit-card {
+    max-width: 320px;
+  }
+  .vpp-hero__pandit-img-frame {
+    height: 320px;
+  }
 }
 
 .vpp-hero::after {
@@ -2353,6 +2552,250 @@ ul, ol {
   text-align: center;
   width: 100%;
 }
+
+/* --------------------------------------------------------------------------
+   Hero Pandit Avatar Profile Badge
+   -------------------------------------------------------------------------- */
+.vpp-hero__pandit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(42, 10, 10, 0.75);
+  border: 1px solid var(--color-gold);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 8px 18px 8px 10px;
+  border-radius: 50px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(212, 175, 55, 0.3);
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.vpp-hero__pandit-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), 0 0 25px rgba(212, 175, 55, 0.5);
+  border-color: var(--color-saffron-light);
+}
+
+.vpp-hero__pandit-avatar-wrap {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(135deg, #D4AF37, #FF9933, #D4AF37);
+  flex-shrink: 0;
+}
+
+.vpp-hero__pandit-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 50%;
+  border: 2px solid #2A0A0A;
+  display: block;
+}
+
+.vpp-hero__pandit-pulse {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  background-color: #2E7D32;
+  border: 2px solid #2A0A0A;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #2E7D32;
+}
+
+.vpp-hero__pandit-info {
+  text-align: left;
+}
+
+.vpp-hero__pandit-name {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-gold-light);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.2;
+}
+
+.vpp-hero__pandit-tag {
+  font-size: 0.7rem;
+  background: rgba(230, 81, 0, 0.3);
+  color: var(--color-saffron-light);
+  border: 1px solid rgba(255, 153, 51, 0.4);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.vpp-hero__pandit-sub {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Footer Link Enhancements (Instagram & Map Location)
+   -------------------------------------------------------------------------- */
+.vpp-footer__social-link--instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #fff !important;
+  border: none !important;
+}
+
+.vpp-footer__social-link--instagram:hover {
+  transform: translateY(-3px) rotate(5deg);
+  box-shadow: 0 6px 16px rgba(220, 39, 67, 0.4);
+}
+
+.vpp-footer__map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-gold-light);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.vpp-footer__map-link:hover {
+  color: var(--color-saffron-light);
+  text-decoration: underline;
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   Floating WhatsApp Popup Widget (Bottom-Right Corner)
+   -------------------------------------------------------------------------- */
+.vpp-floating-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999999;
+  animation: waFloatIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.vpp-floating-whatsapp__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+  color: #FFFFFF;
+  padding: 10px 18px 10px 12px;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.vpp-floating-whatsapp__link:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 14px 38px rgba(37, 211, 102, 0.5), 0 6px 16px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #075E54 0%, #128C7E 100%);
+}
+
+.vpp-floating-whatsapp__icon-box {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.vpp-floating-whatsapp__dot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: #FFD700;
+  border: 2px solid #128C7E;
+  border-radius: 50%;
+  animation: waPulse 1.5s infinite;
+}
+
+.vpp-floating-whatsapp__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.vpp-floating-whatsapp__title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #E8F5E9;
+  line-height: 1.1;
+}
+
+.vpp-floating-whatsapp__num {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+@keyframes waPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+  }
+  70% {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 10px rgba(255, 215, 0, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+  }
+}
+
+@keyframes waFloatIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .vpp-floating-whatsapp {
+    bottom: 18px;
+    right: 18px;
+  }
+  .vpp-floating-whatsapp__text {
+    display: none;
+  }
+  .vpp-floating-whatsapp__link {
+    padding: 10px;
+    border-radius: 50%;
+  }
+  .vpp-hero__pandit-badge {
+    padding: 6px 14px 6px 8px;
+  }
+  .vpp-hero__pandit-sub {
+    display: none;
+  }
+}
+
 
 
 
